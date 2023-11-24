@@ -1,0 +1,33 @@
+@import "assets/fonts/fonts";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import url("https://fonts.cdnfonts.com/css/pp-neue-montreal");
+
+@import "./global-styles/animations";
+@import "./global-styles/color-var";
+@import "./global-styles/common-style";
+
+:host {
+    touch-action: none;
+    user-select: none;
+    zoom: 1;
+    max-zoom: 1;
+    min-zoom: 1;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    // font-family: "NeueMontreal-Regular", sans-serif;
+    font-family: "PP Neue Montreal", sans-serif;
+}
+p {
+    font-weight: 400;
+}
+a {
+    text-decoration: none;
+}

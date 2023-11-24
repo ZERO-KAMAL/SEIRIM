@@ -1,0 +1,104 @@
+header {
+    .header-container {
+        padding: 1.6rem 0rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 11;
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: borderSlideAnimation 3s ease-in-out;
+        }
+        .header-logo {
+            svg {
+                width: 95px;
+                height: 27px;
+            }
+        }
+        .header-menu {
+            ul {
+                display: flex;
+                align-items: center;
+                li {
+                    margin-left: 2.25rem;
+                    a {
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        span {
+                            color: #fff;
+                            font-size: 0.875rem;
+                            letter-spacing: 1.95px;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                        }
+                        svg {
+                            width: 12.385px;
+                            height: 6.841px;
+                            margin-left: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+        .mobile-menu {
+            display: flex;
+            align-items: center;
+            .border {
+                width: 1px;
+                height: 0.75rem;
+                background-color: #fff;
+                margin: 0 0.75rem;
+            }
+            .language-selector {
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                margin-right: 1.25rem;
+                a {
+                    color: #fff;
+                    font-size: 14.17px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;
+                    // &:hover {
+                    //     color: #048bd7;
+                    // }
+                }
+            }
+            .hamburger-menu {
+                div {
+                    width: 31px;
+                    height: 3px;
+                    background: #fff;
+                    margin-bottom: 4px;
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .header-menu {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 991px) {
+            .header-menu {
+                display: block;
+            }
+            .mobile-menu {
+                display: none;
+            }
+        }
+    }
+}
