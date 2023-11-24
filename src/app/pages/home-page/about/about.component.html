@@ -1,0 +1,64 @@
+<section class="about-us">
+    <div class="app-container">
+        <div class="about-us-top row">
+            <div class="about-us-top-left col-md-6">
+
+                <div class="section-title">
+                    <span class="title-label"> Who is Seriem </span>
+                    <h2 class="title">SEIRIM is a System</h2>
+                </div>
+
+
+                <div class="line">
+                    <img src="../../../../assets/images/line.png" alt="">
+                </div>
+
+                <img class="img-sm" src="../../../../assets/images/about-img.jpg" alt="about image" />
+
+                <div class="underline"></div>
+                <p class="para">Since founding in 2012, we have been dedicated to always improving how powerfully we
+                    code,
+                    design and
+                    deliver websites, cybersecurity and IT solutions.</p>
+                <p class="para">We love our work and love to work well for our esteemed clients.</p>
+                <button class="btn-trans btn-learn-more btn-big">
+                    <span>
+                        Learn more
+                    </span>
+                    <svg class="link-icon">
+                        <use xlink:href="#arrowTopRightIcon"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="about-us-top-right col-md-6">
+                <img src="../../../../assets/images/about-img.jpg" alt="about image" />
+            </div>
+        </div>
+
+        <div class="about-us-bottom">
+
+            <ul class="about-us-list">
+                <li class="about-us-item" *ngFor="let item of aboutUsData">
+                    <img class="border-line" src="../../../../assets/images/card-line.png" alt="">
+                    <div class="item-content">
+                        <div class="card-icon">
+                            <img [src]="item.cardIcon" alt="">
+                        </div>
+                        <h6 class="count">{{ item.count }}</h6>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <button class="btn-trans btn-learn-more btn-small">
+            <span>
+                Learn more
+            </span>
+            <svg class="link-icon">
+                <use xlink:href="#arrowTopRightIcon"></use>
+            </svg>
+        </button>
+
+    </div>
+</section>

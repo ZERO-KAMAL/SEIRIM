@@ -1,0 +1,68 @@
+.inquire {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("../../../../assets/images/inquire-bg-lg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .inquire-wrapper {
+        padding: 7.5rem 0 8.875rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+        .inquire-heading {
+            color: #fff;
+            font-size: 3.75rem;
+            font-weight: 500;
+            line-height: 100%;
+            max-width: 33.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .inquire-content {
+            max-width: 34.938rem;
+
+            .inquire-para {
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 25px;
+                letter-spacing: 0.85px;
+                margin-top: 2.375rem;
+                margin-bottom: 3.438rem;
+            }
+
+            .inquire-button {
+                margin: 0 auto
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .inquire {
+        .inquire-wrapper {
+            .inquire-heading {
+                font-size: 2rem;
+                max-width: 312px;
+                margin-bottom: 1.4rem;
+            }
+            .inquire-content {
+                .inquire-para {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 30px;
+                    letter-spacing: 0.8px;
+                    margin-top: 1.4rem;
+                }
+                .inquire-button {
+                    background: rgba($color: #26376c, $alpha: 0.5);
+                    padding: 1rem 2.4rem;
+                }
+            }
+        }
+    }
+}

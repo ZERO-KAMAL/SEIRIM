@@ -1,0 +1,192 @@
+.what-we-offer {
+    background: #090c18;
+    padding: 6.8rem 0 11rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .small-img {
+        display: none;
+        margin: 1.4rem 0;
+        width: 100%;
+    }
+    .list-content {
+        margin-top: 5.6rem;
+        .title {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 100%; /* 25px */
+            margin-bottom: 2rem;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.2rem 0;
+                border-bottom: 1px solid #0a304b;
+                max-width: 26rem;
+                width: 100%;
+                margin-bottom: 0.75rem;
+                span {
+                    color: #fff;
+                    font-size: 1.063rem;
+                    font-weight: 400;
+                    line-height: 100%;
+                }
+                svg {
+                    width: 21px;
+                    height: 21px;
+                }
+            }
+        }
+    }
+    .what-we-offer-top {
+        .section-title {
+            text-align: center;
+            .line {
+                margin: auto;
+            }
+            P {
+                max-width: 47rem;
+                margin: auto;
+                margin-top: 1rem;
+            }
+        }
+    }
+    .tabs {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        .tab-item {
+            max-width: 15rem;
+            width: 100%;
+            border: none;
+            background: none;
+            position: relative;
+            padding: 1.4rem 0;
+            &::after {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 4px;
+                background: #1b2023;
+            }
+
+            &:nth-child(2) {
+                margin: 0 1rem;
+            }
+            &.active {
+                &::after {
+                    background: linear-gradient(95deg, #057ba0 -4.15%, #042dc0 102.16%);
+                }
+            }
+            span {
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 100%; /* 16px */
+            }
+        }
+    }
+    .tab-content {
+        width: 100%;
+        margin-top: 4.875rem;
+        .cybersecurity-content {
+            .cybersecurity-content-top {
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+                .line {
+                    display: none;
+                }
+                .big-img {
+                    max-width: 44rem;
+                    width: 100%;
+                }
+                .section-title {
+                    max-width: 37rem;
+                    .title {
+                        font-size: 2.5rem;
+                    }
+                }
+                .btn-link {
+                    margin-top: 2.2rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .list-content {
+            ul {
+                li {
+                    max-width: 22rem;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 767px) {
+        padding: 4.375rem 0;
+        .cybersecurity-content {
+            .cybersecurity-content-top {
+                .line {
+                    display: block !important;
+                }
+            }
+        }
+        .small-img {
+            display: block;
+        }
+        .top-right-item {
+            display: none;
+        }
+        .list-content {
+            ul {
+                li {
+                    max-width: 16rem;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .btn-link {
+            padding: 1rem 1.5rem;
+            background: rgba($color: #19264B, $alpha: 0.5);
+        }
+        .what-we-offer-top {
+            .section-title {
+                text-align: start;
+            }
+            .line {
+                margin: 0 !important;
+            }
+        }
+
+        .tabs {
+            margin-top: 4rem;
+            .tab-item {
+                &:nth-child(2) {
+                    margin: 0;
+                }
+            }
+        }
+        .tab-content {
+            margin-top: 3rem;
+        }
+        .list-content {
+            ul {
+                li {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,293 @@
+.banner {
+    .latest-news-box {
+        .title {
+            color: #fff;
+            font-size: 0.938rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .latest-news-list {
+            .latest-news-item {
+                position: relative;
+                padding: 1.313rem 0 1.813rem 0;
+                &:last-child {
+                    padding-bottom: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    left: 0;
+                    width: 8.254rem;
+                    height: 1px;
+                    background: rgba(105, 105, 105, 0.5);
+                }
+                .item-label {
+                    color: #8e8e8e;
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    line-height: 100%;
+                    letter-spacing: 1.2px;
+                    text-transform: uppercase;
+                }
+                p {
+                    color: #fafafa;
+                    font-size: 1.125rem;
+                    font-weight: 400;
+                    margin: 0;
+                    line-height: normal;
+                    // margin-top: 0.375rem;
+                }
+            }
+        }
+    }
+    .banner-wrapper {
+        margin-top: -5.813rem;
+        background-image: url("../../../../assets/images/banner-img.jpg");
+        background-position: 38% 100%;
+        background-size: cover;
+        min-height: 102vh;
+        position: relative;
+        z-index: 1;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            mix-blend-mode: soft-light;
+            z-index: -1;
+        }
+        .banner-content {
+            padding-top: 5.813rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .banner-content-left {
+                margin-top: 5rem;
+                max-width: 36.125rem;
+                h1 {
+                    color: #fff;
+                    font-size: 5.5rem;
+                    line-height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                    span {
+                        font-weight: 300;
+                    }
+                    strong {
+                        font-weight: 500;
+                    }
+                }
+                p {
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 30px;
+                    letter-spacing: 0.056rem;
+                    margin-top: 1.5rem;
+                    margin-bottom: 2rem;
+                }
+                .btn-banner {
+                    transition: none;
+                    svg {
+                        width: 1.089rem;
+                        height: 1.375rem;
+                    }
+                    span {
+                        margin: 0 1.2rem 0 1rem;
+                    }
+                }
+            }
+            .banner-content-right {
+                max-width: 29.5rem;
+                padding: 1.938rem 2.188rem;
+                background: rgba(6, 8, 15, 0.3);
+                backdrop-filter: blur(3px);
+                margin-top: 3.75rem;
+            }
+            .slider-indicator-wrapper {
+                margin-top: 4.375rem;
+                .slider-indicator {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    button {
+                        max-width: 2.2rem;
+                        width: 100%;
+                        height: 2px;
+                        padding: 0;
+                        border: none;
+                        outline: none;
+                        background: rgba(255, 255, 255, 0.5);
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            animation: borderSlideAnimation 5s ease-in-out infinite; /* Add the animation here */
+                        }
+
+                        &:nth-child(2) {
+                            margin: 0 0.5rem;
+                        }
+
+                        &.active {
+                            &::after {
+                                background-color: #07cef4;
+                            }
+                        }
+                    }
+                }
+                .btn-prev,
+                .btn-next {
+                    background: none;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    width: 34px;
+                    height: 34px;
+                    transition: all 0.3s ease-in-out;
+                    background-color: rgba($color: #06080e, $alpha: 0.5);
+                    svg {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                    &:hover {
+                        background-color: #0782f4;
+                    }
+                }
+            }
+        }
+        .banner-footer {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2.75rem;
+            padding: 0 2rem;
+            padding-bottom: 1.2rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            .footer-top {
+                margin-left: auto;
+                span {
+                    font-size: 0.938rem;
+                    font-weight: 400;
+                    line-height: 1.563;
+                    text-transform: uppercase;
+                    color: #fff;
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .footer-bottom {
+                margin-left: auto;
+                ul {
+                    display: flex;
+                    align-items: center;
+                    li {
+                        color: #fff;
+                        font-size: 0.938rem;
+                        font-weight: 400;
+                        line-height: 1.563;
+                        text-transform: uppercase;
+                    }
+                    li.border {
+                        background-color: #fff;
+                        width: 1px;
+                        height: 1rem;
+                        margin: 0 0.75rem;
+                    }
+                    li.active {
+                        color: #048bd7;
+                    }
+                }
+            }
+        }
+    }
+
+    .moblie-latest-news {
+        background-color: #0c2436;
+        padding: 3.125rem 0;
+    }
+    @media screen and (min-width: 767px) and (max-width: 1400px) {
+        .banner-wrapper {
+            min-height: 60rem !important;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .banner-wrapper {
+            .banner-content {
+                .banner-content-right {
+                    display: none;
+                }
+            }
+            .banner-footer {
+                // display: none;
+                display: flex;
+                flex-direction: column-reverse;
+                .footer-top {
+                    margin: auto;
+                }
+                .footer-bottom {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 991px) {
+        .moblie-latest-news {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .banner-wrapper {
+            .banner-content {
+                .banner-content-left {
+                    h1 {
+                        font-size: 60px;
+                        word-break: break-all;
+                    }
+                    p {
+                        font-size: 18px;
+                    }
+                    .btn-banner {
+                        padding: 1rem 1.2rem;
+                        background: rgba($color: #06080e, $alpha: 0.5);
+                    }
+                }
+                .slider-indicator-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 4.375rem;
+                }
+                .slider-indicator {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 600px) {
+        .slider-indicator-wrapper {
+            .btn-prev,
+            .btn-next {
+                display: none;
+            }
+        }
+    }
+}

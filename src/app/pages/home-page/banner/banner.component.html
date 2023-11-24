@@ -1,0 +1,119 @@
+<section class="banner">
+    <div class="banner-wrapper">
+        <div class="app-container">
+            <div class="banner-content">
+                <div class="banner-content-left">
+
+                    <div class="slide-content">
+                        <h1>
+                            <span>{{ slides[currentIndex].title }}</span>
+                            <strong>{{ slides[currentIndex].subtitle }}</strong>
+                        </h1>
+                        <p>{{ slides[currentIndex].content }}</p>
+                        <button class="btn-banner btn-trans">
+                            <svg>
+                                <use xlink:href="#shieldIcon"></use>
+                            </svg>
+                            <span>{{slides[currentIndex].buttonLabel}}</span>
+                            <svg class="link-icon">
+                                <use xlink:href="#arrowUpRightIcon"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="slider-indicator-wrapper">
+                        <button class="btn-prev active" (click)="onPrevClick()">
+                            <svg>
+                                <use xlink:href="#arrowLeftIcon"></use>
+                            </svg>
+                        </button>
+                        <div class="slider-indicator">
+
+                            <button *ngFor="let slide of slides; let i = index"
+                                [class.active]="i === currentIndex"></button>
+
+                        </div>
+                        <button class="btn-next" (click)="onNextClick()">
+                            <svg>
+                                <use xlink:href="#arrowRightIcon"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="banner-content-right">
+                    <div class="latest-news-box">
+                        <h6 class="title">Latest News</h6>
+                        <ul class="latest-news-list">
+                            <li class="latest-news-item">
+                                <label class="item-label">02 Aug 2023 - Cyber Security</label>
+                                <p class="item-content">White paper on secure software development practices for 2023
+                                    published</p>
+                            </li>
+                            <li class="latest-news-item">
+                                <label class="item-label">03 Aug 2023 - Cyber Security</label>
+                                <p class="item-content">Hypersecure CMS updated with latest security enhancements and
+                                    Passkey support</p>
+                            </li>
+                            <li class="latest-news-item">
+                                <label class="item-label">04 Aug 2023 - Cyber Security</label>
+                                <p class="item-content">Top 20 threat intelligence feeds and services for SME’s</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="banner-footer">
+                <div class="footer-top">
+                    <span>Live Chat : Online —
+                        <a href="#">click here</a>
+                    </span>
+                </div>
+                <div class="animated-border">
+
+                </div>
+                <div class="footer-bottom">
+                    <ul>
+                        <li>Shanghai: 16:45:55 GMT +8 </li>
+                        <li class="border"></li>
+                        <li> info@seirim.com </li>
+                        <li class="border"></li>
+                        <li> info@seirim.com </li>
+                        <li class="border"></li>
+                        <li> English </li>
+                        <li class="border"></li>
+                        <li> 中文 </li>
+                        <li class="border"></li>
+                        <li> Light </li>
+                        <li class="border"></li>
+                        <li class="active"> Dark </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="moblie-latest-news">
+        <div class="app-container">
+            <div class="latest-news-box">
+                <h6 class="title">Latest News</h6>
+                <ul class="latest-news-list">
+                    <li class="latest-news-item">
+                        <label class="item-label">02 Aug 2023 - Cyber Security</label>
+                        <p class="item-content">White paper on secure software development practices for 2023
+                            published</p>
+                    </li>
+                    <li class="latest-news-item">
+                        <label class="item-label">03 Aug 2023 - Cyber Security</label>
+                        <p class="item-content">Hypersecure CMS updated with latest security enhancements and
+                            Passkey support</p>
+                    </li>
+                    <li class="latest-news-item">
+                        <label class="item-label">04 Aug 2023 - Cyber Security</label>
+                        <p class="item-content">Top 20 threat intelligence feeds and services for SME’s</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
