@@ -12,6 +12,8 @@ import { BannerComponent } from './pages/home-page/banner/banner.component';
 import { InquireComponent } from './pages/home-page/inquire/inquire.component';
 import { AboutComponent } from './pages/home-page/about/about.component';
 import { WhatWeOfferComponent } from './pages/home-page/what-we-offer/what-we-offer.component';
+import { CaseStudyComponent } from './pages/home-page/case-study/case-study.component';
+import { BlogComponent } from './pages/home-page/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { WhatWeOfferComponent } from './pages/home-page/what-we-offer/what-we-of
     BannerComponent,
     InquireComponent,
     AboutComponent,
-    WhatWeOfferComponent
+    WhatWeOfferComponent,
+    CaseStudyComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

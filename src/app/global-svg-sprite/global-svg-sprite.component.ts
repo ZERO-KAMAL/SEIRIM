@@ -206,6 +206,10 @@ import { Component } from '@angular/core';
         <circle cx="10.5" cy="10.5" r="10" fill="#00121D" stroke="#079AFF" />
         <path d="M5 11.375L8.04347 14L15 8" stroke="white" stroke-width="1.5" />
       </symbol>
+
+      <symbol id="arrowRightIconOne" viewBox="0 0 22 19" fill="none">
+  <path d="M12.8879 0.646484L11.3975 2.17071L17.3589 8.26762H0.113403V10.4451H17.3589L11.3975 16.542L12.8879 18.0662L21.4042 9.35635L12.8879 0.646484Z" fill="#079AFF"/>
+</symbol>
     </svg>
   `,
 })
