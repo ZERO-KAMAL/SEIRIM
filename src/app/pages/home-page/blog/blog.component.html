@@ -19,9 +19,9 @@
         </div>
     </div>
     <div class="blog-bottom">
-        <ul class="slider-list">
+        <ul class="slider-list" #sliderList>
 
-            <li class="slider-item" *ngFor="let item of sliderData">
+            <li class="slider-item" *ngFor="let item of visibleItems">
                 <img [src]="item.blogImg" alt="">
 
                 <div class="card-content">
@@ -45,18 +45,21 @@
         </ul>
 
         <div class="slider-actions">
-            <button class="btn-prev">
+
+            <button class="btn-prev" (click)="prevSlide()">
                 <svg>
                     <use xlink:href="#arrowLeftIcon"></use>
                 </svg>
             </button>
-
             <div class="loading-indicator"></div>
-            <button class="btn-next">
+            <button class="btn-next" (click)="nextSlide()">
                 <svg>
                     <use xlink:href="#arrowRightIcon"></use>
                 </svg>
             </button>
+
         </div>
     </div>
+
+
 </section>

@@ -12,16 +12,16 @@
     }
     .blog-bottom {
         margin-top: 4rem;
+        overflow: hidden;
         .slider-list {
             display: flex;
             align-items: center;
             justify-content: space-between;
             .slider-item {
-                // border: 1px solid #00c3cf;
+                box-shadow: rgba(255, 255, 255, 0.05) 0px 0px 80px 4px;
                 opacity: 0.8;
                 background: #0a0d1c;
                 width: 24rem;
-                // width: 100%;
                 padding: 2rem 1.8rem;
                 margin: 0 1.875rem;
                 overflow: hidden;

@@ -1,11 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit {
+
+  @ViewChild('sliderList', { static: true }) sliderList!: ElementRef<HTMLSpanElement>;
+
+  currentSlideIndex: number = 0;
+
+  constructor() { }
+
+  ngAfterViewInit() {
+    gsap.to(this.sliderList.nativeElement, {
+      duration: 1,
+      rotation: 360,
+      opacity: 1, 
+      delay: 0.5, 
+      stagger: 0.2,
+      ease: "sine.out", 
+      force3D: true
+    });
+  }
+
   aboutUsData = [
     {
       cardIcon: '../../../../assets/images/about-icons/webPageIcon.png',

@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
-export class BlogComponent {
+export class BlogComponent implements AfterViewInit {
 
   sliderData = [
     {
@@ -67,4 +68,79 @@ export class BlogComponent {
   ];
 
 
+  @ViewChild('sliderList', { static: true }) sliderList!: ElementRef<HTMLDivElement>;
+
+  ngAfterViewInit() {
+    // this.autoSlider();
+  }
+
+  currentSlideIndex: number = 0;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  get visibleItems() {
+    const endIndex = (this.currentSlideIndex + 4) % this.sliderData.length;
+    if (this.currentSlideIndex <= endIndex) {
+      return this.sliderData.slice(this.currentSlideIndex, endIndex);
+    } else {
+      return [
+        ...this.sliderData.slice(this.currentSlideIndex),
+        ...this.sliderData.slice(0, endIndex),
+      ];
+    }
+  }
+
+  isAnimating: boolean = false;
+
+  // Modify the previous slide method
+  prevSlide() {
+    if (!this.isAnimating) {
+      this.isAnimating = true;
+      const prevIndex = (this.currentSlideIndex - 1 + this.sliderData.length) % this.sliderData.length;
+      this.animateSlide(prevIndex, -1);
+    }
+  }
+
+  // Modify the next slide method
+  nextSlide() {
+    if (!this.isAnimating) {
+      this.isAnimating = true;
+      const nextIndex = (this.currentSlideIndex + 1) % this.sliderData.length;
+      this.animateSlide(nextIndex, 1);
+    }
+  }
+
+  animateSlide(targetIndex: number, direction: number) {
+    const slidesInView = 3; // Number of slides visible at a time
+  
+    gsap.to(this.sliderList.nativeElement.children, {
+      duration: 0.5,
+      x: -direction * 100,
+      opacity: 0,
+      stagger: {
+        amount: 0.2, // Adjust the stagger amount for a smoother transition
+      },
+      ease: 'power2.inOut', // Use an easing function for a smoother animation
+    });
+  
+    gsap.fromTo(this.sliderList.nativeElement.children, {
+      x: direction * 100,
+      opacity: 0,
+    }, {
+      duration: 0.5,
+      x: 0,
+      opacity: 1,
+      stagger: {
+        amount: 0.2, // Adjust the stagger amount here as well
+      },
+      ease: 'power2.inOut', // Use the same easing function
+      onComplete: () => {
+        this.currentSlideIndex = targetIndex;
+        this.isAnimating = false;
+      },
+    });
+  }
+  
 }

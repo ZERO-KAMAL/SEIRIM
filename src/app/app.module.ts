@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -14,6 +14,11 @@ import { AboutComponent } from './pages/home-page/about/about.component';
 import { WhatWeOfferComponent } from './pages/home-page/what-we-offer/what-we-offer.component';
 import { CaseStudyComponent } from './pages/home-page/case-study/case-study.component';
 import { BlogComponent } from './pages/home-page/blog/blog.component';
+
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 @NgModule({
   declarations: [
@@ -35,6 +40,7 @@ import { BlogComponent } from './pages/home-page/blog/blog.component';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
