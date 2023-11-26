@@ -1,4 +1,202 @@
 <section class="case-study">
-    
+
+    <div class="section-title main-section-title">
+        <span class="title-label">Our Solutions</span>
+        <h2 class="title">Case Study</h2>
+        <div class="line">
+            <img src="../../../../assets/images/line.png" alt="">
+        </div>
+        <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+    </div>
+
+
+    <div class="cyberSecurity-study">
+
+        <div class="app-container">
+            <div class="study-top">
+                <div class="section-title">
+                    <span class="title-label">case study</span>
+                    <h2 class="title">Cybersecurity</h2>
+                    <div class="line">
+                        <img src="../../../../assets/images/line.png" alt="">
+                    </div>
+                    <p>
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+                </div>
+
+                <button class="btn-trans">
+                    <span class="btn-label">see more</span>
+                    <svg class="link-icon">
+                        <use xlink:href="#arrowTopRightIcon"></use>
+                    </svg>
+                </button>
+
+            </div>
+
+            <div class="study-blog">
+                <ul class="blog-list">
+                    <li class="list-item" *ngFor="let item of sliderData">
+                        <img [src]="item.cardImg" alt="">
+
+                        <div class="card-content">
+                            <div class="category">
+                                {{ item.category }}
+                            </div>
+                            <h6 class="card-title">{{ item.title }}</h6>
+                            <p>
+                                {{ item.description }}
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="development-study">
+
+        <div class="app-container">
+            <div class="study-top">
+                <div class="section-title">
+                    <span class="title-label">case study</span>
+                    <h2 class="title">Development</h2>
+                    <div class="line">
+                        <img src="../../../../assets/images/line.png" alt="">
+                    </div>
+                    <p>
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+                </div>
+
+                <button class="btn-trans">
+                    <span class="btn-label">see more</span>
+                    <svg class="link-icon">
+                        <use xlink:href="#arrowTopRightIcon"></use>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+        <div class="study-blog">
+            <ul class="blog-list">
+                <li class="list-item">
+                    <div class="list-item-left">
+
+                        <span>Development</span>
+                        <h6>GITI Tire</h6>
+                        <p>The Giti Corporate project was an ambitious endeavor to create the main website platform for
+                            one of the world's top ten tire companies at the center of their many brand and country
+                            websites.
+                        </p>
+
+                        <button class="btn-trans btn-link">
+                            <span>Learn more</span>
+                            <svg
+                                class="link-icon">
+                                <use xlink:href="#arrowUpRightIcon"></use>
+                            </svg></button>
+                    </div>
+                    <div class="list-item-right">
+                        <img src="../../../../assets/images/devlopment.png" alt="">
+                    </div>
+                </li>
+            </ul>
+            <div class="slider-actions">
+
+                <button class="btn-prev">
+                    <svg>
+                        <use xlink:href="#arrowRightIconOne"></use>
+                    </svg>
+                </button>
+                <div class="loading-indicator"></div>
+                <button class="btn-next">
+                    <svg>
+                        <use xlink:href="#arrowRightIconOne"></use>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="digitalMarketing-study">
+
+        <div class="app-container">
+            <div class="study-top">
+                <div class="section-title">
+                    <span class="title-label">case study</span>
+                    <h2 class="title">Digital Marketing</h2>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab-item active">
+                        <span>All</span>
+                    </button>
+                    <button class="tab-item">
+                        <span>Video Production</span>
+                    </button>
+                    <button class="tab-item">
+                        <span>3d animation</span>
+                    </button>
+                    <button class="tab-item">
+                        <span>virtual reality</span>
+                    </button>
+                    <button class="tab-item">
+                        <span>seo</span>
+                    </button>
+                    <button class="tab-item">
+                        <span>graphic design</span>
+                    </button>
+                </div>
+
+                <!-- <button class="btn-trans">
+                    <span class="btn-label">see more</span>
+                    <svg class="link-icon">
+                        <use xlink:href="#arrowTopRightIcon"></use>
+                    </svg>
+                </button> -->
+
+            </div>
+        </div>
+        <div class="study-blog">
+            <div class="top-content">
+                <div class="top-content-wrapper">
+                    <button class="btn-play">
+                        <svg class="play-icon">
+                            <use xlink:href="#playIcon"></use>
+                        </svg>
+                    </button>
+                    <span>Video production</span>
+                    <h5>Dubai Summit Opening</h5>
+                    <p>Super cool music, video and animations editing to create this very impactful video launching the
+                        Giti
+                        Summit in Dubai.</p>
+                </div>
+            </div>
+            <div class="bottom-content">
+
+                <div class="bottom-content-wrapper">
+                    <span>Video production</span>
+                    <h5>Turtler GPS</h5>
+                    <p>It’s a quality maxim in SEO that no agency should ever promise a #1 position ranking. The playing
+                        field isn’t static: the competition is always also moving forward and the search engines
+                        continually change their algorithms.</p>
+                </div>
+                <div class="bottom-content-wrapper">
+                    <span>Video production</span>
+                    <h5>Turtler GPS App</h5>
+                    <p>It facilitates automated, location based employee timekeeping, hours tracking for client billing
+                        of time spent on-site, security tracking for employee safety and much more.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </section>
