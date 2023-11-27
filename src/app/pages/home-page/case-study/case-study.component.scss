@@ -131,10 +131,15 @@
     .development-study {
         .study-blog {
             margin: 3rem 0 6rem 0;
+            overflow: hidden;
+            // .swiper-slide{
+            //     max-width: 56rem;
+            //     width: 100% !important;
+            // }
             .blog-list {
                 display: flex;
                 justify-content: center;
-                align-items: stretch;
+                height: 32rem;
                 .list-item {
                     display: flex;
                     align-items: center;
@@ -145,6 +150,9 @@
                         max-width: 16rem;
                         z-index: 99;
                         padding-left: 4.375rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
                         span {
                             color: #0782f4;
                             font-size: 0.875rem;
@@ -168,11 +176,12 @@
                         }
                     }
                     .list-item-right {
-                        // max-width: 32rem;
                         position: relative;
-                        width: 100%;
+                        height: 100%;
                         img {
                             width: 100%;
+                            height: 100%;
+                            object-fit: cover;
                         }
                         &::after {
                             position: absolute;
@@ -384,14 +393,11 @@
         }
     }
 
-
-
     @media screen and (max-width: 767px) {
         .cyberSecurity-study {
             margin-bottom: 3rem;
         }
 
-        
         .cyberSecurity-study {
             .study-blog {
                 .blog-list {

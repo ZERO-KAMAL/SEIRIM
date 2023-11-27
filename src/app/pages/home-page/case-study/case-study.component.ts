@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+
+import Swiper from 'swiper';
 
 @Component({
   selector: 'case-study',
   templateUrl: './case-study.component.html',
   styleUrls: ['./case-study.component.scss']
 })
-export class CaseStudyComponent {
+export class CaseStudyComponent implements AfterViewInit {
+
+  @ViewChild('caseStudyDevContainer') caseStudyDevContainer!: ElementRef;
+  
   sliderData = [
     {
       cardImg: '../../../../assets/images/card-img.png',
@@ -26,4 +31,31 @@ export class CaseStudyComponent {
       description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
     },
   ];
+
+  // Declare Swiper variable
+  caseStudyDevSwiper: Swiper | undefined;
+
+  constructor() { }
+
+  ngAfterViewInit(): void {
+     const caseStudyDevSwiper = new Swiper(this.caseStudyDevContainer.nativeElement, {
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 10,
+      grabCursor: true,
+      loop: true,
+      navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        }
+      },
+    });
+  }
+  
+
 }

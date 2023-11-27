@@ -19,40 +19,43 @@
         </div>
     </div>
     <div class="blog-bottom">
-        <ul class="slider-list" #sliderList>
 
-            <li class="slider-item" *ngFor="let item of visibleItems">
-                <img [src]="item.blogImg" alt="">
+        <div class="swiper-container" #blogSwiperContainer>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let item of sliderData">
+                    <div class="slider-list">
+                        <div class="slider-item" >
+                            <img [src]="item.blogImg" alt="">
+                            <div class="card-content">
+                                <div class="category">
+                                    {{ item.date }} - {{ item.category }}
+                                </div>
+                                <h6 class="card-title">{{ item.title }}</h6>
+                                <p>
+                                    {{ item.description }}
+                                </p>
 
-                <div class="card-content">
-                    <div class="category">
-                        {{ item.date }} - {{ item.category }}
+                                <button>
+                                    <svg>
+                                        <use xlink:href="#arrowRightIconOne"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <h6 class="card-title">{{ item.title }}</h6>
-                    <p>
-                        {{ item.description }}
-                    </p>
-
-                    <button>
-                        <svg>
-                            <use xlink:href="#arrowRightIconOne"></use>
-                        </svg>
-                    </button>
                 </div>
-
-            </li>
-
-        </ul>
+            </div>
+        </div>
 
         <div class="slider-actions">
 
-            <button class="btn-prev" (click)="prevSlide()">
+            <button class="btn-prev">
                 <svg>
                     <use xlink:href="#arrowRightIconOne"></use>
                 </svg>
             </button>
             <div class="loading-indicator"></div>
-            <button class="btn-next" (click)="nextSlide()">
+            <button class="btn-next">
                 <svg>
                     <use xlink:href="#arrowRightIconOne"></use>
                 </svg>
