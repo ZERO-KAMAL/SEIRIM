@@ -14,6 +14,7 @@ import { AboutComponent } from './pages/home-page/about/about.component';
 import { WhatWeOfferComponent } from './pages/home-page/what-we-offer/what-we-offer.component';
 import { CaseStudyComponent } from './pages/home-page/case-study/case-study.component';
 import { BlogComponent } from './pages/home-page/blog/blog.component';
+import { AppLoadingComponent } from './components/app-loading/app-loading.component';
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
@@ -32,7 +33,9 @@ register();
     AboutComponent,
     WhatWeOfferComponent,
     CaseStudyComponent,
-    BlogComponent
+    BlogComponent,
+    AppLoadingComponent
+    
   ],
   imports: [
     BrowserModule,

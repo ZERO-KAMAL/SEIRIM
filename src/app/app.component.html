@@ -1,14 +1,17 @@
 <global-svg-sprite></global-svg-sprite>
 
-<div class="main">
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div class="main" *ngIf="!isLoading">
 
   <div class="main-container">
+
 
     <!-- header -->
     <app-header />
 
     <router-outlet></router-outlet>
-   
+
 
     <!-- footer -->
     <app-footer />

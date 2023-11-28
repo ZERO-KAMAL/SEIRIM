@@ -1,0 +1,37 @@
+/* loading.component.css */
+
+.loading {
+    min-height: 100vh;
+    height: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .loading-content {
+        max-width: 30rem;
+        width: 100%;
+        .loading-bar {
+            height: 2px;
+            width: 100%;
+            position: relative;
+            background: rgba(105, 105, 105, 0.5);
+            z-index: 10;
+            .loading-fill {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0%;
+                height: 100%;
+                background: #007bff;
+                z-index: 11;
+            }
+        }
+        .counter {
+            font-size: 1rem;
+            text-align: start;
+            margin-top: 0.75rem;
+            color: white;
+        }
+    }
+}
