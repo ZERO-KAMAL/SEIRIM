@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import gsap from 'gsap';
 
 @Component({
@@ -11,15 +11,18 @@ export class AppLoadingComponent implements OnInit {
   loadingPercentage: number = 0;
   displayPercentage: string = '0%';
 
+  constructor(private zone: NgZone) {}
+
   ngOnInit() {
     const animation = gsap.to('.loading-fill', {
       width: '100%',
       duration: 2,
       ease: 'power2.inOut',
       onUpdate: () => {
-        // We should use the progress of the animation we created above
-        this.loadingPercentage = animation.progress() * 100;
-        this.displayPercentage = `${this.round(this.loadingPercentage)}%`;
+        this.zone.run(() => {
+          this.loadingPercentage = animation.progress() * 100;
+          this.displayPercentage = `${this.round(this.loadingPercentage)}%`;
+        });
       }
     });
   }
