@@ -1,5 +1,8 @@
-import { Component, AfterViewInit, ElementRef, OnInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
+
+gsap.registerPlugin(ScrambleTextPlugin);
 
 @Component({
   selector: 'banner',
@@ -34,7 +37,7 @@ export class BannerComponent implements OnInit, AfterViewInit {
 
   //slider
   currentIndex = 0;
-  interval: any;
+  private interval: any;
 
   setActiveIndex(index: number): void {
     this.currentIndex = index;
@@ -42,55 +45,96 @@ export class BannerComponent implements OnInit, AfterViewInit {
 
   constructor(private el: ElementRef) { }
 
-
   ngOnInit(): void {
     this.startAutoSlide();
   }
 
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
+  }
+
   startAutoSlide(): void {
-    this.interval = setInterval(() => {
-      this.onNextSlide();
-    }, 5000);
+    this.interval = setInterval(() => this.onNextSlide(), 5000);
   }
 
   onNextSlide(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-    this.animateSlide();
+    this.changeSlide(1);
   }
+
   onNextClick(): void {
-    clearInterval(this.interval);
-    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    this.stopAutoSlide();
+    this.changeSlide(1);
+  }
+
+  onPrevClick(): void {
+    this.stopAutoSlide();
+    this.changeSlide(-1);
+  }
+
+  private changeSlide(direction: number): void {
+    const lastIndex = this.slides.length - 1;
+    this.currentIndex =
+      (this.currentIndex + direction + this.slides.length) % this.slides.length;
     this.animateSlide();
   }
-  onPrevClick(): void {
+
+  private stopAutoSlide(): void {
     clearInterval(this.interval);
-    this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
-    this.animateSlide();
   }
 
   animateSlide(): void {
-    gsap.fromTo('.slide-content', { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 2 });
+    gsap.fromTo('.slide-content', { opacity: 0 }, { opacity: 1, duration: 2 });
+    this.animationText();
   }
 
-
-
   ngAfterViewInit(): void {
-    // Get the elements to animate
-    const bannerContentRight = this.el.nativeElement.querySelector('.banner-content-right');
-    const bannerContentLeft = this.el.nativeElement.querySelector('.banner-content-left');
-    const bannerContentLeftTitle = bannerContentLeft.querySelector('h1');
-    const p = bannerContentLeft.querySelector('p');
-    const btnBanner = bannerContentLeft.querySelector('.btn-trans');
-    const sliderIndicator = bannerContentLeft.querySelector('.slider-indicator');
+    // Define targets for animations
+    const targets = {
+      bannerContentRight: this.el.nativeElement.querySelector('.banner-content-right'),
+      bannerContentLeft: this.el.nativeElement.querySelector('.banner-content-left'),
+      paragraph: this.el.nativeElement.querySelector('.banner-content-left p'),
+      btnBanner: this.el.nativeElement.querySelector('.banner-content-left .btn-trans'),
+      sliderIndicator: this.el.nativeElement.querySelectorAll('.banner-content-left .slider-indicator > *'),
+      bannerContentLeftTitle: this.el.nativeElement.querySelector('.banner-content-left h1'),
+    };
 
-    // GSAP animation
-    gsap.timeline()
-      .from(bannerContentLeftTitle, { duration: 0.6, opacity: 0, ease: 'power2.out', delay: 0.4 }) // Delay the h1 animation by 0.2 seconds
-      .from(p, { duration: 0.4, opacity: 0, ease: 'power2.out' }, '-=0.2') // Starts 0.2 seconds after the previous animation
-      .from(btnBanner, { duration: 0.4, opacity: 0, ease: 'power2.out' }, '-=0.2') // Starts 0.2 seconds after the previous animation
-      .from(sliderIndicator.children, { duration: 0.4, opacity: 0, ease: 'power2.out' }, '-=0.2') // Staggered animation for slider indicators
-      .from(bannerContentRight, { duration: 0.4, y: 10, opacity: 0, ease: 'power2.out' }); // Adjusted easing and duration for a smoother transition
+    // Run animations with the GSAP timeline
+    const tl = gsap.timeline();
+    tl.from(targets.bannerContentLeftTitle, { duration: 0.6, opacity: 0, ease: 'power2.out', delay: 0.4 })
+      .from(targets.paragraph, { duration: 0.4, opacity: 0, ease: 'power2.out' }, '-=0.2')
+      .from(targets.btnBanner, { duration: 0.4, opacity: 0, ease: 'power2.out' }, '-=0.2')
+      .from(targets.sliderIndicator, { duration: 0.4, opacity: 0, stagger: 0.1, ease: 'power2.out' }, '-=0.2')
+      .from(targets.bannerContentRight, { duration: 0.4, x: 100, opacity: 0, ease: 'power2.out' });
 
+    this.animationText();
+
+  }
+
+  animationText() {
+    const spanElement = this.el.nativeElement.querySelector('h1 span');
+    const strongElement = this.el.nativeElement.querySelector('h1 strong');
+
+    if (spanElement) {
+      this.scrambleAnimationText(spanElement, 0.2, 0.1, this.currentIndex, 'title');
+    }
+    if (strongElement) {
+      this.scrambleAnimationText(strongElement, 0.3, 0.2, this.currentIndex, 'subtitle');
+    }
+  }
+
+  scrambleAnimationText(element: Element, revealDelay: number, speed: number, index: number, property: 'title' | 'subtitle') {
+    const originalText = this.slides[index][property] || '';
+    const uniqueChars = Array.from(new Set(originalText.replace(/\s/g, ''))).join('');
+
+    gsap.to(element, {
+      duration: 1,
+      scrambleText: {
+        text: originalText,
+        chars: uniqueChars,
+        revealDelay: revealDelay,
+        speed: speed,
+      }
+    });
   }
 
 

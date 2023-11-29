@@ -14,18 +14,6 @@ export class HeaderComponent {
 
   constructor() {}
 
-
-
-
-
-
-
-
-
-
-
-  
-
   handleHoverAnimationEnter(event: MouseEvent): void {
     const target = event.currentTarget as HTMLAnchorElement;
     const linkText: HTMLElement | null = target.querySelector('.link-name');
