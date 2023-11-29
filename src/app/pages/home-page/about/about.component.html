@@ -1,10 +1,10 @@
-<section class="about-us">
+<section class="about-us" #about>
     <div class="app-container">
         <div class="about-us-top row">
-            <div class="about-us-top-left col-md-6">
+            <div class="about-us-top-left col-md-6" >
 
                 <div class="section-title">
-                    <span class="title-label"  #sliderList> Who is Seriem </span>
+                    <span class="title-label"> Who is Seriem </span>
                     <h2 class="title">SEIRIM is a System</h2>
                 </div>
 
@@ -31,14 +31,14 @@
                 </button>
             </div>
             <div class="about-us-top-right col-md-6">
-                <img src="../../../../assets/images/about-img.jpg" alt="about image" />
+                <img class="big-img" src="../../../../assets/images/about-img.jpg" alt="about image" />
             </div>
         </div>
 
         <div class="about-us-bottom">
 
             <ul class="about-us-list">
-                <li class="about-us-item" *ngFor="let item of aboutUsData">
+                <li class="about-us-item" #aboutListItem *ngFor="let item of aboutUsData">
                     <img class="border-line" src="../../../../assets/images/card-line.png" alt="">
                     <div class="item-content">
                         <div class="card-icon">
