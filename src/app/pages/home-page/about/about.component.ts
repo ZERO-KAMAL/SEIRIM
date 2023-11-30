@@ -35,12 +35,12 @@ export class AboutComponent implements AfterViewInit {
     // gsap
 
     // Add sequential animations
-    tl.from(this.about.nativeElement.querySelector('.section-title .title-label'), { x: -100, opacity: 0 })
-      .from(this.about.nativeElement.querySelector('.section-title .title'), { x: -100, opacity: 0 }, '-=0.2')
+    tl.from(this.about.nativeElement.querySelector('.section-title .title-label'), { opacity: 0 })
+      .from(this.about.nativeElement.querySelector('.section-title .title'), { opacity: 0 }, '-=0.2')
       .from(this.about.nativeElement.querySelector('.line img'), { width: 0, opacity: 0 }, '-=0.5')
       .from(this.about.nativeElement.querySelector('.img-sm'), { scale: 0, opacity: 0 }, '-=0.5')
-      .from(this.about.nativeElement.querySelectorAll('.para'), { y: 100, opacity: 0, stagger: 0.2 })
-      .from(this.about.nativeElement.querySelector('.btn-trans'), { y: 100, opacity: 0, ease: 'elastic.out(1, 0.3)' })
+      .from(this.about.nativeElement.querySelectorAll('.para'), {  opacity: 0, stagger: 0.2 })
+      .from(this.about.nativeElement.querySelector('.btn-trans'), {  opacity: 0, ease: 'elastic.out(1, 0.3)' })
       .from(this.about.nativeElement.querySelector('.big-img'), { x: 100, opacity: 0, stagger: 0.2 })
       .to(this.about.nativeElement.querySelector('.section-title .title'), {
         duration: 2,
