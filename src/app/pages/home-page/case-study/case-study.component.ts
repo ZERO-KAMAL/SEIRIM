@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
+import { SectionAnimationsService } from 'src/app/service/section-animation.service';
 
 import Swiper from 'swiper';
 
@@ -9,8 +10,10 @@ import Swiper from 'swiper';
 })
 export class CaseStudyComponent implements AfterViewInit {
 
+  @ViewChild('sectionAnimation') sectionAnimation!: ElementRef;
   @ViewChild('caseStudyDevContainer') caseStudyDevContainer!: ElementRef;
-  
+
+
   sliderData = [
     {
       cardImg: '../../../../assets/images/card-img.png',
@@ -35,10 +38,16 @@ export class CaseStudyComponent implements AfterViewInit {
   // Declare Swiper variable
   caseStudyDevSwiper: Swiper | undefined;
 
-  constructor() { }
+  constructor(private animationService: SectionAnimationsService) {}
 
   ngAfterViewInit(): void {
-     const caseStudyDevSwiper = new Swiper(this.caseStudyDevContainer.nativeElement, {
+    const targetElement = this.sectionAnimation.nativeElement;
+
+    // Use the animation service to apply the global animation
+    const tl = this.animationService.playSectionGlobalAnimation(targetElement);
+
+
+    const caseStudyDevSwiper = new Swiper(this.caseStudyDevContainer.nativeElement, {
       slidesPerView: 1,
       centeredSlides: true,
       spaceBetween: 10,
@@ -56,6 +65,6 @@ export class CaseStudyComponent implements AfterViewInit {
       },
     });
   }
-  
+
 
 }

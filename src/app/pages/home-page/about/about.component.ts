@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SectionAnimationsService } from 'src/app/service/section-animation.service';
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
@@ -10,47 +11,19 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class AboutComponent implements AfterViewInit {
 
-  @ViewChild('about', { static: true }) about!: ElementRef;
+  @ViewChild('sectionAnimation', { static: true }) sectionAnimation!: ElementRef;
   @ViewChildren('aboutListItem') aboutListItems!: QueryList<ElementRef>;
 
   currentSlideIndex: number = 0;
 
-  constructor() { }
+  constructor(private animationService: SectionAnimationsService) {}
+  
   ngAfterViewInit() {
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: this.about.nativeElement,
-        start: "top center", // start the animation when "top" of the trigger hits the "center" of the viewport
-        end: "bottom center", // end the animation when "bottom" of the trigger hits the "center" of the viewport
-        toggleActions: "play none none none" // defines what happens to the animation at certain scroll points (play, pause, resume, reset)
-      },
-      defaults: { duration: .5 }
-    });
+    const targetElement = this.sectionAnimation.nativeElement;
 
-    const originalTextElement = this.about.nativeElement.querySelector('.section-title .title');
-    const originalText = originalTextElement ? originalTextElement.textContent : '';
-    const uniqueChars = Array.from(new Set(originalText.replace(/\s/g, ''))).join('');
-
-    // gsap
-
-    // Add sequential animations
-    tl.from(this.about.nativeElement.querySelector('.section-title .title-label'), { opacity: 0 })
-      .from(this.about.nativeElement.querySelector('.section-title .title'), { opacity: 0 }, '-=0.2')
-      .from(this.about.nativeElement.querySelector('.line img'), { width: 0, opacity: 0 }, '-=0.5')
-      .from(this.about.nativeElement.querySelector('.img-sm'), { scale: 0, opacity: 0 }, '-=0.5')
-      .from(this.about.nativeElement.querySelectorAll('.para'), {  opacity: 0, stagger: 0.2 })
-      .from(this.about.nativeElement.querySelector('.btn-trans'), {  opacity: 0, ease: 'elastic.out(1, 0.3)' })
-      .from(this.about.nativeElement.querySelector('.big-img'), { x: 100, opacity: 0, stagger: 0.2 })
-      .to(this.about.nativeElement.querySelector('.section-title .title'), {
-        duration: 2,
-        scrambleText: {
-          text: originalText,
-          chars: uniqueChars,
-          revealDelay: 0.2,
-          speed: 0.1,
-        }
-      })
+    // Use the animation service to apply the global animation
+    const tl = this.animationService.playSectionGlobalAnimation(targetElement);
 
     this.aboutListItems.forEach((item, index) => {
       gsap.from(item.nativeElement, {
