@@ -33,5 +33,6 @@ export class WhatWeOfferComponent implements AfterViewInit {
     //   // Additional animation options...
     // });
 
+    
   }
 }
