@@ -1,66 +1,46 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-
-/* The following plugin is a Club GSAP perk */
-// import { gsap, ScrambleTextPlugin } from "gsap-trial/all";
-
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import gsap from 'gsap';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent  {
+export class FooterComponent implements AfterViewInit {
+  @ViewChild('footerContentAnimation', { static: true }) footerContentAnimation!: ElementRef;
 
-  // @ViewChild('animatedText') animatedTextRef!: ElementRef<HTMLDivElement>;
 
-  // constructor() {
-  //   gsap.registerPlugin(ScrambleTextPlugin);
-  // }
+  ngAfterViewInit() {
+    this.playTopRightItemAnimation();
+  }
 
-  // ngAfterViewInit() {
-  //   // The view has been initialized, so this.animatedTextRef is now available.
-  //   const element = this.animatedTextRef.nativeElement;
-  //   const initialText = element.textContent || ''; // Provide a fallback to empty string
 
-  //   gsap.to(element, {
-  //     duration: 2,
-  //     scrambleText: {
-  //       text: initialText,
-  //       speed: 0.3,
-  //       revealDelay: 0.5,
-  //       tweenLength: false,
-  //       chars: 'lowerCase'
-  //     },
-  //     ease: 'none'
-  //   });
-  // }
+  playTopRightItemAnimation() {
 
+    // Obtain the reference to the second element
+    const fotterContent = this.footerContentAnimation.nativeElement;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: fotterContent,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none"
+      },
+      defaults: { duration: 0.5 },
+    });
+
+
+
+    tl.from(fotterContent.querySelectorAll('.main-links'), { opacity: 0 } ,'-=0.1')
+      .from(fotterContent.querySelectorAll(' .footer-links .footer-link-title'), { width: 0, opacity: 0 }, '-=0.1')
+      .from(fotterContent.querySelectorAll(' .footer-links ul li'), { opacity: 0 , stagger: 0.1 })
+      .from(fotterContent.querySelectorAll(' .footer-bottom-menu-left'), { opacity: 0 , stagger: 0.1 })
+      .from(fotterContent.querySelectorAll(' .footer-bottom-menu-right'), { opacity: 0 , stagger: 0.1 })
+      .from(fotterContent.querySelector(' .copyright span'), { opacity: 0  })
+      .from(fotterContent.querySelectorAll(' .copyright ul li'), { opacity: 0 , stagger: 0.1 })
+      // .from(fotterContent.querySelectorAll('.list-content li'), { opacity: 0, stagger: 0.2 });
+      // .from(fotterContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
+  }
 }
 
-// ngAfterViewInit() {
-//   this.scrambleText(this.animatedTextRef.nativeElement, 0.5, 0.1);
-// }
 
-// scrambleText(element: HTMLElement, duration: number, updateInterval: number) {
-//   const originalText = element.textContent ?? '';
-//   const scramblePeriods = duration / updateInterval;
-//   let counter = 0;
-
-//   const intervalId = setInterval(() => {
-//     element.textContent = this.shuffleText(originalText);
-//     counter++;
-
-//     if (counter >= scramblePeriods) {
-//       clearInterval(intervalId);
-//       element.textContent = originalText; // Restore the original text at the end
-//     }
-//   }, updateInterval * 1000);
-// }
-
-// shuffleText(text: string): string {
-//   const characters = text.split('');
-//   for (let i = characters.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     [characters[i], characters[j]] = [characters[j], characters[i]];
-//   }
-//   return characters.join('');
-// }

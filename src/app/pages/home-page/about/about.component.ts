@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SectionAnimationsService } from 'src/app/service/section-animation.service';
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
@@ -16,29 +15,58 @@ export class AboutComponent implements AfterViewInit {
 
   currentSlideIndex: number = 0;
 
-  constructor(private animationService: SectionAnimationsService) {}
-  
+  constructor() { }
+
+
   ngAfterViewInit() {
+    this.playAboutSectionAnimation();
 
-    const targetElement = this.sectionAnimation.nativeElement;
+    // this.aboutListItems.forEach((item, index) => {
+    //   gsap.from(item.nativeElement, {
+    //     duration: 0.5,
+    //     scale: 0.5,
+    //     opacity: 0,
+    //     delay: index * 0.2, // Delays each item's animation slightly more than the previous one
+    //     scrollTrigger: {
+    //       trigger: item.nativeElement,
+    //       start: "top bottom", // Animation starts when top of item hits the bottom of viewport
+    //       toggleActions: "play none none none"
+    //     }
+    //   });
+    // });
 
-    // Use the animation service to apply the global animation
-    const tl = this.animationService.playSectionGlobalAnimation(targetElement);
+  }
 
-    this.aboutListItems.forEach((item, index) => {
-      gsap.from(item.nativeElement, {
-        duration: 0.5,
-        scale: 0.5,
-        opacity: 0,
-        delay: index * 0.2, // Delays each item's animation slightly more than the previous one
-        scrollTrigger: {
-          trigger: item.nativeElement,
-          start: "top bottom", // Animation starts when top of item hits the bottom of viewport
-          toggleActions: "play none none none"
-        }
-      });
+  playAboutSectionAnimation() {
+    const target = this.sectionAnimation.nativeElement;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: target,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none"
+      },
+      defaults: { duration: 0.3 },
     });
 
+    tl.from(target.querySelector('.title-label'), { opacity: 0 })
+      .from(target.querySelector('.title'), { opacity: 0 }, '-=0.1')
+      .from(target.querySelector(' .line img'), { width: 0, opacity: 0 })
+      // .from(target.querySelector(' .img-sm'), { scale: 0, opacity: 0 })
+      .from(target.querySelectorAll('.para'), { opacity: 0, stagger: 0.1 })
+      .from(target.querySelector(' .btn-trans'), { opacity: 0 })
+      .from(target.querySelector('.big-img'), { x: 100, opacity: 0 })
+
+    // Additional animations for aboutListItems
+    this.aboutListItems.forEach((item, index) => {
+      tl.from(item.nativeElement, {
+        duration: 0.2,
+        scale: 0.3,
+        opacity: 0,
+        // delay: index * 0.2,
+        stagger: 0.1,
+      },);
+    });
   }
 
 

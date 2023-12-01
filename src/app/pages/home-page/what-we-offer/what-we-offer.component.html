@@ -1,8 +1,8 @@
-<section class="what-we-offer" #sectionAnimation>
+<section class="what-we-offer">
     <div class="app-container w-100">
 
-        <div class="what-we-offer-top">
-            <div class="section-title">
+        <div class="what-we-offer-top" #sectionTitleAnimation>
+            <div class="section-title" >
                 <span class="title-label">Our Solutions</span>
                 <h2 class="title">What we offer</h2>
                 <div class="line">
@@ -13,23 +13,22 @@
                     consequat.
                     Duis aute irure dolor in reprehenderit in voluptate.</p>
             </div>
-            <!-- <app-tab  [tabs]="tabs" (tabSelected)="onTabSelected($event)"></app-tab> -->
-
             <div class="tabs">
-                <button class="tab-item" *ngFor="let tab of tabs; let i = index"  [class.active]="currentTabIndex === i" (click)="onTabSelected(i)" >
+                <button class="tab-item" *ngFor="let tab of tabs; let i = index" [class.active]="currentTabIndex === i"
+                    (click)="onTabSelected(i)">
                     <span> {{ tab }}</span>
                     <!-- <span class="border"></span> -->
                 </button>
             </div>
         </div>
 
-        <div class="tab-content">
+        <div class="tab-content" #offerContentAnimation>
 
             <ng-container *ngIf="currentTabIndex === 0">
                 <div class="cybersecurity-content">
-                    <div class="cybersecurity-content-top">
+                    <div class="cybersecurity-content-top" >
 
-                        <div class="top-left-item">
+                        <div class="top-left-item" >
                             <div class="section-title">
                                 <span class="title-label">Cybersecurity</span>
                                 <h2 class="title">Security from the ground up</h2>
@@ -126,8 +125,17 @@
                     </div>
                 </div>
             </ng-container>
-            <ng-container *ngIf="currentTabIndex === 1"></ng-container>
-            <ng-container *ngIf="currentTabIndex === 2"></ng-container>
+            <ng-container *ngIf="currentTabIndex === 1">
+
+                <div class="">
+                    content 1
+                </div>
+            </ng-container>
+            <ng-container *ngIf="currentTabIndex === 2">
+                <div class="">
+                    content 2
+                </div>
+            </ng-container>
         </div>
     </div>
 

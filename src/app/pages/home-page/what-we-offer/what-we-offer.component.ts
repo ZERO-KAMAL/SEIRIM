@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { SectionAnimationsService } from 'src/app/service/section-animation.service';
+import { SectionTitleAnimationsService } from 'src/app/service/section-title-animation.service';
 import gsap from 'gsap';
 
 @Component({
@@ -8,7 +8,9 @@ import gsap from 'gsap';
   styleUrls: ['./what-we-offer.component.scss']
 })
 export class WhatWeOfferComponent implements AfterViewInit {
-  @ViewChild('sectionAnimation', { static: true }) sectionAnimation!: ElementRef;
+  @ViewChild('sectionTitleAnimation', { static: true }) sectionTitleAnimation!: ElementRef;
+  @ViewChild('offerContentAnimation') offerContentAnimation!: ElementRef;
+  @ViewChild('tabAnimation', { static: true }) tabAnimation!: ElementRef;
 
   tabs: string[] = ["Cybersecurity", "Development", "Digital Marketing"];
   currentTabIndex: number = 0;
@@ -17,22 +19,46 @@ export class WhatWeOfferComponent implements AfterViewInit {
     this.currentTabIndex = index;
   }
 
-  constructor(private animationService: SectionAnimationsService, private el: ElementRef) { }
+  constructor(private animationService: SectionTitleAnimationsService, private el: ElementRef) { }
 
 
 
   ngAfterViewInit() {
-    const targetElement = this.sectionAnimation.nativeElement;
+    const targetElement = this.sectionTitleAnimation.nativeElement;
+    const tl = this.animationService.playSectionTitleGlobalAnimation(targetElement);
 
-    // Use the animation service to apply the global animation
-    const tl = this.animationService.playSectionGlobalAnimation(targetElement);
-
-    // // Customize the animation further if needed
-    // tl.to(targetElement.querySelector('.section-title .title'), {
-    //   duration: 2,
-    //   // Additional animation options...
+    this.playTopRightItemAnimation();
+    // tl.eventCallback('onComplete', () => {
     // });
 
-    
+
+  }
+  playTopRightItemAnimation() {
+
+
+    // Obtain the reference to the second element
+    const offerContent = this.offerContentAnimation.nativeElement;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: offerContent,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none"
+      },
+      defaults: { duration: 0.3 },
+    });
+
+    // Define the animation for the second element (top-right-item)
+    tl
+      .from(offerContent.querySelector('.section-title .title-label'), { opacity: 0 })
+      .from(offerContent.querySelectorAll('.section-title .title'), { opacity: 0 }, '-=0.2')
+      .from(offerContent.querySelector(' .line img'), { width: 0, opacity: 0 }, '-=0.3')
+      .from(offerContent.querySelector(' .img-sm'), { scale: 0, opacity: 0 }, '-=0.4')
+      .from(offerContent.querySelectorAll(' .para'), { opacity: 0, duration: 0.5 })
+      .from(offerContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
+      .from(offerContent.querySelector('.big-img'), { x: 100, opacity: 0, duration: 0.6 })
+      .from(offerContent.querySelector('.list-content .title'), { opacity: 0, stagger: 0.2 })
+      .from(offerContent.querySelectorAll('.list-content li'), { opacity: 0, stagger: 0.2 });
   }
 }

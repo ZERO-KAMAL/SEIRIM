@@ -39,6 +39,26 @@
         }
     }
 }
+.content-title {
+    .title {
+        color: #fff;
+        font-size: 3.125rem;
+        font-weight: 500;
+        line-height: 100%;
+    }
+    P {
+        color: #fff;
+        font-size: 1.063rem;
+        font-weight: 400;
+        line-height: 1.875rem;
+        letter-spacing: 0.85px;
+    }
+    @media screen and (max-width: 767px) {
+        .title {
+            font-size: 2rem !important;
+        }
+    }
+}
 .title-label {
     color: #0782f4;
     font-size: 0.75rem;
@@ -93,7 +113,7 @@
     .loading-indicator {
         width: 20rem;
         height: 2px;
-        background: #D6D6D6;
+        background: #d6d6d6;
         // background: #06f;
         padding: 0 1rem;
         margin-top: 3px;

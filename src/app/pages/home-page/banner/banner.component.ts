@@ -100,11 +100,11 @@ export class BannerComponent implements OnInit, AfterViewInit {
 
     // Run animations with the GSAP timeline
     const tl = gsap.timeline();
-    tl.from(targets.bannerContentLeftTitle, { duration: 0.6, opacity: 0, ease: 'power2.out', delay: 0.4 })
-      .from(targets.paragraph, { duration: 0.4, opacity: 0, ease: 'power2.out' }, '-=0.2')
-      .from(targets.btnBanner, { duration: 0.4, opacity: 0, ease: 'power2.out' }, '-=0.2')
-      .from(targets.sliderIndicator, { duration: 0.4, opacity: 0, stagger: 0.1, ease: 'power2.out' }, '-=0.2')
-      .from(targets.bannerContentRight, { duration: 0.4, x: 100, opacity: 0, ease: 'power2.out' });
+    tl.from(targets.bannerContentLeftTitle, { opacity: 0, ease: 'power2.out', delay: 0.4 })
+      .from(targets.paragraph, { opacity: 0, ease: 'power2.out' }, '-=0.1')
+      .from(targets.btnBanner, { opacity: 0, ease: 'power2.out' }, '-=0.1')
+      .from(targets.sliderIndicator, { opacity: 0, stagger: 0.1, ease: 'power2.out' }, '-=0.1')
+      .from(targets.bannerContentRight, { x: 100, opacity: 0, ease: 'power2.out' });
 
     this.animationText();
 
