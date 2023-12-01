@@ -13,7 +13,14 @@
                     consequat.
                     Duis aute irure dolor in reprehenderit in voluptate.</p>
             </div>
-            <app-tab [tabs]="tabs" (tabSelected)="onTabSelected($event)"></app-tab>
+            <!-- <app-tab  [tabs]="tabs" (tabSelected)="onTabSelected($event)"></app-tab> -->
+
+            <div class="tabs">
+                <button class="tab-item" *ngFor="let tab of tabs; let i = index"  [class.active]="currentTabIndex === i" (click)="onTabSelected(i)" >
+                    <span> {{ tab }}</span>
+                    <!-- <span class="border"></span> -->
+                </button>
+            </div>
         </div>
 
         <div class="tab-content">
@@ -120,6 +127,7 @@
                 </div>
             </ng-container>
             <ng-container *ngIf="currentTabIndex === 1"></ng-container>
+            <ng-container *ngIf="currentTabIndex === 2"></ng-container>
         </div>
     </div>
 

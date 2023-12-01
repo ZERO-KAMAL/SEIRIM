@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { SectionAnimationsService } from 'src/app/service/section-animation.service';
+import gsap from 'gsap';
 
 @Component({
   selector: 'what-we-offer',
@@ -11,9 +12,9 @@ export class WhatWeOfferComponent implements AfterViewInit {
 
   tabs: string[] = ["Cybersecurity", "Development" ,"Digital Marketing"];
   currentTabIndex: number = 0;
-  selectedIconIndex: number | undefined = 0;
 
-  onTabSelected(index: number) {
+  onTabSelected(index: number) : void {
+
     this.currentTabIndex = index;
   }
 

@@ -59,7 +59,7 @@
             }
         }
     }
-    ::ng-deep .app-tabs {
+    .tabs {
         display: flex;
         width: 100%;
         justify-content: center;
@@ -86,6 +86,7 @@
             &.active {
                 &::after {
                     background: linear-gradient(95deg, #057ba0 -4.15%, #042dc0 102.16%);
+                    animation: borderSlideAnimation 0.3s ease-in-out forwards;
                 }
             }
             span {
@@ -159,7 +160,7 @@
     @media screen and (max-width: 600px) {
         .btn-link {
             padding: 1rem 1.5rem;
-            background: rgba($color: #19264B, $alpha: 0.5);
+            background: rgba($color: #19264b, $alpha: 0.5);
         }
         .what-we-offer-top {
             .section-title {
