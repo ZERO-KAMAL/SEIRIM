@@ -59,7 +59,7 @@
             }
         }
     }
-    .tabs {
+    ::ng-deep .app-tabs {
         display: flex;
         width: 100%;
         justify-content: center;

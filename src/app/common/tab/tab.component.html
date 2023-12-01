@@ -1,7 +1,7 @@
-<div class="tabs">
-    <button *ngFor="let tab of tabs; let i = index" class="tab" (click)="selectTab(i)"
+<div class="app-tabs">
+    <button *ngFor="let tab of tabs; let i = index" class="tab-item" (click)="selectTab(i)"
         [class.active]="selectedTabIndex === i">
-        {{ tab }}
+        <span> {{ tab }}</span>
     </button>
 </div>
 

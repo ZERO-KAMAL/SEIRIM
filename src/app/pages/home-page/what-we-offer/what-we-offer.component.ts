@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { SectionAnimationsService } from 'src/app/service/section-animation.service';
 
 @Component({
@@ -6,10 +6,20 @@ import { SectionAnimationsService } from 'src/app/service/section-animation.serv
   templateUrl: './what-we-offer.component.html',
   styleUrls: ['./what-we-offer.component.scss']
 })
-export class WhatWeOfferComponent {
+export class WhatWeOfferComponent implements AfterViewInit {
   @ViewChild('sectionAnimation', { static: true }) sectionAnimation!: ElementRef;
 
-  constructor(private animationService: SectionAnimationsService) { }
+  tabs: string[] = ["Cybersecurity", "Development" ,"Digital Marketing"];
+  currentTabIndex: number = 0;
+  selectedIconIndex: number | undefined = 0;
+
+  onTabSelected(index: number) {
+    this.currentTabIndex = index;
+  }
+
+  constructor(private animationService: SectionAnimationsService ,private el: ElementRef) { }
+
+
 
   ngAfterViewInit() {
     const targetElement = this.sectionAnimation.nativeElement;
@@ -22,5 +32,6 @@ export class WhatWeOfferComponent {
     //   duration: 2,
     //   // Additional animation options...
     // });
+    
   }
 }

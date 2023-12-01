@@ -15,6 +15,7 @@ import { WhatWeOfferComponent } from './pages/home-page/what-we-offer/what-we-of
 import { CaseStudyComponent } from './pages/home-page/case-study/case-study.component';
 import { BlogComponent } from './pages/home-page/blog/blog.component';
 import { AppLoadingComponent } from './components/app-loading/app-loading.component';
+import { TabComponent } from './common/tab/tab.component';
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
@@ -34,13 +35,14 @@ register();
     WhatWeOfferComponent,
     CaseStudyComponent,
     BlogComponent,
-    AppLoadingComponent
+    AppLoadingComponent,
+    TabComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
