@@ -10,15 +10,14 @@ import gsap from 'gsap';
 export class WhatWeOfferComponent implements AfterViewInit {
   @ViewChild('sectionAnimation', { static: true }) sectionAnimation!: ElementRef;
 
-  tabs: string[] = ["Cybersecurity", "Development" ,"Digital Marketing"];
+  tabs: string[] = ["Cybersecurity", "Development", "Digital Marketing"];
   currentTabIndex: number = 0;
 
-  onTabSelected(index: number) : void {
-
+  onTabSelected(index: number): void {
     this.currentTabIndex = index;
   }
 
-  constructor(private animationService: SectionAnimationsService ,private el: ElementRef) { }
+  constructor(private animationService: SectionAnimationsService, private el: ElementRef) { }
 
 
 
@@ -33,6 +32,6 @@ export class WhatWeOfferComponent implements AfterViewInit {
     //   duration: 2,
     //   // Additional animation options...
     // });
-    
+
   }
 }
