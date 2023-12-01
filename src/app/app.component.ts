@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
-gsap.registerPlugin( ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,8 @@ gsap.registerPlugin( ScrollSmoother);
 export class AppComponent implements OnInit {
   // isLoading: boolean = true;
 
-  
   ngOnInit() {
-    // Simulate an asynchronous operation (e.g., HTTP request)
+    // // Simulate an asynchronous operation (e.g., HTTP request)
     // setTimeout(() => {
     //   // Set isLoading to false to hide the loading component
     //   this.isLoading = false;
