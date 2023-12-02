@@ -231,6 +231,8 @@ import { Component } from '@angular/core';
           stroke-width="2"
         />
       </symbol>
+
+
     </svg>
   `,
 })

@@ -18,6 +18,8 @@ export class CaseStudyComponent implements AfterViewInit {
   @ViewChild('devCaseStudyContentAnimation', { static: true }) devCaseStudyContentAnimation!: ElementRef;
   @ViewChild('digitalCaseStudyContentAnimation', { static: true }) digitalCaseStudyContentAnimation!: ElementRef;
 
+  @ViewChild('sectionBgAnimation', { static: true }) sectionBgAnimation!: ElementRef;
+
   sliderData = [
     {
       cardImg: '../../../../assets/images/card-img.png',
@@ -87,12 +89,15 @@ export class CaseStudyComponent implements AfterViewInit {
     const devCaseStyudyContent = this.devCaseStudyContentAnimation.nativeElement;
     const digitalCaseStyudyContent = this.digitalCaseStudyContentAnimation.nativeElement;
 
+
+
+
     const tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: [cyberCaseStyudyContent],
         start: "top center",
         end: "bottom center",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
       },
       defaults: { duration: 0.3 },
     });
@@ -115,7 +120,25 @@ export class CaseStudyComponent implements AfterViewInit {
       defaults: { duration: 0.3 },
     });
 
-    // Define the animation for the second element (top-right-item)
+    const tl4 = gsap.timeline({
+      scrollTrigger: {
+        trigger: devCaseStyudyContent, // Make sure this is a selector string or DOM element
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play reverse play reverse"
+      },
+      defaults: { duration: 0.1 , ease: 'none' },
+    });
+
+    tl4.fromTo(".case-study", { backgroundColor: "white" }, { backgroundColor: "#090C18" })
+      .fromTo(".case-study .section-title .title", { color: "#090C18" }, { color: "white" })
+      .fromTo(".case-study .para", { color: "#090C18" }, { color: "white" })
+      .fromTo(".case-study .btn-trans span", { color: "#090C18" }, { color: "white" })
+      .fromTo(".case-study .card-title", { color: "#090C18" }, { color: "white" })
+      .fromTo(".case-study .card-des", { color: "#090C18" }, { color: "white" })
+      .fromTo(".case-study .tabs .tab-item span", { color: "#090C18" }, { color: "white" })
+
+
     tl1
       .from(cyberCaseStyudyContent.querySelector('.section-title .title-label'), { opacity: 0 })
       .from(cyberCaseStyudyContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
@@ -124,7 +147,8 @@ export class CaseStudyComponent implements AfterViewInit {
       .from(cyberCaseStyudyContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
       .from(cyberCaseStyudyContent.querySelectorAll('.blog-list li'), { y: 50, opacity: 0, stagger: 0.1 })
 
-    tl2.from(devCaseStyudyContent.querySelector('.section-title .title-label'), { opacity: 0 })
+    tl2
+      .from(devCaseStyudyContent.querySelector('.section-title .title-label'), { opacity: 0 })
       .from(devCaseStyudyContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
       .from(devCaseStyudyContent.querySelector(' .img-sm'), { scale: 0, opacity: 0 }, '-=0.1')
       .from(devCaseStyudyContent.querySelectorAll(' .para'), { opacity: 0, duration: 0.2 })

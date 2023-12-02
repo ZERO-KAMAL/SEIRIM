@@ -1,7 +1,7 @@
 <section class="about-us">
-    <div class="app-container">
-        <div class="about-us-top row"  #sectionAnimation>
-            <div class="about-us-top-left col-md-6" >
+    <div class="app-container" #sectionAnimation>
+        <div class="about-us-top row">
+            <div class="about-us-top-left col-md-6">
 
                 <div class="section-title">
                     <span class="title-label"> Who is Seriem </span>
@@ -38,17 +38,69 @@
         <div class="about-us-bottom">
 
             <ul class="about-us-list">
-                <li class="about-us-item" #aboutListItem *ngFor="let item of aboutUsData">
+                <li class="about-us-item">
+                    <img class="border-line" src="../../../../assets/images/card-line.png" alt="">
+                    <div class="item-content">
+                        <div #rotatingElement class="card-icon">
+                            <img src="../../../../assets/images/about-icons/webPageIcon.png" alt="">
+                        </div>
+                        <h6 class="count"><span class="number">375</span>+</h6>
+                        <p>Website and IT Projects Delivered.</p>
+                    </div>
+                </li>
+                <li class="about-us-item">
                     <img class="border-line" src="../../../../assets/images/card-line.png" alt="">
                     <div class="item-content">
                         <div class="card-icon">
-                            <img [src]="item.cardIcon" alt="">
+                            <img src="../../../../assets/images/about-icons/revenueIcon.png" alt="">
                         </div>
-                        <h6 class="count">{{ item.count }}</h6>
-                        <p>{{ item.description }}</p>
+                        <h6 class="count">$ <span class="number">1.6</span> B</h6>
+                        <p>Largest Client Revenue Level.</p>
+                    </div>
+                </li>
+                <li class="about-us-item">
+                    <img class="border-line" src="../../../../assets/images/card-line.png" alt="">
+                    <div class="item-content">
+                        <div class="card-icon">
+                            <img src="../../../../assets/images/about-icons/cmsIcon.png" alt="">
+                        </div>
+                        <h6 class="count">$ <span class="number">2.8</span>M</h6>
+                        <p>Products Managed by our CMS.</p>
+                    </div>
+                </li>
+                <li class="about-us-item">
+                    <img class="border-line" src="../../../../assets/images/card-line.png" alt="">
+                    <div class="item-content">
+                        <div class="card-icon">
+                            <img src="../../../../assets/images/about-icons/diffProjectIcon.png" alt="">
+                        </div>
+                        <h6 class="count"><span class="number">20</span>+</h6>
+                        <p>Languages of Different Projects.</p>
+                    </div>
+                </li>
+                <li class="about-us-item">
+                    <img class="border-line" src="../../../../assets/images/card-line.png" alt="">
+                    <div class="item-content">
+                        <div class="card-icon">
+                            <img src="../../../../assets/images/about-icons/teamMemberIcon.png" alt="">
+                        </div>
+                        <h6 class="count"><span class="number">25</span>+</h6>
+                        <p>Team Members Across China and Southeast Asia.</p>
                     </div>
                 </li>
             </ul>
+
+            <!-- <svg #mySvg xmlns="http://www.w3.org/2000/svg" width="222" height="85" viewBox="0 0 222 85" fill="none">
+                <rect x="1.77393" y="1.72925" width="219" height="82" rx="9" stroke="url(#paint0_linear_419_718)"
+                    stroke-width="2" />
+                <defs>
+                    <linearGradient id="paint0_linear_419_718" x1="111.274" y1="0.729248" x2="111.274" y2="84.7292"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#023F7D" />
+                        <stop offset="1" stop-color="#021221" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg> -->
         </div>
 
         <button class="btn-trans btn-learn-more btn-small">
