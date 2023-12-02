@@ -1,0 +1,46 @@
+.och-accordion {
+  width: 100%;
+  border-bottom: 1px solid #0a304b;
+  &.active {
+    border-bottom: 2px solid #079aff;
+  }
+  .och-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    max-width: 26rem;
+    width: 100%;
+
+    .title {
+      margin: 0;
+      color: #fff;
+      font-size: 1.063rem;
+      font-weight: 400;
+      line-height: 100%;
+    }
+    .icon {
+      transition: transform 0.2s ease-in-out;
+      svg {
+        width: 21px;
+        height: 21px;
+      }
+    }
+
+    .icon.rotated {
+      transform: rotate(180deg);
+    }
+  }
+  .och-accordion-content {
+    // margin-top: 0.75rem;
+    .och-accordion-content-wrapper {
+      padding: 0.2rem 0.75rem 0.75rem 0.75rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .och-accordion-header {
+      max-width: 100% !important;
+    }
+  }
+}

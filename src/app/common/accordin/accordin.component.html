@@ -1,0 +1,21 @@
+<div class="och-accordion" [ngClass]="{ active: accordionState === 'expanded' }">
+    <div class="och-accordion-header" (click)="toggleAccordion()">
+        <h6 class="title">{{ title }}</h6>
+        <div class="icon">
+            <!-- <svg>
+                <use xlink:href="#checkCircleIcon"></use>
+            </svg> -->
+            <svg *ngIf="accordionState !== 'expanded'">
+                <use xlink:href="#checkCircleIcon"></use>
+            </svg>
+            <svg *ngIf="accordionState === 'expanded'">
+                <use xlink:href="#minusIcon"></use>
+            </svg>
+        </div>
+    </div>
+    <div class="och-accordion-content" [@expandCollapse]="accordionState">
+        <div class="och-accordion-content-wrapper">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
