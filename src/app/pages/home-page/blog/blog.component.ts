@@ -1,6 +1,8 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import Swiper from 'swiper';
 
+import gsap from 'gsap';
+
 
 @Component({
   selector: 'blog',
@@ -10,6 +12,8 @@ import Swiper from 'swiper';
 export class BlogComponent implements AfterViewInit {
 
   @ViewChild('blogSwiperContainer') blogSwiperContainer!: ElementRef;
+
+  @ViewChild('blogContentAnimation') blogContentAnimation!: ElementRef;
 
   sliderData = [
     {
@@ -48,21 +52,21 @@ export class BlogComponent implements AfterViewInit {
       description: 'Nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.'
     },
     {
-      blogImg:'../../../../assets/images/card-img.png',
+      blogImg: '../../../../assets/images/card-img.png',
       date: '08 Jan 2024',
       category: 'Cloud Computing',
       title: 'Getting Started with Cloud Services: AWS, Azure, and Google Cloud',
       description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.'
     },
     {
-      blogImg:'../../../../assets/images/card-img.png',
+      blogImg: '../../../../assets/images/card-img.png',
       date: '21 Feb 2024',
       category: 'UI/UX Design',
       title: 'Design Principles for Creating User-Centric Interfaces',
       description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.'
     },
     {
-      blogImg:'../../../../assets/images/card-img.png',
+      blogImg: '../../../../assets/images/card-img.png',
       date: '06 Mar 2024',
       category: 'Blockchain',
       title: 'Understanding Blockchain Technology and Cryptocurrencies',
@@ -71,32 +75,65 @@ export class BlogComponent implements AfterViewInit {
   ];
 
 
- // Declare Swiper variable
- blogSwiper: Swiper | undefined;
+  // Declare Swiper variable
+  blogSwiper: Swiper | undefined;
 
- constructor() { }
+  constructor() { }
 
- ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
 
-  const blogSwiper = new Swiper(this.blogSwiperContainer.nativeElement, {
-     slidesPerView: 2,
-     centeredSlides: true,
-     spaceBetween: 10,
-     grabCursor: true,
-     loop: true,
-     navigation: {
-       nextEl: '.btn-next',
-       prevEl: '.btn-prev',
-     },
-     breakpoints: {
-       767: {
-         slidesPerView: 4,
-         spaceBetween: 30,
-       }
-     },
-   });
- }
+    const blogSwiper = new Swiper(this.blogSwiperContainer.nativeElement, {
+      slidesPerView: 2,
+      centeredSlides: true,
+      spaceBetween: 10,
+      grabCursor: true,
+      loop: true,
+      // autoplay: {
+      //   delay: 5000,
+      //   disableOnInteraction: false, 
+      //   pauseOnMouseEnter: true,
+      //   waitForTransition: true,
+        
+      // },
+      navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        }
+      },
+    });
 
- 
-  
+    this.playOfferContentAnimation();
+  }
+
+  playOfferContentAnimation() {
+
+
+    // Obtain the reference to the second element
+    const blogContent = this.blogContentAnimation.nativeElement;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: blogContent,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none"
+      },
+      defaults: { duration: 0.3 },
+    });
+
+    // Define the animation for the second element (top-right-item)
+    tl
+      .from(blogContent.querySelector('.section-title .title-label'), { opacity: 0 })
+      .from(blogContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
+      .from(blogContent.querySelector(' .line img'), { width: 0, opacity: 0 }, '-=0.1')
+      .from(blogContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
+      .from(blogContent.querySelectorAll('.swiper-slide'), { y: 50, opacity: 0, stagger: 0.1 })
+      .from(blogContent.querySelectorAll('.slider-actions'), { y: 50, opacity: 0 })
+  }
+
 }

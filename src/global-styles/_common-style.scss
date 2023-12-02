@@ -1,5 +1,5 @@
 .app-container {
-    // max-width: 1440px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 2rem;
     @media screen and (max-width: 1200px) {
@@ -115,8 +115,19 @@
         height: 2px;
         background: #d6d6d6;
         // background: #06f;
-        padding: 0 1rem;
+        margin: 0 0.75rem;
         margin-top: 3px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(95deg, #057ba0 -4.15%, #042dc0 102.16%);
+            animation: borderSlideAnimation 0.3s ease-in-out forwards !important;
+        }
     }
     .btn-prev {
         svg {

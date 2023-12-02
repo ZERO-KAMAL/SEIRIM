@@ -1,4 +1,4 @@
-<section class="blog">
+<section class="blog" #blogContentAnimation>
     <div class="app-container">
         <div class="blog-top">
             <div class="section-title">
@@ -25,7 +25,7 @@
                 <div class="swiper-slide" *ngFor="let item of sliderData">
                     <div class="slider-list">
                         <div class="slider-item" >
-                            <img [src]="item.blogImg" alt="">
+                            <img class="card-img" [src]="item.blogImg" alt="">
                             <div class="card-content">
                                 <div class="category">
                                     {{ item.date }} - {{ item.category }}

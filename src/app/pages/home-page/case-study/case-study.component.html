@@ -1,6 +1,6 @@
-<section class="case-study" #sectionAnimation>
+<section class="case-study">
 
-    <div class="section-title main-section-title">
+    <div class="section-title main-section-title" #sectionTitleAnimation>
         <span class="title-label">Our Solutions</span>
         <h2 class="title">Case Study</h2>
         <div class="line">
@@ -10,7 +10,7 @@
             consequat.</p>
     </div>
 
-    <div class="cyberSecurity-study">
+    <div class="cyberSecurity-study" #cybercaseStudyContentAnimation>
 
         <div class="app-container">
             <div class="study-top">
@@ -20,7 +20,7 @@
                     <div class="line">
                         <img src="../../../../assets/images/line.png" alt="">
                     </div>
-                    <p>
+                    <p class="para">
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat.
                     </p>
@@ -56,7 +56,7 @@
 
     </div>
 
-    <div class="development-study">
+    <div class="development-study" #devCaseStudyContentAnimation>
 
         <div class="app-container">
             <div class="study-top">
@@ -66,7 +66,7 @@
                     <div class="line">
                         <img src="../../../../assets/images/line.png" alt="">
                     </div>
-                    <p>
+                    <p class="para">
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat.
                     </p>
@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="study-blog">
-            <div class="swiper-container" #caseStudyDevContainer>
+            <div class="swiper-container" #caseStudySwiperDevContainer>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="blog-list">
@@ -217,7 +217,7 @@
                 </div>
             </div>
             <div class="slider-actions">
-                <button class="btn-prev" >
+                <button class="btn-prev">
                     <svg>
                         <use xlink:href="#arrowRightIconOne"></use>
                     </svg>
@@ -234,7 +234,7 @@
 
     </div>
 
-    <div class="digitalMarketing-study">
+    <div class="digitalMarketing-study" #digitalCaseStudyContentAnimation>
 
         <div class="app-container">
             <div class="study-top">
@@ -244,66 +244,58 @@
                 </div>
 
                 <div class="tabs">
-                    <button class="tab-item active">
-                        <span>All</span>
-                    </button>
-                    <button class="tab-item">
-                        <span>Video Production</span>
-                    </button>
-                    <button class="tab-item">
-                        <span>3d animation</span>
-                    </button>
-                    <button class="tab-item">
-                        <span>virtual reality</span>
-                    </button>
-                    <button class="tab-item">
-                        <span>seo</span>
-                    </button>
-                    <button class="tab-item">
-                        <span>graphic design</span>
+                    <button class="tab-item" *ngFor="let tab of tabs; let i = index"
+                        [class.active]="currentTabIndex === i" (click)="onTabSelected(i)">
+                        <span> {{ tab }}</span>
                     </button>
                 </div>
-
-                <!-- <button class="btn-trans">
-                    <span class="btn-label">see more</span>
-                    <svg class="link-icon">
-                        <use xlink:href="#arrowTopRightIcon"></use>
-                    </svg>
-                </button> -->
 
             </div>
         </div>
-        <div class="study-blog">
-            <div class="top-content">
-                <div class="top-content-wrapper">
-                    <button class="btn-play">
-                        <svg class="play-icon">
-                            <use xlink:href="#playIcon"></use>
-                        </svg>
-                    </button>
-                    <span>Video production</span>
-                    <h5>Dubai Summit Opening</h5>
-                    <p>Super cool music, video and animations editing to create this very impactful video launching the
-                        Giti
-                        Summit in Dubai.</p>
-                </div>
-            </div>
-            <div class="bottom-content">
+        <div class="tab-content">
+            <ng-container *ngIf="currentTabIndex === 0">
+                <div class="study-blog">
+                    <div class="top-content">
+                        <div class="top-content-wrapper">
+                            <button class="btn-play">
+                                <svg class="play-icon">
+                                    <use xlink:href="#playIcon"></use>
+                                </svg>
+                            </button>
+                            <span>Video production</span>
+                            <h5>Dubai Summit Opening</h5>
+                            <p>Super cool music, video and animations editing to create this very impactful video
+                                launching the
+                                Giti
+                                Summit in Dubai.</p>
+                        </div>
+                    </div>
+                    <div class="bottom-content">
 
-                <div class="bottom-content-wrapper">
-                    <span>Video production</span>
-                    <h5>Turtler GPS</h5>
-                    <p>It’s a quality maxim in SEO that no agency should ever promise a #1 position ranking. The playing
-                        field isn’t static: the competition is always also moving forward and the search engines
-                        continually change their algorithms.</p>
+                        <div class="bottom-content-wrapper">
+                            <span>Video production</span>
+                            <h5>Turtler GPS</h5>
+                            <p>It’s a quality maxim in SEO that no agency should ever promise a #1 position ranking. The
+                                playing
+                                field isn’t static: the competition is always also moving forward and the search engines
+                                continually change their algorithms.</p>
+                        </div>
+                        <div class="bottom-content-wrapper">
+                            <span>Video production</span>
+                            <h5>Turtler GPS App</h5>
+                            <p>It facilitates automated, location based employee timekeeping, hours tracking for client
+                                billing
+                                of time spent on-site, security tracking for employee safety and much more.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bottom-content-wrapper">
-                    <span>Video production</span>
-                    <h5>Turtler GPS App</h5>
-                    <p>It facilitates automated, location based employee timekeeping, hours tracking for client billing
-                        of time spent on-site, security tracking for employee safety and much more.</p>
-                </div>
-            </div>
+            </ng-container>
+            <ng-container *ngIf="currentTabIndex === 1"></ng-container>
+            <ng-container *ngIf="currentTabIndex === 2"></ng-container>
+            <ng-container *ngIf="currentTabIndex === 3"></ng-container>
+            <ng-container *ngIf="currentTabIndex === 4"></ng-container>
+            <ng-container *ngIf="currentTabIndex === 5"></ng-container>
+
         </div>
 
     </div>

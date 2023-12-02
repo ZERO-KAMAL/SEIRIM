@@ -132,6 +132,7 @@
         .study-blog {
             margin: 3rem 0 6rem 0;
             overflow: hidden;
+            
             // .swiper-slide{
             //     max-width: 56rem;
             //     width: 100% !important;
@@ -228,6 +229,7 @@
             // flex-direction: column;
             margin-top: 4.5rem;
             margin-bottom: 0rem;
+            background: #020306;
             span {
                 color: #07bbf4;
                 font-size: 0.875rem;
@@ -261,6 +263,9 @@
                     height: 100%;
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
                 }
+                p{
+                    text-align: start;
+                }
             }
             .top-content {
                 background-image: url(../../../../assets/images/digital-marketing-1.png);
@@ -268,6 +273,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                height: 30rem;
                 .top-content-wrapper {
                     padding: 6.5rem 0 9.5rem 0;
                     display: flex;

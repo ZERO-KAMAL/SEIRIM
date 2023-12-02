@@ -4,7 +4,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    height: 38rem;
     .inquire-wrapper {
         padding: 7.5rem 0 8.875rem 0;
         display: flex;
@@ -36,7 +36,7 @@
             }
 
             .inquire-button {
-                margin: 0 auto
+                margin: 0 auto;
             }
         }
     }
@@ -44,6 +44,7 @@
 
 @media screen and (max-width: 600px) {
     .inquire {
+        height: 100%;
         .inquire-wrapper {
             .inquire-heading {
                 font-size: 2rem;
