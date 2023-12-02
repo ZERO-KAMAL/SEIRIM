@@ -52,6 +52,7 @@
       </div>
 
       <div class="mobile-menu">
+        
         <div class="language-selector">
           <a class="link">
             <span class="link-name">En</span>
@@ -61,10 +62,51 @@
             <span class="link-name"> 中文</span>
           </a>
         </div>
-        <div class="hamburger-menu">
-          <div></div>
-          <div></div>
-          <div></div>
+
+        <div class="burger-menu" (click)="toggleMenu()">
+          <span class="burger-menu-piece top" #top></span>
+          <span class="burger-menu-piece middle" #middle></span>
+          <span class="burger-menu-piece bottom" #bottom></span>
+        </div>
+
+        <div class="sidebar" #sidebar>
+          <div class="sidemenu" #sideMenuLink>
+            <ul>
+              <li>
+                <a class="link" href="/">
+                  <span class="link-name">Services</span>
+                  <svg>
+                    <use xlink:href="#arrowDownIcon"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="link" href="/about">
+                  <span class="link-name">Case Studies</span>
+                  <svg>
+                    <use xlink:href="#arrowDownIcon"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="link" href="/contact"><span class="link-name">About</span></a>
+              </li>
+              <li>
+                <a class="link" href="/contact"><span class="link-name">News</span></a>
+              </li>
+              <li>
+                <a class="link" href="/contact">
+                  <span class="link-name">Tools</span>
+                  <svg>
+                    <use xlink:href="#arrowDownIcon"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="link" href="/contact"><span class="link-name">Contact Us</span></a>
+              </li>
+            </ul>
+          </div>
         </div>
 
       </div>

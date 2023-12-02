@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { gsap } from 'gsap';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { gsap, Power1, Power2 } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 gsap.registerPlugin(TextPlugin);
 
@@ -8,11 +8,37 @@ gsap.registerPlugin(TextPlugin);
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
+  @ViewChild('top', { static: false }) top!: ElementRef;
+  @ViewChild('bottom', { static: false }) bottom!: ElementRef;
+  @ViewChild('middle', { static: false }) middle!: ElementRef;
+  @ViewChild('sidebar', { static: false }) sidebar!: ElementRef;
+  @ViewChild('sideMenuLink', { static: false }) sideMenuLink!: ElementRef;
+
+  private tl: any;
+  
+  constructor() { }
+
+  
+  ngAfterViewInit() {
+    this.tl = gsap.timeline({ paused: true, reversed: true })
+      .to(this.top.nativeElement, 0.3, { y: 9, yoyo: true, ease: Power1.easeInOut })
+      .to(this.bottom.nativeElement, 0.3, { y: -9, yoyo: true, ease: Power1.easeInOut }, '-=0.3')
+      .to(this.top.nativeElement, 0.5, { rotation: 585 })
+      .to(this.middle.nativeElement, 0.5, { rotation: 585 }, '-=0.5')
+      .to(this.bottom.nativeElement, 0.5, { rotation: 675 }, '-=0.5')
+      .to([this.top.nativeElement, this.middle.nativeElement, this.bottom.nativeElement], 0.1, { css: { borderColor: "white" }, ease: Power1.easeOut }, '-=1')
+      .to(this.sidebar.nativeElement, 0.5, { width: "80%" , ease: Power2.easeOut }, '-=1')
+      .staggerFrom(this.sideMenuLink.nativeElement, 0.3, { opacity: 0, y: 20, ease: Power1.easeOut }, 0.1)
+  }
+
+  toggleMenu() {
+    this.tl.reversed() ? this.tl.play() : this.tl.reverse();
+  }
+
   // Assuming you have a class property to store the original text
   private originalTextMap: Map<HTMLAnchorElement, string> = new Map();
 
-  constructor() {}
 
   handleHoverAnimationEnter(event: MouseEvent): void {
     const target = event.currentTarget as HTMLAnchorElement;

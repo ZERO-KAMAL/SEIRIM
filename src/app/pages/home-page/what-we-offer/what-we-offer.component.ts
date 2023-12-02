@@ -5,7 +5,7 @@ import gsap from 'gsap';
 @Component({
   selector: 'what-we-offer',
   templateUrl: './what-we-offer.component.html',
-  styleUrls: ['./what-we-offer.component.scss']
+  styleUrls: ['./what-we-offer.component.scss'],
 })
 export class WhatWeOfferComponent implements AfterViewInit {
   @ViewChild('sectionTitleAnimation', { static: true }) sectionTitleAnimation!: ElementRef;
@@ -58,7 +58,7 @@ export class WhatWeOfferComponent implements AfterViewInit {
       .from(offerContent.querySelectorAll(' .para'), { opacity: 0, duration: 0.2 })
       .from(offerContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
       .from(offerContent.querySelector('.big-img'), { x: 100, opacity: 0, duration: 0.2 })
-      .from(offerContent.querySelector('.list-content .title'), { opacity: 0})
+      .from(offerContent.querySelector('.list-content .title'), { opacity: 0 })
       .from(offerContent.querySelectorAll('.list-content li'), { opacity: 0, stagger: 0.1 });
   }
 }

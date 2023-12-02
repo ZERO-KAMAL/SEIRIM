@@ -16,6 +16,7 @@ import { CaseStudyComponent } from './pages/home-page/case-study/case-study.comp
 import { BlogComponent } from './pages/home-page/blog/blog.component';
 import { AppLoadingComponent } from './components/app-loading/app-loading.component';
 import { TabComponent } from './common/tab/tab.component';
+import { AccordinComponent } from './common/accordin/accordin.component';
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
@@ -36,8 +37,9 @@ register();
     CaseStudyComponent,
     BlogComponent,
     AppLoadingComponent,
-    TabComponent
-    
+    TabComponent,
+    AccordinComponent
+
   ],
   imports: [
     BrowserModule,

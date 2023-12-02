@@ -208,12 +208,29 @@ import { Component } from '@angular/core';
       </symbol>
 
       <symbol id="arrowRightIconOne" viewBox="0 0 22 19" fill="none">
-  <path d="M12.8879 0.646484L11.3975 2.17071L17.3589 8.26762H0.113403V10.4451H17.3589L11.3975 16.542L12.8879 18.0662L21.4042 9.35635L12.8879 0.646484Z" fill="#079AFF"/>
-</symbol>
+        <path
+          d="M12.8879 0.646484L11.3975 2.17071L17.3589 8.26762H0.113403V10.4451H17.3589L11.3975 16.542L12.8879 18.0662L21.4042 9.35635L12.8879 0.646484Z"
+          fill="#079AFF"
+        />
+      </symbol>
 
-<symbol id="playIcon" viewBox="0 0 21 23" fill="none">
-  <path d="M20.0767 11.4898L0.872542 22.5773L0.872543 0.402253L20.0767 11.4898Z" fill="white"/>
-</symbol>
+      <symbol id="playIcon" viewBox="0 0 21 23" fill="none">
+        <path
+          d="M20.0767 11.4898L0.872542 22.5773L0.872543 0.402253L20.0767 11.4898Z"
+          fill="white"
+        />
+      </symbol>
+
+      <symbol id="minusIcon" viewBox="0 0 21 21" fill="none">
+        <circle
+          cx="10.5"
+          cy="10.5"
+          r="9.5"
+          fill="#00121D"
+          stroke="#079AFF"
+          stroke-width="2"
+        />
+      </symbol>
     </svg>
   `,
 })

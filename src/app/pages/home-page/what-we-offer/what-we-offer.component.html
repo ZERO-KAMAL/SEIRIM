@@ -2,7 +2,7 @@
     <div class="app-container w-100">
 
         <div class="what-we-offer-top" #sectionTitleAnimation>
-            <div class="section-title" >
+            <div class="section-title">
                 <span class="title-label">Our Solutions</span>
                 <h2 class="title">What we offer</h2>
                 <div class="line">
@@ -26,9 +26,9 @@
 
             <ng-container *ngIf="currentTabIndex === 0">
                 <div class="cybersecurity-content">
-                    <div class="cybersecurity-content-top" >
+                    <div class="cybersecurity-content-top">
 
-                        <div class="top-left-item" >
+                        <div class="top-left-item">
                             <div class="section-title">
                                 <span class="title-label">Cybersecurity</span>
                                 <h2 class="title">Security from the ground up</h2>
@@ -67,58 +67,139 @@
                             <h5 class="title">Specialized Security Services:</h5>
                             <ul>
                                 <li>
-                                    <span>Risk Assessments</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Risk Assessments'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>Incident Response</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Incident Response'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>Penetration Testing</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Penetration Testing'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>Vulnerability Scanning & Management</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Vulnerability Scanning & Management'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>Managed Custom Services</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Managed Custom Services'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>System Hardening</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'System Hardening'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>Application Secure Development</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Application Secure Development'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>Cybersecurity Consulting</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Cybersecurity Consulting'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                                 <li>
-                                    <span>Cybersecurity Consulting</span>
-                                    <svg>
-                                        <use xlink:href="#checkCircleIcon"></use>
-                                    </svg>
+                                    <app-accordin [title]="'Cybersecurity Consulting'">
+                                        <div class="according-content">
+                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                laboris nisi ut aliquip ex ea
+                                                commodo consequat. </p>
+                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                                                Sagittis nisl rhoncus mattis
+                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
+                                                habitasse platea dictumst
+                                                quisque sagittis
+                                                purus. </p>
+                                        </div>
+                                    </app-accordin>
                                 </li>
                             </ul>
                         </div>
