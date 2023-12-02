@@ -127,7 +127,9 @@ export class CaseStudyComponent implements AfterViewInit {
         end: "bottom center",
         toggleActions: "play reverse play reverse"
       },
-      defaults: { duration: 0.1 , ease: 'none' },
+      defaults: {
+        duration: 0.1
+      },
     });
 
     tl4.fromTo(".case-study", { backgroundColor: "white" }, { backgroundColor: "#090C18" })
