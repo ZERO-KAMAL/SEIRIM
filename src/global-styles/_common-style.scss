@@ -118,15 +118,15 @@
         margin: 0 0.75rem;
         margin-top: 3px;
         position: relative;
-        &::after {
+        overflow: hidden;
+        .loading-bar {
             content: "";
             position: absolute;
             top: 0;
-            left: 0;
-            width: 0%;
+            left: 0%;
             height: 100%;
+            width: 0;
             background: linear-gradient(95deg, #057ba0 -4.15%, #042dc0 102.16%);
-            animation: borderSlideAnimation 0.3s ease-in-out forwards !important;
         }
     }
     .btn-prev {

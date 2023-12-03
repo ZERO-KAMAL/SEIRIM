@@ -20,6 +20,8 @@ export class CaseStudyComponent implements AfterViewInit {
 
   @ViewChild('sectionBgAnimation', { static: true }) sectionBgAnimation!: ElementRef;
 
+  @ViewChild('loadingIndicator') loadingIndicator!: ElementRef<HTMLDivElement>;
+
   sliderData = [
     {
       cardImg: '../../../../assets/images/card-img.png',
@@ -69,6 +71,10 @@ export class CaseStudyComponent implements AfterViewInit {
       keyboard: {
         enabled: true
       },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      }, speed: 1500,
       navigation: {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
@@ -79,6 +85,11 @@ export class CaseStudyComponent implements AfterViewInit {
           slidesPerView: 1.5,
           spaceBetween: 20
         }
+      },
+      on: {
+        autoplayStart: () => this.animateLoadingIndicator(),
+        slideNextTransitionStart: () => this.animateLoadingIndicator(),
+        slidePrevTransitionStart: () => this.animateLoadingIndicator(),
       }
     });
 
@@ -169,5 +180,23 @@ export class CaseStudyComponent implements AfterViewInit {
       .from(digitalCaseStyudyContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
       .from(digitalCaseStyudyContent.querySelectorAll('.tabs'), { opacity: 0, stagger: 0.1 })
       .from(digitalCaseStyudyContent.querySelectorAll('.tab-content'), { opacity: 0, stagger: 0.1 })
+
+
+  }
+
+
+  animateLoadingIndicator(): void {
+    gsap.fromTo(
+      this.loadingIndicator.nativeElement,
+      { width: '0%' },
+      {
+        width: '100%',
+        duration: 5,
+        onComplete: () => {
+          // Reset width after animation completion
+          gsap.set(this.loadingIndicator.nativeElement, { width: '0%' });
+        }
+      }
+    );
   }
 }

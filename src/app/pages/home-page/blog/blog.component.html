@@ -24,7 +24,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide" *ngFor="let item of sliderData">
                     <div class="slider-list">
-                        <div class="slider-item" >
+                        <div class="slider-item">
                             <img class="card-img" [src]="item.blogImg" alt="">
                             <div class="card-content">
                                 <div class="category">
@@ -54,7 +54,10 @@
                     <use xlink:href="#arrowRightIconOne"></use>
                 </svg>
             </button>
-            <div class="loading-indicator"></div>
+            <div class="loading-indicator">
+                <div class="loading-bar" #loadingIndicator>
+                </div>
+            </div>
             <button class="btn-next">
                 <svg>
                     <use xlink:href="#arrowRightIconOne"></use>

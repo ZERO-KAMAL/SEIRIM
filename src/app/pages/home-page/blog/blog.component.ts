@@ -15,6 +15,10 @@ export class BlogComponent implements AfterViewInit {
 
   @ViewChild('blogContentAnimation') blogContentAnimation!: ElementRef;
 
+  @ViewChild('loadingIndicator') loadingIndicator!: ElementRef<HTMLDivElement>;
+
+
+
   sliderData = [
     {
       blogImg: '../../../../assets/images/card-img.png',
@@ -88,13 +92,11 @@ export class BlogComponent implements AfterViewInit {
       spaceBetween: 10,
       grabCursor: true,
       loop: true,
-      // autoplay: {
-      //   delay: 5000,
-      //   disableOnInteraction: false, 
-      //   pauseOnMouseEnter: true,
-      //   waitForTransition: true,
-        
-      // },
+      autoplay: {
+        delay: 3000, // Delay in milliseconds before the next slide is automatically shown
+        disableOnInteraction: false, // Do not disable autoplay after user interactions
+      },
+      speed: 1500,
       navigation: {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
@@ -105,10 +107,31 @@ export class BlogComponent implements AfterViewInit {
           spaceBetween: 30,
         }
       },
+      on: {
+        autoplayStart: () => this.animateLoadingIndicator(),
+        slideNextTransitionStart: () => this.animateLoadingIndicator(),
+        slidePrevTransitionStart: () => this.animateLoadingIndicator(),
+      }
     });
 
     this.playOfferContentAnimation();
   }
+
+  animateLoadingIndicator(): void {
+    gsap.fromTo(
+      this.loadingIndicator.nativeElement,
+      { width: '0%' },
+      {
+        width: '100%',
+        duration: 5,
+        onComplete: () => {
+          // Reset width after animation completion
+          gsap.set(this.loadingIndicator.nativeElement, { width: '0%' });
+        }
+      }
+    );
+  }
+
 
   playOfferContentAnimation() {
 
