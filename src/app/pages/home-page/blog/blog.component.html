@@ -23,24 +23,22 @@
         <div class="swiper-container" #blogSwiperContainer>
             <div class="swiper-wrapper">
                 <div class="swiper-slide" *ngFor="let item of sliderData">
-                    <div class="slider-list">
-                        <div class="slider-item">
-                            <img class="card-img" [src]="item.blogImg" alt="">
-                            <div class="card-content">
-                                <div class="category">
-                                    {{ item.date }} - {{ item.category }}
-                                </div>
-                                <h6 class="card-title">{{ item.title }}</h6>
-                                <p>
-                                    {{ item.description }}
-                                </p>
-
-                                <button>
-                                    <svg>
-                                        <use xlink:href="#arrowRightIconOne"></use>
-                                    </svg>
-                                </button>
+                    <div class="slider-item">
+                        <img class="card-img" [src]="item.blogImg" alt="">
+                        <div class="card-content">
+                            <div class="category">
+                                {{ item.date }} - {{ item.category }}
                             </div>
+                            <h6 class="card-title">{{ item.title }}</h6>
+                            <p>
+                                {{ item.description }}
+                            </p>
+
+                            <button>
+                                <svg>
+                                    <use xlink:href="#arrowRightIconOne"></use>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>

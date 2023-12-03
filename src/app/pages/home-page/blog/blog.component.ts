@@ -87,7 +87,7 @@ export class BlogComponent implements AfterViewInit {
   ngAfterViewInit(): void {
 
     const blogSwiper = new Swiper(this.blogSwiperContainer.nativeElement, {
-      slidesPerView: 2,
+      slidesPerView: 1,
       centeredSlides: true,
       spaceBetween: 10,
       grabCursor: true,
@@ -102,8 +102,20 @@ export class BlogComponent implements AfterViewInit {
         prevEl: '.btn-prev',
       },
       breakpoints: {
+        600: {
+          slidesPerView: 1.5,
+          spaceBetween: 30,
+        },
         767: {
-          slidesPerView: 4,
+          slidesPerView: 2.5,
+          spaceBetween: 30,
+        },
+        991: {
+          slidesPerView: 2.9,
+          spaceBetween: 30,
+        },
+        1180: {
+          slidesPerView: 3.9,
           spaceBetween: 30,
         }
       },
