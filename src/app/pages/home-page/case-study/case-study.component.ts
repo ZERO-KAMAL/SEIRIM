@@ -60,21 +60,26 @@ export class CaseStudyComponent implements AfterViewInit {
     const tl = this.animationService.playSectionTitleGlobalAnimation(targetElement);
 
     const caseStudyDevSwiper = new Swiper(this.caseStudySwiperDevContainer.nativeElement, {
-      slidesPerView: 1,
       centeredSlides: true,
-      spaceBetween: 10,
+      slidesPerView: 1,
       grabCursor: true,
+      freeMode: false,
       loop: true,
+      mousewheel: false,
+      keyboard: {
+        enabled: true
+      },
       navigation: {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
       },
+      // Responsive breakpoints
       breakpoints: {
-        767: {
-          slidesPerView: 2,
-          spaceBetween: 50,
+        1024: {
+          slidesPerView: 1.5,
+          spaceBetween: 20
         }
-      },
+      }
     });
 
     this.playCaseStudyContentAnimation();
@@ -101,6 +106,7 @@ export class CaseStudyComponent implements AfterViewInit {
       },
       defaults: { duration: 0.3 },
     });
+
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: [devCaseStyudyContent],
@@ -110,6 +116,7 @@ export class CaseStudyComponent implements AfterViewInit {
       },
       defaults: { duration: 0.3 },
     });
+
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: [digitalCaseStyudyContent],
