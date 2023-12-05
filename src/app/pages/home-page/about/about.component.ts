@@ -40,7 +40,7 @@ export class AboutComponent implements AfterViewInit {
       .from(target.querySelector(' .img-sm'), { scale: 0, opacity: 0 })
       .from(target.querySelectorAll('.para'), { opacity: 0, stagger: 0.1 })
       .from(target.querySelector(' .btn-trans'), { opacity: 0 })
-      .from(target.querySelector('.big-img'), { x: 100, opacity: 0 })
+      .from(target.querySelector('.big-img'), {  opacity: 0 })
       .from(target.querySelectorAll('.about-us-list li'), { opacity: 0, scale: 0.5, duration: 0.2 })
       // .from(target.querySelectorAll('.about-us-list li .card-icon img'), { opacity: 0, stagger: 0.1 })
       .from(target.querySelectorAll('.about-us-list li .number'), {

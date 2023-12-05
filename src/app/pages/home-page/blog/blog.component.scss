@@ -2,7 +2,7 @@
     padding: 11rem 0 6rem 0;
     background: #0d101e;
     .swiper-container {
-        overflow: hidden;
+        // overflow: hidden;
     }
     .slider-actions {
         margin-top: 5rem;
@@ -19,23 +19,16 @@
     .blog-bottom {
         margin-top: 4rem;
         .slider-item {
-            // box-shadow:
-            // 0 16px 48px -16px rgba(0, 195, 207, 0.1),
-            // 0 -16px 48px -16px rgba(0, 195, 207, 0.1),
-            // 0 16px 48px -16px rgba(0, 195, 207, 0.1),
-            // 0 -16px 48px -16px rgba(0, 195, 207, 0.1);
-            box-shadow:
-                0 8px 24px -8px rgba(0, 195, 207, 0.05),
-                0 -8px 24px -8px rgba(0, 195, 207, 0.05),
-                0 8px 24px -8px rgba(0, 195, 207, 0.05),
-                0 -8px 24px -8px rgba(0, 195, 207, 0.05);
             border: 1px solid rgba($color: #00c3cf, $alpha: 0.2);
             background: #0a0d1c;
-            // backdrop-filter: blur(20px);
-            // width: 24rem;
             padding: 2rem 1.8rem;
-            overflow: hidden;
             position: relative;
+
+            border: 1px solid rgba($color: #00C3CF, $alpha: 0.3);
+            background: #0D1324;
+            box-shadow: 0px 0px 100px 15px rgba(35, 60, 96, 0.60);
+            
+
             .card-bg {
                 position: absolute;
                 left: 0;

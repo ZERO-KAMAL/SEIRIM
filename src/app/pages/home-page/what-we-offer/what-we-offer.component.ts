@@ -57,7 +57,7 @@ export class WhatWeOfferComponent implements AfterViewInit {
       .from(offerContent.querySelector(' .img-sm'), { scale: 0, opacity: 0 }, '-=0.1')
       .from(offerContent.querySelectorAll(' .para'), { opacity: 0, duration: 0.2 })
       .from(offerContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
-      .from(offerContent.querySelector('.big-img'), { x: 100, opacity: 0, duration: 0.2 })
+      .from(offerContent.querySelector('.big-img'), { opacity: 0, duration: 0.2 })
       .from(offerContent.querySelector('.list-content .title'), { opacity: 0 })
       .from(offerContent.querySelectorAll('.list-content li'), { opacity: 0, stagger: 0.1 });
   }

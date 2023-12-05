@@ -30,7 +30,7 @@ export class InquireComponent implements AfterViewInit {
         end: "bottom center",
         toggleActions: "play none none none"
       },
-      defaults: { duration: 0.5 },
+      defaults: { duration: 0.3 },
     });
 
 

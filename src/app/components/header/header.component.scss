@@ -6,11 +6,7 @@ header {
         justify-content: space-between;
         position: relative;
         z-index: 11;
-        svg {
-            width: 12.385px;
-            height: 6.841px;
-            margin-left: 0.5rem;
-        }
+
         &::after {
             position: absolute;
             content: "";
@@ -27,16 +23,34 @@ header {
                 height: 27px;
             }
         }
+
+        .header-menu,
+        .mobile-menu {
+            svg {
+                width: 12.385px;
+                height: 6.841px;
+                margin-left: 0.5rem;
+            }
+        }
+
         .header-menu {
             ul {
                 display: flex;
                 align-items: center;
                 li {
                     margin-left: 2.25rem;
-                    a {
+                    .link {
+                        position: relative;
+                        // display: inline-block;
                         text-decoration: none;
                         display: flex;
                         align-items: center;
+                        &:hover {
+                            .mega-menu-content {
+                                display: block !important;
+                            }
+                        }
+                        
                         span {
                             color: #fff;
                             font-size: 0.875rem;
@@ -45,9 +59,21 @@ header {
                             text-transform: uppercase;
                         }
                     }
+                    .mega-menu-content {
+                        // display: none;
+                        visibility: hidden;
+                        background-color: #081321;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        z-index: 11;
+                    }
                 }
             }
         }
+
         .mobile-menu {
             display: flex;
             justify-content: space-between;
@@ -116,6 +142,7 @@ header {
                 margin: 100px 0 0 2rem;
             }
         }
+
         @media screen and (max-width: 991px) {
             .header-menu {
                 display: none;
