@@ -1,6 +1,6 @@
 header {
     .header-container {
-        padding: 1.6rem 0rem;
+        // padding: 1.6rem 0rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -39,18 +39,18 @@ header {
                 align-items: center;
                 li {
                     margin-left: 2.25rem;
+                    &:hover {
+                        .mega-menu {
+                            display: block;
+                        }
+                    }
                     .link {
                         position: relative;
                         // display: inline-block;
                         text-decoration: none;
                         display: flex;
                         align-items: center;
-                        &:hover {
-                            .mega-menu-content {
-                                display: block !important;
-                            }
-                        }
-                        
+
                         span {
                             color: #fff;
                             font-size: 0.875rem;
@@ -58,17 +58,6 @@ header {
                             font-weight: 500;
                             text-transform: uppercase;
                         }
-                    }
-                    .mega-menu-content {
-                        // display: none;
-                        visibility: hidden;
-                        background-color: #081321;
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        width: 100%;
-                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                        z-index: 11;
                     }
                 }
             }
@@ -142,7 +131,158 @@ header {
                 margin: 100px 0 0 2rem;
             }
         }
+        .mega-menu {
+            display: none; /* Start hidden */
+            opacity: 0; /* Start transparent */
+            height: 0; /* Start with no height */
+            overflow: hidden; /* Hide overflow content */
+            
+            background-color: #081321;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 111;
+            .mega-menu-content {
+                max-width: 1600px;
+                margin: 0 auto;
+                padding: 1.75rem 2rem;
+                .mega-menu-left {
+                    h6 {
+                        color: #fff;
+                        font-size: 2.188rem;
+                        font-weight: 300;
+                        line-height: 100%;
+                    }
+                    p {
+                        color: #fff;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: 25px;
+                        letter-spacing: 0.75px;
+                        max-width: 18rem;
+                    }
+                    button {
+                        background: #044c8e;
+                        padding: 0.875rem 1.6rem;
+                        margin-top: 2rem;
+                        span {
+                            color: #fff;
+                            font-size: 0.75rem;
+                            font-weight: 500;
+                            letter-spacing: 1.8px;
+                            text-transform: uppercase;
+                        }
+                        svg {
+                            width: 0.75rem;
+                            height: 0.75rem;
+                        }
+                    }
+                }
+                .mega-menu-right {
+                    .tabs {
+                        .tab-item {
+                            border: none;
+                            background: none;
+                            padding: 1rem 1.4rem;
+                            color: #fff;
+                            font-size: 0.75rem;
+                            font-weight: 500;
+                            letter-spacing: 1.65px;
+                            text-transform: uppercase;
+                            &.active {
+                                color: #091421;
+                                background: #fff;
+                            }
+                        }
+                    }
+                    .tab-content {
+                        background-color: white;
+                        padding: 2.375rem 1.5rem 1.5rem 1.5rem;
+                        .menu-title {
+                            color: #081320;
+                            font-size: 1.375rem;
+                            font-weight: 400;
+                            line-height: 25px;
+                            letter-spacing: 1.1px;
+                            text-transform: uppercase;
+                            margin: 0;
+                        }
+                        .menu-img {
+                            max-height: 10rem;
+                            width: 100%;
+                            margin: 0.875rem 0;
+                        }
+                        .menu-para {
+                            color: #000;
+                            font-size: 0.938rem;
+                            font-weight: 400;
+                            line-height: 20px;
+                            letter-spacing: 0.75px;
+                            margin: 0;
+                            word-break: keep-all;
+                        }
+                        .btn-menu {
+                            margin-top: 1.625rem;
+                            span {
+                                color: #0a0a0a;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                                letter-spacing: 1.8px;
+                                text-transform: uppercase;
+                            }
+                            svg {
+                                width: 1rem;
+                                height: 1rem;
+                            }
+                        }
 
+                        .list {
+                            display: block;
+                            columns: 2;
+                            column-gap: 2rem;
+                            .list-item {
+                                margin-bottom: 1.2rem;
+                                &:last-child {
+                                    margin-bottom: 0rem;
+                                }
+                                .item-title {
+                                    color: #081320;
+                                    font-size: 0.875rem;
+                                    font-weight: 700;
+                                    line-height: 20px;
+                                    letter-spacing: 0.65px;
+                                    text-transform: uppercase;
+                                    margin: 0;
+                                    padding-bottom: 0.5rem;
+                                    position: relative;
+                                    &::after {
+                                        position: absolute;
+                                        content: "";
+                                        left: 0;
+                                        bottom: 0;
+                                        width: 112px;
+                                        height: 2px;
+                                        background: #a8d3ff;
+                                        // margin: 0.4rem 0;
+                                    }
+                                }
+                                .item-para {
+                                    color: #000;
+                                    font-size: 0.875rem;
+                                    font-weight: 400;
+                                    line-height: 20px; /* 153.846% */
+                                    letter-spacing: 0.65px;
+                                    margin: 0;
+                                    margin-top: 0.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         @media screen and (max-width: 991px) {
             .header-menu {
                 display: none;
@@ -150,7 +290,13 @@ header {
         }
         @media screen and (min-width: 991px) {
             .header-menu {
-                display: block;
+                display: flex;
+                align-items: center;
+                li {
+                    a {
+                        height: 70px;
+                    }
+                }
             }
             .mobile-menu {
                 display: none;
