@@ -1,11 +1,15 @@
 header {
+    z-index: 99;
+    position: relative;
+    &.activeNavBg {
+        background-color: #081321;
+    }
     .header-container {
         // padding: 1.6rem 0rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        z-index: 11;
 
         &::after {
             position: absolute;
@@ -39,14 +43,39 @@ header {
                 align-items: center;
                 li {
                     margin-left: 2.25rem;
+                    position: relative;
+                    // &::after {
+                    //     text-align: center;
+                    //     display: none;
+                    //     position: absolute;
+                    //     content: "";
+                    //     bottom: 0;
+                    //     left: 0;
+                    //     width: 0;
+                    //     height: 0;
+                    //     border-left: 0.75rem solid transparent;
+                    //     border-right: 0.75rem solid transparent;
+                    //     border-bottom: 10px solid #555;
+                    // }
                     &:hover {
                         .mega-menu {
                             display: block;
                         }
                     }
+                    &.active {
+                        // &::after {
+                        //     display: block;
+                        // }
+                        .link {
+                            span,
+                            svg {
+                                color: #0782f4;
+                                --fill-color: #0782f4;
+                            }
+                        }
+                    }
                     .link {
                         position: relative;
-                        // display: inline-block;
                         text-decoration: none;
                         display: flex;
                         align-items: center;
@@ -57,6 +86,9 @@ header {
                             letter-spacing: 1.95px;
                             font-weight: 500;
                             text-transform: uppercase;
+                        }
+                        svg {
+                            --fill-color: #fff;
                         }
                     }
                 }
@@ -136,7 +168,7 @@ header {
             opacity: 0; /* Start transparent */
             height: 0; /* Start with no height */
             overflow: hidden; /* Hide overflow content */
-            
+
             background-color: #081321;
             position: fixed;
             top: 70px;

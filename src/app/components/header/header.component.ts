@@ -59,6 +59,8 @@ export class HeaderComponent implements AfterViewInit {
         'Comprehensive platforms for online sales and digital commerce.Comprehensive platforms for online sales and digital commerceComprehensive platforms for online sales and digital commerce',
     },
   ];
+  
+  isMegaMenuActive: boolean = false;
 
   tabs: string[] = [
     'cybersecurity',
@@ -183,6 +185,9 @@ export class HeaderComponent implements AfterViewInit {
 
 
   showMegaMenu(): void {
+
+    this.isMegaMenuActive = !this.isMegaMenuActive;
+
     gsap.fromTo(
       this.megaMenu.nativeElement,
       // from state
@@ -200,6 +205,9 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   hideMegaMenu(): void {
+    
+    this.isMegaMenuActive = !this.isMegaMenuActive;
+
     gsap.to(this.megaMenu.nativeElement, {
       height: 0,
       opacity: 0,

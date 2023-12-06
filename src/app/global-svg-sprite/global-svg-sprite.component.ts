@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
       <symbol id="arrowDownIcon" viewBox="0 0 14 7" fill="none">
         <path
           d="M6.96624 6.98037L0.773926 0.788051L1.42233 0.139648L6.96624 5.6903L12.5102 0.146385L13.1586 0.794789L6.96624 6.98037Z"
-          fill="white"
+          fill="var(--fill-color , #048BD7)"
         />
       </symbol>
 
@@ -242,4 +242,4 @@ import { Component } from '@angular/core';
     </svg>
   `,
 })
-export class GlobalSvgSpriteComponent {}
+export class GlobalSvgSpriteComponent { }

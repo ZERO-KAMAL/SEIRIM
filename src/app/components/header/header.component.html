@@ -1,4 +1,4 @@
-<header>
+<header [ngClass]="{activeNavBg: isMegaMenuActive}">
   <div class="app-container">
     <div class="header-container">
 
@@ -12,15 +12,15 @@
 
       <div class="header-menu">
         <ul>
-          <li (mouseenter)="showMegaMenu()" (mouseleave)="hideMegaMenu()">
-            <a class="link" href="/" (mouseenter)="onHoverTextScramble($event)">
-              <span class="link-name">Services</span>
+          <li (mouseenter)="showMegaMenu()" (mouseleave)="hideMegaMenu()" [ngClass]="{active: isMegaMenuActive}">
+            <a class="link" href="/" (mouseenter)="onHoverTextScramble($event)" >
+              <span class="link-name" >Services</span>
               <svg>
                 <use xlink:href="#arrowDownIcon"></use>
               </svg>
             </a>
             <!-- Mega Menu Content -->
-            <div  #megaMenu class="mega-menu">
+            <div #megaMenu class="mega-menu">
               <div class="mega-menu-content">
                 <div class="row">
                   <div class="col-md-3">
@@ -96,7 +96,6 @@
               </div>
             </div>
           </li>
-
           <li>
             <a class="link" href="/about" (mouseenter)="onHoverTextScramble($event)">
               <span class="link-name">Case Studies</span>
