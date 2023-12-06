@@ -230,9 +230,15 @@ import { Component } from '@angular/core';
           stroke="#079AFF"
           stroke-width="2"
         />
+        <line
+          x1="5"
+          y1="11.25"
+          x2="16"
+          y2="11.25"
+          stroke="white"
+          stroke-width="1.5"
+        />
       </symbol>
-
-
     </svg>
   `,
 })
