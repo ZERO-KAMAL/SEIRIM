@@ -19,7 +19,7 @@ export class InquireComponent implements AfterViewInit {
     // Obtain the reference to the second element
     const inquireContent = this.inquireContentAnimation.nativeElement;
 
-    const originalTextElement = inquireContent.querySelector('.inquire-heading');
+    const originalTextElement = inquireContent.querySelector('.inquire-heading span');
     const originalText = originalTextElement?.textContent ?? '';
     const uniqueChars = Array.from(new Set(originalText.replace(/\s/g, ''))).join('');
 
@@ -34,7 +34,7 @@ export class InquireComponent implements AfterViewInit {
     });
 
 
-    tl.from(inquireContent.querySelector('.inquire-heading'), {
+    tl.from(inquireContent.querySelector('.inquire-heading span'), {
       // opacity: 0,
       duration: 2,
       scrambleText: {

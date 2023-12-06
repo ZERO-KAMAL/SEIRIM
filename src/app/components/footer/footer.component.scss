@@ -64,9 +64,9 @@ footer {
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            // margin-bottom: 2rem;
             .footer-bottom-menu-left {
-                margin-bottom: 1.2rem;
+                // margin-bottom: 1.2rem;
                 p {
                     color: #41454a;
                     font-size: 15px;
@@ -222,6 +222,9 @@ footer {
                     .menu-left-item,
                     .menu-left-item ul {
                         justify-content: center;
+                    }
+                    .menu-left-item {
+                        
                     }
 
                     .footer-bottom-menu-right {

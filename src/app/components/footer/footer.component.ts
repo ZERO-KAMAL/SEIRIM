@@ -31,13 +31,8 @@ export class FooterComponent implements AfterViewInit {
 
 
 
-    tl.from(fotterContent.querySelectorAll('.main-links'), { opacity: 0 } ,'-=0.1')
-      .from(fotterContent.querySelectorAll(' .footer-links .footer-link-title'), { width: 0, opacity: 0 }, '-=0.1')
-      .from(fotterContent.querySelectorAll(' .footer-links ul li'), { opacity: 0 , stagger: 0.1 })
-      // .from(fotterContent.querySelectorAll(' .footer-bottom-menu-left'), { opacity: 0 , stagger: 0.1 })
-      // .from(fotterContent.querySelectorAll(' .footer-bottom-menu-right'), { opacity: 0 , stagger: 0.1 })
-      // .from(fotterContent.querySelector(' .copyright span'), { opacity: 0  })
-      // .from(fotterContent.querySelectorAll(' .copyright ul li'), { opacity: 0 , stagger: 0.1 })
+    tl.from(fotterContent.querySelectorAll('.main-links a'), {  stagger: 0.1 })
+      .from(fotterContent.querySelectorAll(' .footer-links'), { opacity: 0, stagger: 0.1 },)
   }
 }
 
