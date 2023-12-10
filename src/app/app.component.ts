@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   // isLoading: boolean = true;
 
   ngOnInit() {
+    
     // // Simulate an asynchronous operation (e.g., HTTP request)
     // setTimeout(() => {
     //   // Set isLoading to false to hide the loading component
@@ -26,7 +27,11 @@ export class AppComponent implements OnInit {
       content: ".main-container",
       smooth: 1,
       effects: true,
+      // ease: "expo.out",
+      // ignoreMobileResize: false,
+      // normalizeScroll: !0
     });
+
   }
 
 

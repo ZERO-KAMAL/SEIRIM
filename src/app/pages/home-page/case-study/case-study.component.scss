@@ -1,126 +1,131 @@
 .case-study {
-    background: #fff;
     padding-top: 8rem;
     .slider-actions {
         margin-top: 3.625rem;
     }
+
+    .btn-trans {
+        span {
+            color: black;
+        }
+    }
+
     .study-top {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         .section-title {
             h2 {
-                font-size: 2.2rem;
-            }
-            p {
-                max-width: 32rem;
-                font-size: 1rem;
-            }
-            .line {
-                display: none;
-            }
-            @media screen and (max-width: 600px) {
-                .line {
-                    display: block;
-                }
-            }
-        }
-        .btn-trans {
-            span {
-                color: black;
+                font-size: 2.8rem;
             }
         }
     }
-    .main-section-title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        p {
-            max-width: 37rem;
-        }
-    }
+
     .section-title {
         h2,
         p {
             color: black;
         }
     }
-    .cyberSecurity-study {
-        margin-top: 3rem;
-        margin-bottom: 6rem;
-        .study-blog {
-            .blog-list {
-                margin-top: 3rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .list-item {
-                    width: 26rem;
-                    overflow: hidden;
-                    img {
-                        width: 100%;
-                        max-height: 12rem;
-                    }
-                    &:nth-child(2) {
-                        margin: 0 1.875rem;
-                    }
-                    .card-content {
-                        margin-top: 1.5rem;
-                        .category {
-                            color: #0782f4;
-                            font-size: 0.75rem;
-                            font-weight: 400;
-                            line-height: 100%;
-                            letter-spacing: 1px;
-                            text-transform: uppercase;
-                        }
-                        .card-title {
-                            color: black;
-                            font-size: 1.375rem;
-                            font-weight: 500;
-                            letter-spacing: -0.22px;
-                            margin: 0.5rem 0;
 
-                            line-height: 26px;
-                            white-space: normal;
-                            display: -webkit-box;
-                            -webkit-line-clamp: 2;
-                            -webkit-box-orient: vertical;
-                            height: 52px;
-                            overflow: hidden;
-                            cursor: pointer;
-                            transition: all 0.3s ease-in-out;
-                            &:hover {
+    .study-left {
+        max-width: 18.8125rem;
+        .section-title {
+            .title {
+                font-size: 2.2rem;
+            }
+        }
+    }
+    .section-widget {
+        margin-top: 5rem;
+        display: flex;
+        align-items: start;
+        gap: 6rem;
+        .btn-view-more {
+            margin-top: 2.5rem;
+            margin-left: auto;
+        }
+    }
+    .cyberSecurity-study {
+        .study-right {
+            width: 100%;
+            .blog-list {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                .list-item {
+                    display: flex;
+                    align-items: end;
+                    justify-content: space-between;
+                    border-bottom: 1px solid #e0e0e0;
+                    padding: 1.8rem 0;
+                    width: 100%;
+                    &:first-child {
+                        padding-top: 0rem;
+                    }
+                    .list-item-left {
+                        display: flex;
+                        img {
+                            max-width: 10rem;
+                            width: 100%;
+                            max-height: 9rem;
+                            object-fit: cover;
+                        }
+                        .card-content {
+                            margin-left: 2rem;
+                            max-width: 40rem;
+                            .category {
                                 color: #0782f4;
+                                font-size: 0.75rem;
+                                font-weight: 400;
+                                line-height: 100%;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                            }
+                            .card-title {
+                                color: black;
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                                letter-spacing: -0.22px;
+                                cursor: pointer;
+                                transition: all 0.3s ease-in-out;
+                                max-width: 39.25rem;
+                                margin: 0.5rem 0;
+                                &:hover {
+                                    color: #0782f4;
+                                }
+                            }
+                            p {
+                                margin: 0rem;
+                                color: black;
+                                font-size: 1rem;
+                                font-weight: 400;
+                                line-height: 25px; /* 178.571% */
+                            }
+
+                            button {
+                                background: none;
+                                border: none;
+                                padding: 0;
+                                margin-top: 2rem;
+                                transition: all 0.3s ease-in-out;
+                                svg {
+                                    width: 21.291px;
+                                    height: 17.42px;
+                                }
+                                &:hover {
+                                    transform: translateX(6px);
+                                }
                             }
                         }
-                        p {
-                            margin-top: 0.75rem;
-                            color: black;
-                            font-size: 1rem;
-                            font-weight: 400;
-                            line-height: 25px; /* 178.571% */
-                            white-space: normal;
-                            display: -webkit-box;
-                            -webkit-line-clamp: 2;
-                            -webkit-box-orient: vertical;
-                            height: 50px;
-                            overflow: hidden;
-                        }
-
-                        button {
+                    }
+                    .list-item-right {
+                        .btn-view-details {
                             background: none;
                             border: none;
-                            padding: 0;
-                            margin-top: 2rem;
-                            transition: all 0.3s ease-in-out;
                             svg {
-                                width: 21.291px;
-                                height: 17.42px;
-                            }
-                            &:hover {
-                                transform: translateX(6px);
+                                width: 1.2rem;
+                                height: 1.2rem;
                             }
                         }
                     }
@@ -128,15 +133,23 @@
             }
         }
     }
+
     .development-study {
-        .study-blog {
-            margin: 3rem 0 6rem 0;
+        .study-right {
             overflow: hidden;
+            .swiper-container {
+                height: 353px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            // .swiper-wrapper{
+            //     overflow: hidden;
+            // }
+            .swiper-slide {
+                // width: fit-content;
+            }
             .list-item {
-                width: fit-content;
-                max-height: 42rem;
-                // height: 100%;
-                margin: auto;
+                // width: fit-content;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -187,226 +200,6 @@
                         width: 100%;
                         height: 100%;
                         background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
-                    }
-                }
-            }
-        }
-    }
-
-    .digitalMarketing-study {
-        .study-top {
-            align-items: center;
-            .tabs {
-                .tab-item {
-                    color: #000;
-                    font-size: 0.75rem;
-                    font-weight: 500;
-                    letter-spacing: 1.8px;
-                    text-transform: uppercase;
-                    background: none;
-                    border: none;
-                    margin: 0 0.4rem;
-                    padding: 0.875rem;
-                    transition: 0.3s ease-in-out;
-                    border: 2px solid transparent;
-                    &.active {
-                        border: 2px solid #00639a;
-                        &:hover {
-                            color: white;
-                            background-color: #0066ff;
-                        }
-                    }
-                }
-            }
-        }
-        .study-blog {
-            // flex-direction: column;
-            margin-top: 4.5rem;
-            margin-bottom: 0rem;
-            background: #020306;
-            span {
-                color: #07bbf4;
-                font-size: 0.875rem;
-                font-weight: 500;
-                letter-spacing: 2.1px;
-                text-transform: uppercase;
-            }
-            h5 {
-                color: #fff;
-                font-size: 1.875rem;
-                font-weight: 400;
-                line-height: 120%;
-            }
-            p {
-                color: #fff;
-                font-size: 1rem;
-                font-weight: 400;
-                line-height: 25px;
-                letter-spacing: 0.8px;
-                text-align: center;
-            }
-            .top-content,
-            .bottom-content {
-                position: relative;
-                &::after {
-                    position: absolute;
-                    content: "";
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-                }
-                p {
-                    text-align: start;
-                }
-            }
-            .top-content {
-                background-image: url(../../../../assets/images/digital-marketing-1.png);
-                background-size: cover;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 30rem;
-                .top-content-wrapper {
-                    padding: 6.5rem 0 9.5rem 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                    max-width: 30rem;
-                    z-index: 11;
-                    .btn-play {
-                        width: 75.531px;
-                        height: 75.531px;
-                        background-color: rgba($color: #111, $alpha: 0.7);
-                        border: 1px solid transparent;
-                        border-radius: 50%;
-                        margin-bottom: 1rem;
-                        svg {
-                            width: 25.605px;
-                            height: 25.605px;
-                        }
-                    }
-                }
-            }
-            .bottom-content {
-                display: flex;
-                width: 100%;
-                .bottom-content-wrapper {
-                    background-image: url(../../../../assets/images/seo-img.png);
-                    background-size: cover;
-                    width: 100%;
-                    z-index: 11;
-                    padding: 10rem 1rem 0rem 3.5rem;
-                    img {
-                        width: 100%;
-                        object-fit: cover;
-                    }
-                }
-            }
-        }
-        @media screen and (max-width: 1180px) {
-            .study-top {
-                flex-direction: column;
-                .tabs {
-                    margin-top: 2rem;
-                    .tab-item {
-                        background: #f6f6f6;
-                        margin-bottom: 0.75rem;
-                        &.active {
-                            border: 2px solid #00639a;
-                            background-color: white;
-                            &:hover {
-                                color: white;
-                                background-color: #0066ff;
-                            }
-                        }
-                    }
-                }
-            }
-            .study-blog {
-                margin-top: 1.5rem;
-                .bottom-content {
-                    display: none;
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 1180px) {
-        .cyberSecurity-study,
-        .development-study,
-        .digitalMarketing-study {
-            .section-title {
-                p {
-                    display: none;
-                }
-                h2 {
-                    margin-bottom: 0 !important;
-                }
-                .line {
-                    display: none;
-                }
-            }
-        }
-        .study-top {
-            align-items: end;
-            .tabs {
-                margin-top: 2rem;
-            }
-        }
-        .digitalMarketing-study {
-            .study-top {
-                align-items: start !important;
-            }
-        }
-    }
-    @media screen and (max-width: 997px) {
-        .development-study {
-            .study-blog {
-                .list-item {
-                    flex-direction: column-reverse;
-                    max-height: 100% !important;
-                    .list-item-left {
-                        padding: 2rem 1rem;
-                        max-width: 100%;
-                        span {
-                            font-size: 0.75rem;
-                        }
-                        h6 {
-                            font-size: 2.5rem;
-                        }
-                        p {
-                            font-size: 1rem;
-                            width: 100%;
-                        }
-                    }
-                    .list-item-right {
-                        max-width: 100%;
-                        &::after {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .cyberSecurity-study {
-            margin-bottom: 3rem;
-        }
-
-        .cyberSecurity-study {
-            .study-blog {
-                .blog-list {
-                    flex-wrap: wrap;
-                    .list-item {
-                        width: 100%;
-                        margin-bottom: 1.2rem !important;
-                        &:nth-child(2) {
-                            margin: 0rem;
-                        }
                     }
                 }
             }

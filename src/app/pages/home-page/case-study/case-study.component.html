@@ -1,303 +1,235 @@
-<section class="case-study">
+<section class="case-study" #sectionBgAnimation>
+    <div class="app-container">
+        <div class="study-top">
+            <div class="section-title">
+                <span class="title-label">Our Solutions</span>
+                <h2 class="title">Case Studies</h2>
+                <div class="line">
+                    <img src="../../../../assets/images/line.png" alt="">
+                </div>
+            </div>
 
-    <div class="section-title main-section-title" #sectionTitleAnimation>
-        <span class="title-label">Our Solutions</span>
-        <h2 class="title">Case Study</h2>
-        <div class="line">
-            <img src="../../../../assets/images/line.png" alt="">
+            <button class="btn-trans">
+                <span class="btn-label">case studies main</span>
+                <svg class="link-icon">
+                    <use xlink:href="#arrowTopRightIcon"></use>
+                </svg>
+            </button>
         </div>
-        <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.</p>
-    </div>
 
-    <div class="cyberSecurity-study" #cybercaseStudyContentAnimation>
+        <div class="cyberSecurity-study section-widget">
 
-        <div class="app-container">
-            <div class="study-top">
+            <div class="study-left">
                 <div class="section-title">
-                    <span class="title-label">case study</span>
                     <h2 class="title">Cybersecurity</h2>
-                    <div class="line">
-                        <img src="../../../../assets/images/line.png" alt="">
-                    </div>
                     <p class="para">
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat.
                     </p>
                 </div>
-
-                <button class="btn-trans">
-                    <span class="btn-label">see more</span>
-                    <svg class="link-icon">
-                        <use xlink:href="#arrowTopRightIcon"></use>
-                    </svg>
-                </button>
-
             </div>
 
-            <div class="study-blog">
+            <div class="study-right">
                 <ul class="blog-list">
                     <li class="list-item" *ngFor="let item of sliderData">
-                        <img [src]="item.cardImg" alt="">
-
-                        <div class="card-content">
-                            <div class="category">
-                                {{ item.category }}
+                        <div class="list-item-left">
+                            <img [src]="item.cardImg" alt="">
+                            <div class="card-content">
+                                <div class="category">
+                                    {{ item.category }}
+                                </div>
+                                <h6 class="card-title">{{ item.title }}</h6>
+                                <p class="card-des">
+                                    {{ item.description }}
+                                </p>
                             </div>
-                            <h6 class="card-title">{{ item.title }}</h6>
-                            <p class="card-des">
-                                {{ item.description }}
-                            </p>
+                        </div>
+                        <div class="list-item-right">
+                            <button class="btn-view-details">
+                                <svg>
+                                    <use xlink:href="#arrowRightIconOne"></use>
+                                </svg>
+                            </button>
                         </div>
                     </li>
                 </ul>
+
+                <button class="btn-trans btn-view-more">
+                    <span class="btn-label">cybersecurity case studies</span>
+                    <svg class="link-icon">
+                        <use xlink:href="#arrowTopRightIcon"></use>
+                    </svg>
+                </button>
             </div>
+
         </div>
-
-    </div>
-
-    <div class="development-study" #devCaseStudyContentAnimation>
-
-        <div class="app-container">
-            <div class="study-top">
+        <!-- 
+        <div class="development-study section-widget">
+            <div class="study-left">
                 <div class="section-title">
-                    <span class="title-label">case study</span>
                     <h2 class="title">Development</h2>
-                    <div class="line">
-                        <img src="../../../../assets/images/line.png" alt="">
-                    </div>
                     <p class="para">
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat.
                     </p>
                 </div>
+            </div>
 
-                <button class="btn-trans">
-                    <span class="btn-label">see more</span>
+            <div class="study-right">
+
+                <div class="swiper-container" #developmentSwiperContainer>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="list-item">
+                                <div class="list-item-left">
+
+                                    <span>Digital Marketing</span>
+                                    <h6>GITI Tire</h6>
+                                    <p>The Giti Corporate project was an ambitious endeavor to create the main
+                                        website platform for
+                                        one of the world's top ten tire companies at the center of their many brand
+                                        and country
+                                        websites.
+                                    </p>
+
+                                    <button class="btn-trans btn-link">
+                                        <span>Learn more</span>
+                                        <svg class="link-icon">
+                                            <use xlink:href="#arrowUpRightIcon"></use>
+                                        </svg></button>
+                                </div>
+                                <div class="list-item-right">
+                                    <img src="../../../../assets/images/devlopment.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="list-item">
+                                <div class="list-item-left">
+
+                                    <span>Digital Marketing</span>
+                                    <h6>GITI Tire</h6>
+                                    <p>The Giti Corporate project was an ambitious endeavor to create the main
+                                        website platform for
+                                        one of the world's top ten tire companies at the center of their many brand
+                                        and country
+                                        websites.
+                                    </p>
+
+                                    <button class="btn-trans btn-link">
+                                        <span>Learn more</span>
+                                        <svg class="link-icon">
+                                            <use xlink:href="#arrowUpRightIcon"></use>
+                                        </svg></button>
+                                </div>
+                                <div class="list-item-right">
+                                    <img src="../../../../assets/images/devlopment.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="list-item">
+                                <div class="list-item-left">
+
+                                    <span>Digital Marketing</span>
+                                    <h6>GITI Tire</h6>
+                                    <p>The Giti Corporate project was an ambitious endeavor to create the main
+                                        website platform for
+                                        one of the world's top ten tire companies at the center of their many brand
+                                        and country
+                                        websites.
+                                    </p>
+
+                                    <button class="btn-trans btn-link">
+                                        <span>Learn more</span>
+                                        <svg class="link-icon">
+                                            <use xlink:href="#arrowUpRightIcon"></use>
+                                        </svg></button>
+                                </div>
+                                <div class="list-item-right">
+                                    <img src="../../../../assets/images/devlopment.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-actions">
+
+                    <button class="btn-prev">
+                        <svg>
+                            <use xlink:href="#arrowRightIconOne"></use>
+                        </svg>
+                    </button>
+                    <div class="loading-indicator">
+                        <div class="loading-bar" #loadingIndicator>
+                        </div>
+                    </div>
+                    <button class="btn-next">
+                        <svg>
+                            <use xlink:href="#arrowRightIconOne"></use>
+                        </svg>
+                    </button>
+        
+                </div>
+
+                <button class="btn-trans btn-view-more">
+                    <span class="btn-label">cybersecurity case studies</span>
                     <svg class="link-icon">
                         <use xlink:href="#arrowTopRightIcon"></use>
                     </svg>
                 </button>
-
             </div>
-        </div>
-        <div class="study-blog">
-            <div class="swiper-container" #caseStudySwiperDevContainer>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="list-item">
-                            <div class="list-item-left">
+        </div> -->
 
-                                <span>Development</span>
-                                <h6>GITI Tire</h6>
-                                <p>The Giti Corporate project was an ambitious endeavor to create the main
-                                    website platform for
-                                    one of the world's top ten tire companies at the center of their many brand
-                                    and country
-                                    websites.
-                                </p>
-
-                                <button class="btn-trans btn-link">
-                                    <span>Learn more</span>
-                                    <svg class="link-icon">
-                                        <use xlink:href="#arrowUpRightIcon"></use>
-                                    </svg></button>
-                            </div>
-                            <div class="list-item-right">
-                                <img src="../../../../assets/images/devlopment.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-
-                        <div class="list-item">
-                            <div class="list-item-left">
-
-                                <span>Digital Marketing</span>
-                                <h6>GITI Tire</h6>
-                                <p>The Giti Corporate project was an ambitious endeavor to create the main
-                                    website platform for
-                                    one of the world's top ten tire companies at the center of their many brand
-                                    and country
-                                    websites.
-                                </p>
-
-                                <button class="btn-trans btn-link">
-                                    <span>Learn more</span>
-                                    <svg class="link-icon">
-                                        <use xlink:href="#arrowUpRightIcon"></use>
-                                    </svg></button>
-                            </div>
-                            <div class="list-item-right">
-                                <img src="../../../../assets/images/devlopment.png" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="swiper-slide">
-
-                        <div class="list-item">
-                            <div class="list-item-left">
-
-                                <span>Cybersecurity</span>
-                                <h6>GITI Tire</h6>
-                                <p>The Giti Corporate project was an ambitious endeavor to create the main
-                                    website platform for
-                                    one of the world's top ten tire companies at the center of their many brand
-                                    and country
-                                    websites.
-                                </p>
-
-                                <button class="btn-trans btn-link">
-                                    <span>Learn more</span>
-                                    <svg class="link-icon">
-                                        <use xlink:href="#arrowUpRightIcon"></use>
-                                    </svg></button>
-                            </div>
-                            <div class="list-item-right">
-                                <img src="../../../../assets/images/devlopment.png" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="swiper-slide">
-
-                        <div class="list-item">
-                            <div class="list-item-left">
-
-                                <span>Cybersecurity</span>
-                                <h6>GITI Tire</h6>
-                                <p>The Giti Corporate project was an ambitious endeavor to create the main
-                                    website platform for
-                                    one of the world's top ten tire companies at the center of their many brand
-                                    and country
-                                    websites.
-                                </p>
-
-                                <button class="btn-trans btn-link">
-                                    <span>Learn more</span>
-                                    <svg class="link-icon">
-                                        <use xlink:href="#arrowUpRightIcon"></use>
-                                    </svg></button>
-                            </div>
-                            <div class="list-item-right">
-                                <img src="../../../../assets/images/devlopment.png" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="swiper-slide">
-
-                        <div class="list-item">
-                            <div class="list-item-left">
-
-                                <span>Cybersecurity</span>
-                                <h6>GITI Tire</h6>
-                                <p>The Giti Corporate project was an ambitious endeavor to create the main
-                                    website platform for
-                                    one of the world's top ten tire companies at the center of their many brand
-                                    and country
-                                    websites.
-                                </p>
-
-                                <button class="btn-trans btn-link">
-                                    <span>Learn more</span>
-                                    <svg class="link-icon">
-                                        <use xlink:href="#arrowUpRightIcon"></use>
-                                    </svg></button>
-                            </div>
-                            <div class="list-item-right">
-                                <img src="../../../../assets/images/devlopment.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-actions">
-                <button class="btn-prev">
-                    <svg>
-                        <use xlink:href="#arrowRightIconOne"></use>
-                    </svg>
-                </button>
-                <div class="loading-indicator" >
-                    <div class="loading-bar" #loadingIndicator>
-
-                    </div>
-                </div>
-                <button class="btn-next">
-                    <svg>
-                        <use xlink:href="#arrowRightIconOne"></use>
-                    </svg>
-                </button>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="digitalMarketing-study" #digitalCaseStudyContentAnimation>
-
-        <div class="app-container">
-            <div class="study-top">
+        <!-- <div class="digital-marketing-study section-widget">
+            <div class="study-left">
                 <div class="section-title">
-                    <span class="title-label">case study</span>
                     <h2 class="title">Digital Marketing</h2>
+                    <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo
+                        consequat.
+                    </p>
                 </div>
+            </div>
 
-                <div class="tabs">
-                    <button class="tab-item" *ngFor="let tab of tabs; let i = index"
-                        [class.active]="currentTabIndex === i" (click)="onTabSelected(i)">
-                        <span> {{ tab }}</span>
-                    </button>
+            <div class="study-right">
+
+                <div class="list-item">
+
+                    <div class="video">
+                        <iframe width="928" height="522" src="https://www.youtube.com/embed/X2tAA3W4xHA"
+                            title="Reality of 4 Cr Package after IIT in USA! Why I Denied?" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="list-item-content">
+                        <span class="sub-title">
+                            video introduction
+                        </span>
+                        <h4>
+                            Dubai Summit Opening
+                        </h4>
+                        <p>Super cool music, video and animations editing to create this very impactful video launching
+                            the Giti Summit in Dubai.</p>
+
+                        <button class="btn-trans">
+                            <span class="btn-label">case studies main</span>
+                            <svg class="link-icon">
+                                <use xlink:href="#arrowTopRightIcon"></use>
+                            </svg>
+                        </button>
+                    </div>
+
                 </div>
 
             </div>
-        </div>
-        <div class="tab-content">
-            <ng-container *ngIf="currentTabIndex === 0">
-                <div class="study-blog">
-                    <div class="top-content">
-                        <div class="top-content-wrapper">
-                            <button class="btn-play">
-                                <svg class="play-icon">
-                                    <use xlink:href="#playIcon"></use>
-                                </svg>
-                            </button>
-                            <span>Video production</span>
-                            <h5>Dubai Summit Opening</h5>
-                            <p>Super cool music, video and animations editing to create this very impactful video
-                                launching the
-                                Giti
-                                Summit in Dubai.</p>
-                        </div>
-                    </div>
-                    <div class="bottom-content">
 
-                        <div class="bottom-content-wrapper">
-                            <span>Video production</span>
-                            <h5>Turtler GPS</h5>
-                            <p>It’s a quality maxim in SEO that no agency should ever promise a #1 position ranking. The
-                                playing
-                                field isn’t static: the competition is always also moving forward and the search engines
-                                continually change their algorithms.</p>
-                        </div>
-                        <div class="bottom-content-wrapper">
-                            <span>Video production</span>
-                            <h5>Turtler GPS App</h5>
-                            <p>It facilitates automated, location based employee timekeeping, hours tracking for client
-                                billing
-                                of time spent on-site, security tracking for employee safety and much more.</p>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="currentTabIndex === 1"></ng-container>
-            <ng-container *ngIf="currentTabIndex === 2"></ng-container>
-            <ng-container *ngIf="currentTabIndex === 3"></ng-container>
-            <ng-container *ngIf="currentTabIndex === 4"></ng-container>
-            <ng-container *ngIf="currentTabIndex === 5"></ng-container>
-
-        </div>
+        </div> -->
 
     </div>
+
+
 
 </section>

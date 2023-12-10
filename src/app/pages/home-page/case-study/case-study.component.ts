@@ -1,9 +1,6 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
-import { SectionTitleAnimationsService } from 'src/app/service/section-title-animation.service';
-// import { SectionAnimationsService } from 'src/app/service/section-animation.service';
-import gsap from 'gsap';
-
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import Swiper from 'swiper';
+import gsap from 'gsap';
 
 @Component({
   selector: 'case-study',
@@ -11,137 +8,67 @@ import Swiper from 'swiper';
   styleUrls: ['./case-study.component.scss']
 })
 export class CaseStudyComponent implements AfterViewInit {
-  @ViewChild('sectionTitleAnimation', { static: true }) sectionTitleAnimation!: ElementRef;
-  @ViewChild('caseStudySwiperDevContainer') caseStudySwiperDevContainer!: ElementRef;
 
-  @ViewChild('cybercaseStudyContentAnimation', { static: true }) cybercaseStudyContentAnimation!: ElementRef;
-  @ViewChild('devCaseStudyContentAnimation', { static: true }) devCaseStudyContentAnimation!: ElementRef;
-  @ViewChild('digitalCaseStudyContentAnimation', { static: true }) digitalCaseStudyContentAnimation!: ElementRef;
+  @ViewChild('sectionBgAnimation') sectionBgAnimation!: ElementRef;
 
-  @ViewChild('sectionBgAnimation', { static: true }) sectionBgAnimation!: ElementRef;
-
-  @ViewChild('loadingIndicator') loadingIndicator!: ElementRef<HTMLDivElement>;
+  // @ViewChild('developmentSwiperContainer') developmentSwiperContainer!: ElementRef;
+  @ViewChild('digitalSwiperContainer') developmentSwiperContainer!: ElementRef;
 
   sliderData = [
     {
       cardImg: '../../../../assets/images/card-img.png',
       category: 'Cyber Security',
-      title: 'Cybersecurity: Protecting Your Digital Life in an Online World',
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      title: 'Incident Response for Ransomware Attack - Health Care Company',
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Volutpat commodo sed egestas egestas fringilla phasellus.'
     },
     {
       cardImg: '../../../../assets/images/case-img.png',
       category: 'Web Development',
-      title: 'Building Modern Web Applications with Angular',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      title: 'Risk Assessment and Consulting - B2B Industrial Corporation',
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Volutpat commodo sed egestas egestas fringilla phasellus.'
     },
     {
       cardImg: '../../../../assets/images/card-img.png',
       category: 'Data Science',
-      title: 'Introduction to Data Analysis and Visualization with Python',
-      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      title: 'System Hardening and Network Configuration - SaaS Company',
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Volutpat commodo sed egestas egestas fringilla phasellus.'
     },
   ];
 
+
   // Declare Swiper variable
-  caseStudyDevSwiper: Swiper | undefined;
+  // developmentSwiper: Swiper | undefined;
+  digitalSwiper: Swiper | undefined;
 
+  constructor() { }
 
-  tabs: string[] = ["all", "Video Production", "3d animation", 'virtual reality', 'seo', 'graphic design'];
-  currentTabIndex: number = 0;
-
-  onTabSelected(index: number): void {
-    this.currentTabIndex = index;
-  }
-
-  constructor(private animationService: SectionTitleAnimationsService, private el: ElementRef) { }
 
   ngAfterViewInit(): void {
 
-    const targetElement = this.sectionTitleAnimation.nativeElement;
-    const tl = this.animationService.playSectionTitleGlobalAnimation(targetElement);
-
-    const caseStudyDevSwiper = new Swiper(this.caseStudySwiperDevContainer.nativeElement, {
-      centeredSlides: true,
-      slidesPerView: 1,
-      grabCursor: true,
-      freeMode: false,
-      loop: true,
-      mousewheel: false,
-      keyboard: {
-        enabled: true
-      },
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      }, speed: 1500,
-      navigation: {
-        nextEl: '.btn-next',
-        prevEl: '.btn-prev',
-      },
-      // Responsive breakpoints
-      breakpoints: {
-        1024: {
-          slidesPerView: 1.5,
-          spaceBetween: 20
-        }
-      },
-      on: {
-        autoplayStart: () => this.animateLoadingIndicator(),
-        slideNextTransitionStart: () => this.animateLoadingIndicator(),
-        slidePrevTransitionStart: () => this.animateLoadingIndicator(),
-      }
-    });
+    // const developmentSwiper = new Swiper(this.developmentSwiperContainer.nativeElement, {
+    //   slidesPerView: 1,
+    //   centeredSlides: true,
+    //   spaceBetween: 10,
+    //   grabCursor: true,
+    //   direction: 'vertical',
+    //   loop: true,
+    //   navigation: {
+    //     nextEl: '.btn-next',
+    //     prevEl: '.btn-prev',
+    //   },
+    // });
 
     this.playCaseStudyContentAnimation();
 
   }
 
   playCaseStudyContentAnimation() {
+    const sectionBgChange = this.sectionBgAnimation.nativeElement;
 
-
-    // Obtain the reference to the second element
-    const cyberCaseStyudyContent = this.cybercaseStudyContentAnimation.nativeElement;
-    const devCaseStyudyContent = this.devCaseStudyContentAnimation.nativeElement;
-    const digitalCaseStyudyContent = this.digitalCaseStudyContentAnimation.nativeElement;
-
-
-
-
-    const tl1 = gsap.timeline({
+    const tlBg = gsap.timeline({
       scrollTrigger: {
-        trigger: [cyberCaseStyudyContent],
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play none none none",
-      },
-      defaults: { duration: 0.3 },
-    });
-
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: [devCaseStyudyContent],
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play none none none"
-      },
-      defaults: { duration: 0.3 },
-    });
-
-    const tl3 = gsap.timeline({
-      scrollTrigger: {
-        trigger: [digitalCaseStyudyContent],
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play none none none"
-      },
-      defaults: { duration: 0.3 },
-    });
-
-    const tl4 = gsap.timeline({
-      scrollTrigger: {
-        trigger: devCaseStyudyContent, // Make sure this is a selector string or DOM element
-        start: "top center",
+        trigger: sectionBgChange,
+        start: "top top",
         end: "bottom center",
         toggleActions: "play reverse play reverse"
       },
@@ -150,53 +77,12 @@ export class CaseStudyComponent implements AfterViewInit {
       },
     });
 
-    tl4.fromTo(".case-study", { backgroundColor: "white" }, { backgroundColor: "#090C18" })
-      .fromTo(".case-study .section-title .title", { color: "#090C18" }, { color: "white" })
-      .fromTo(".case-study .para", { color: "#090C18" }, { color: "white" })
-      .fromTo(".case-study .btn-trans span", { color: "#090C18" }, { color: "white" })
-      .fromTo(".case-study .card-title", { color: "#090C18" }, { color: "white" })
-      .fromTo(".case-study .card-des", { color: "#090C18" }, { color: "white" })
-      .fromTo(".case-study .tabs .tab-item span", { color: "#090C18" }, { color: "white" })
-
-
-    tl1
-      .from(cyberCaseStyudyContent.querySelector('.section-title .title-label'), { opacity: 0 })
-      .from(cyberCaseStyudyContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
-      .from(cyberCaseStyudyContent.querySelector(' .img-sm'), { scale: 0, opacity: 0 }, '-=0.1')
-      .from(cyberCaseStyudyContent.querySelectorAll(' .para'), { opacity: 0, duration: 0.2 })
-      .from(cyberCaseStyudyContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
-      .from(cyberCaseStyudyContent.querySelectorAll('.blog-list li'), { y: 50, opacity: 0, stagger: 0.1 })
-
-    tl2
-      .from(devCaseStyudyContent.querySelector('.section-title .title-label'), { opacity: 0 })
-      .from(devCaseStyudyContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
-      .from(devCaseStyudyContent.querySelector(' .img-sm'), { scale: 0, opacity: 0 }, '-=0.1')
-      .from(devCaseStyudyContent.querySelectorAll(' .para'), { opacity: 0, duration: 0.2 })
-      .from(devCaseStyudyContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
-      .from(devCaseStyudyContent.querySelectorAll('.swiper-slide'), { opacity: 0, stagger: 0.1 })
-      .from(devCaseStyudyContent.querySelector('.slider-actions'), { y: 50, opacity: 0 });
-
-    tl3.from(digitalCaseStyudyContent.querySelector('.section-title .title-label'), { opacity: 0 })
-      .from(digitalCaseStyudyContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
-      .from(digitalCaseStyudyContent.querySelectorAll('.tabs'), { opacity: 0, stagger: 0.1 })
-      .from(digitalCaseStyudyContent.querySelectorAll('.tab-content'), { opacity: 0, stagger: 0.1 })
-
-
+    tlBg.fromTo(".case-study", { backgroundColor: "#090C18" }, { backgroundColor: "white" })
+      .fromTo(".case-study .section-title .title", { color: "white" }, { color: "#090C18" })
+      .fromTo(".case-study .para", { color: "white" }, { color: "#090C18" })
+      .fromTo(".case-study .btn-trans span", { color: "white" }, { color: "#090C18" })
+      .fromTo(".case-study .card-title", { color: "white" }, { color: "#090C18" })
+      .fromTo(".case-study .card-des", { color: "white" }, { color: "#090C18" })
   }
 
-
-  animateLoadingIndicator(): void {
-    gsap.fromTo(
-      this.loadingIndicator.nativeElement,
-      { width: '0%' },
-      {
-        width: '100%',
-        duration: 5,
-        onComplete: () => {
-          // Reset width after animation completion
-          gsap.set(this.loadingIndicator.nativeElement, { width: '0%' });
-        }
-      }
-    );
-  }
 }
