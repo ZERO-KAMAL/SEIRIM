@@ -12,7 +12,7 @@ export class CaseStudyComponent implements AfterViewInit {
   @ViewChild('sectionBgAnimation') sectionBgAnimation!: ElementRef;
 
   // @ViewChild('developmentSwiperContainer') developmentSwiperContainer!: ElementRef;
-  @ViewChild('digitalSwiperContainer') developmentSwiperContainer!: ElementRef;
+  @ViewChild('digitalSwiperContainer') digitalSwiperContainer!: ElementRef;
 
   sliderData = [
     {
@@ -57,6 +57,22 @@ export class CaseStudyComponent implements AfterViewInit {
     //     prevEl: '.btn-prev',
     //   },
     // });
+
+    const digitalSwiper = new Swiper(this.digitalSwiperContainer.nativeElement, {
+      // slidesPerView: 1,
+      loop: true,
+      speed: 1000,
+      effect: 'coverflow',
+      centeredSlides: true,
+      spaceBetween: 10,
+      grabCursor: true,
+      slidesPerView: 'auto',
+      coverflowEffect: { rotate: 0, stretch: 80, depth: 100, modifier: 4, },
+      navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+      },
+    });
 
     this.playCaseStudyContentAnimation();
 
