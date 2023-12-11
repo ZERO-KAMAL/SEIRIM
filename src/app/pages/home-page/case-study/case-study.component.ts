@@ -72,6 +72,15 @@ export class CaseStudyComponent implements AfterViewInit {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
       },
+      pagination: {
+        el: '.digital-swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          // Start from '01' instead of '1'
+          const num = (index + 1).toString().padStart(2, '0');
+          return '<div class="' + className + '" role="button" data-number="' + num + '"></div>';
+        }
+      },
     });
 
     this.playCaseStudyContentAnimation();
