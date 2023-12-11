@@ -61,16 +61,28 @@ export class CaseStudyComponent implements AfterViewInit {
     const digitalSwiper = new Swiper(this.digitalSwiperContainer.nativeElement, {
       // slidesPerView: 1,
       loop: true,
-      speed: 1000,
-      effect: 'coverflow',
+      speed: 900,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
       centeredSlides: true,
-      spaceBetween: 10,
-      grabCursor: true,
-      slidesPerView: 'auto',
-      coverflowEffect: { rotate: 0, stretch: 80, depth: 100, modifier: 4, },
+      effect: 'slide',
+      parallax: true,
+      // coverflowEffect: { rotate: 0, stretch: 80, depth: 100, modifier: 4, },
       navigation: {
         nextEl: '.btn-next',
         prevEl: '.btn-prev',
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          slidesPerGroup: 1
+        },
+        1023: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          slidesPerGroup: 1
+        }
       },
       pagination: {
         el: '.digital-swiper-pagination',
@@ -78,7 +90,7 @@ export class CaseStudyComponent implements AfterViewInit {
         renderBullet: function (index, className) {
           // Start from '01' instead of '1'
           const num = (index + 1).toString().padStart(2, '0');
-          return '<div class="' + className + '" role="button" data-number="' + num + '"></div>';
+          return '<span class="' + className + '" role="button" data-number="' + num + '"></span>';
         }
       },
     });
