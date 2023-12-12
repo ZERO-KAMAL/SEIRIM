@@ -1,5 +1,4 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import Swiper from 'swiper';
 import gsap from 'gsap';
 
 @Component({
@@ -11,8 +10,6 @@ export class CaseStudyComponent implements AfterViewInit {
 
   @ViewChild('sectionBgAnimation') sectionBgAnimation!: ElementRef;
 
-  // @ViewChild('developmentSwiperContainer') developmentSwiperContainer!: ElementRef;
-  // @ViewChild('digitalSwiperContainer') digitalSwiperContainer!: ElementRef;
 
   sliderData = [
     {
@@ -36,81 +33,7 @@ export class CaseStudyComponent implements AfterViewInit {
   ];
 
 
-  slides = ['Slide 1', 'Slide 2', 'Slide 3']; // Replace with your content
-  currentIndex = 0;
-
-  @ViewChild('slider') slider!: ElementRef;
-
-  // Declare Swiper variable
-  // developmentSwiper: Swiper | undefined;
-  digitalSwiper: Swiper | undefined;
-
-  constructor() { }
-  nextSlide() {
-    if (this.currentIndex < this.slides.length - 1) {
-      this.currentIndex++;
-      this.animateSlider();
-    }
-  }
-
-  prevSlide() {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-      this.animateSlider();
-    }
-  }
-
-  goToSlide(index: number) {
-    this.currentIndex = index;
-    this.animateSlider();
-  }
-
-  private animateSlider() {
-    gsap.to(this.slider.nativeElement, {
-      x: -(this.currentIndex * 100) + '%',
-      duration: 1
-    });
-  }
-
   ngAfterViewInit(): void {
-
-    // const developmentSwiper = new Swiper(this.developmentSwiperContainer.nativeElement, {
-    //   slidesPerView: 1,
-    //   centeredSlides: true,
-    //   spaceBetween: 10,
-    //   grabCursor: true,
-    //   direction: 'vertical',
-    //   loop: true,
-    //   navigation: {
-    //     nextEl: '.btn-next',
-    //     prevEl: '.btn-prev',
-    //   },
-    // });
-
-    // const digitalSwiper = new Swiper(this.digitalSwiperContainer.nativeElement, {
-    //   // slidesPerView: 1,
-    //   loop: true,
-    //   speed: 1000,
-    //   effect: 'coverflow',
-    //   centeredSlides: true,
-    //   spaceBetween: 10,
-    //   grabCursor: true,
-    //   slidesPerView: 'auto',
-    //   coverflowEffect: { rotate: 0, stretch: 80, depth: 100, modifier: 4, },
-    //   navigation: {
-    //     nextEl: '.btn-next',
-    //     prevEl: '.btn-prev',
-    //   },
-    //   pagination: {
-    //     el: '.digital-swiper-pagination',
-    //     clickable: true,
-    //     renderBullet: function (index, className) {
-    //       // Start from '01' instead of '1'
-    //       const num = (index + 1).toString().padStart(2, '0');
-    //       return '<span class="' + className + '" role="button" data-number="' + num + '"></span>';
-    //     }
-    //   },
-    // });
 
     this.playCaseStudyContentAnimation();
 

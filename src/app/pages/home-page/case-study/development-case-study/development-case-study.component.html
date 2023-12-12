@@ -1,0 +1,75 @@
+<div class="dev-study section-margin-top">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="study-left">
+                <div class="section-title">
+                    <h2 class="title">Development</h2>
+                    <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo
+                        consequat.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="study-right">
+
+                <div class="dev-slider-wrapper">
+                    <div class="list-item-img-top">
+                        <img src="../../../../assets/images/banner-img.jpg" alt="">
+
+                    </div>
+                    <div class="list-item-img-middle">
+                        <img src="../../../../assets/images/banner-img.jpg" alt="">
+                    </div>
+                    <div class="dev-slider-container">
+                        <div class="slider" #slider>
+                            <div class="slide" *ngFor="let slide of slides">
+                                <div class="list-item">
+                                    <div class="list-item-left">
+        
+                                        <span>Development</span>
+                                        <h6>GITI Tire</h6>
+                                        <p>The Giti Corporate project was an ambitious endeavor to create the main
+                                            website platform for
+                                            one of the world's top ten tire companies at the center of their many brand
+                                            and country
+                                            websites.
+                                        </p>
+        
+                                        <button class="btn-trans btn-link">
+                                            <span>Learn more</span>
+                                            <svg class="link-icon">
+                                                <use xlink:href="#arrowUpRightIcon"></use>
+                                            </svg></button>
+                                    </div>
+                                    <div class="list-item-right">
+                                        <img src="../../../../assets/images/devlopment.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dev-pagination">
+                            <span *ngFor="let slide of slides; let i = index" class="slider-pagination-bullet"
+                                [class.slider-pagination-bullet-active]="currentIndex === i" (click)="goToSlide(i)">{{ i
+                                + 1 }}</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <button class="btn-trans btn-view-more">
+                    <span class="btn-label">dev marketing case studies</span>
+                    <svg class="link-icon">
+                        <use xlink:href="#arrowTopRightIcon"></use>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
