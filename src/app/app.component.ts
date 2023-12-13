@@ -25,11 +25,11 @@ export class AppComponent implements OnInit {
     ScrollSmoother.create({
       wrapper: ".main",
       content: ".main-container",
-      smooth: 1,
+      smooth: 2,
       effects: true,
-      // ease: "expo.out",
-      // ignoreMobileResize: false,
-      // normalizeScroll: !0
+      ease: "expo.out",
+      ignoreMobileResize: false,
+      normalizeScroll: !0
     });
 
   }

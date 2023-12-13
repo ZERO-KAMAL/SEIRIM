@@ -16,15 +16,12 @@
 .study-right {
     padding-left: 3rem;
 }
-.btn-trans {
-    span {
-        color: white  !important;
-    }
-}
+
 
 .dev-study {
     position: relative;
     justify-content: start;
+    margin-top: 11rem;
     .btn-view-more {
         margin-left: auto;
         margin-top: 1rem;
@@ -115,6 +112,11 @@
                     line-height: 25px;
                     letter-spacing: 0.8px;
                     width: 27rem;
+                }
+                .btn-trans {
+                    span {
+                        color: white  !important;
+                    }
                 }
             }
             .list-item-right {

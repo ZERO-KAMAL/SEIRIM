@@ -104,7 +104,7 @@ export class BannerComponent implements OnInit, AfterViewInit {
       .from(targets.paragraph, { opacity: 0, ease: 'power2.out' }, '-=0.1')
       .from(targets.btnBanner, { opacity: 0, ease: 'power2.out' }, '-=0.1')
       .from(targets.sliderIndicator, { opacity: 0, stagger: 0.1, ease: 'power2.out' }, '-=0.1')
-      .from(targets.bannerContentRight, { x: 100, opacity: 0, ease: 'power2.out' });
+      .from(targets.bannerContentRight, { opacity: 0, ease: 'power2.out' });
 
     this.animationText();
 

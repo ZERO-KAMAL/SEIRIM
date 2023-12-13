@@ -17,6 +17,8 @@ import { BlogComponent } from './pages/home-page/blog/blog.component';
 import { AppLoadingComponent } from './components/app-loading/app-loading.component';
 import { TabComponent } from './common/tab/tab.component';
 import { AccordinComponent } from './common/accordin/accordin.component';
+import { MarketingCaseStudyComponent } from './pages/home-page/case-study/marketing-case-study/marketing-case-study.component';
+import { DevelopmentCaseStudyComponent } from './pages/home-page/case-study/development-case-study/development-case-study.component';
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
@@ -38,7 +40,9 @@ register();
     BlogComponent,
     AppLoadingComponent,
     TabComponent,
-    AccordinComponent
+    AccordinComponent,
+    MarketingCaseStudyComponent,
+    DevelopmentCaseStudyComponent
 
   ],
   imports: [
