@@ -1,224 +1,577 @@
 <section class="what-we-offer" #sectionTitleAnimation>
-    <div class="app-container w-100">
-
-        <div class="what-we-offer-top" >
-            <div class="section-title">
-                <span class="title-label">Our Solutions</span>
-                <h2 class="title">What we offer</h2>
-                <div class="line">
-                    <img src="../../../../assets/images/line.png" alt="">
-                </div>
-                <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo
-                    consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate.</p>
-            </div>
-            <div class="tabs">
-                <button class="tab-item" *ngFor="let tab of tabs; let i = index" [class.active]="currentTabIndex === i"
-                    (click)="onTabSelected(i)">
-                    <span> {{ tab }}</span>
-                    <!-- <span class="border"></span> -->
-                </button>
-            </div>
+  <div class="app-container w-100">
+    <div class="what-we-offer-top">
+      <div class="section-title">
+        <span class="title-label">Our Solutions</span>
+        <h2 class="title">What we offer</h2>
+        <div class="line">
+          <img src="../../../../assets/images/line.png" alt="" />
         </div>
-
-        <div class="tab-content" #offerContentAnimation>
-
-            <ng-container *ngIf="currentTabIndex === 0">
-                <div class="cybersecurity-content">
-                    <div class="cybersecurity-content-top">
-
-                        <div class="top-left-item">
-                            <div class="section-title">
-                                <span class="title-label">Cybersecurity</span>
-                                <h2 class="title">Security from the ground up</h2>
-                                <div class="line">
-                                    <img src="../../../../assets/images/line.png" alt="">
-                                </div>
-                                <img class="small-img" src="../../../../assets/images/cybersecurity.png" alt="">
-                                <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                    ut
-                                    aliquip ex ea
-                                    commodo consequat. </p>
-                                <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in. Sagittis nisl
-                                    rhoncus mattis
-                                    rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac habitasse platea
-                                    dictumst
-                                    quisque sagittis
-                                    purus. </p>
-                            </div>
-
-                            <button class="btn-trans btn-link">
-                                <span>go to cybersecurity services</span>
-                                <svg class="link-icon">
-                                    <use xlink:href="#arrowUpRightIcon"></use>
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div class="top-right-item">
-                            <img class="big-img" src="../../../../assets/images/cybersecurity.png" alt="">
-                        </div>
-
-                    </div>
-
-                    <div class="cybersecurity-content-bottom">
-                        <div class="list-content">
-                            <h5 class="title">Specialized Security Services:</h5>
-                            <ul>
-                                <li>
-                                    <app-accordin [title]="'Risk Assessments'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'Incident Response'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'Penetration Testing'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'Vulnerability Scanning & Management'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'Managed Custom Services'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'System Hardening'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'Application Secure Development'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'Cybersecurity Consulting'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                                <li>
-                                    <app-accordin [title]="'Cybersecurity Consulting'">
-                                        <div class="according-content">
-                                            <p class="para">Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea
-                                                commodo consequat. </p>
-                                            <p class="para">Ornare suspendisse sed nisi lacus sed viverra tellus in.
-                                                Sagittis nisl rhoncus mattis
-                                                rhoncus urna neque Pulvinar neque laoreet suspendisse. In hac
-                                                habitasse platea dictumst
-                                                quisque sagittis
-                                                purus. </p>
-                                        </div>
-                                    </app-accordin>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="currentTabIndex === 1">
-
-                <div class="">
-                    content 1
-                </div>
-            </ng-container>
-            <ng-container *ngIf="currentTabIndex === 2">
-                <div class="">
-                    content 2
-                </div>
-            </ng-container>
-        </div>
+        <p class="para">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate.
+        </p>
+      </div>
+      <div class="tabs">
+        <button
+          class="tab-item"
+          *ngFor="let tab of tabs; let i = index"
+          [class.active]="currentTabIndex === i"
+          (click)="onTabSelected(i)"
+        >
+          <span> {{ tab }}</span>
+          <!-- <span class="border"></span> -->
+        </button>
+      </div>
     </div>
 
+    <div class="tab-content" #offerContentAnimation>
+      <ng-container *ngIf="currentTabIndex === 0">
+        <div class="offer-content">
+          <div class="offer-content-top">
+            <div class="top-left-item">
+              <div class="section-title">
+                <span class="title-label">Cybersecurity</span>
+                <h2 class="title">Security from the ground up</h2>
+                <div class="line">
+                  <img src="../../../../assets/images/line.png" alt="" />
+                </div>
+                <img
+                  class="small-img"
+                  src="../../../../assets/images/cybersecurity.png"
+                  alt=""
+                />
+                <p class="para">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p class="para">
+                  Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                  Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar neque
+                  laoreet suspendisse. In hac habitasse platea dictumst quisque
+                  sagittis purus.
+                </p>
+              </div>
 
+              <button class="btn-trans btn-link">
+                <span>go to cybersecurity services</span>
+                <svg class="link-icon">
+                  <use xlink:href="#arrowUpRightIcon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="top-right-item">
+              <img
+                class="big-img"
+                src="../../../../assets/images/cybersecurity.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="offer-content-bottom">
+            <div class="list-content">
+              <h5 class="title">Specialized Security Services:</h5>
+              <ul>
+                <li>
+                  <app-accordin [title]="'Risk Assessments'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Incident Response'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Penetration Testing'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Vulnerability Scanning & Management'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Managed Custom Services'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'System Hardening'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Application Secure Development'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Cybersecurity Consulting'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="currentTabIndex === 1">
+        <div class="offer-content">
+          <div class="offer-content-top">
+            <div class="top-left-item">
+              <div class="section-title">
+                <span class="title-label">Development</span>
+                <h2 class="title">Building Ideas into Reality</h2>
+                <div class="line">
+                  <img src="../../../../assets/images/line.png" alt="" />
+                </div>
+                <img
+                  class="small-img"
+                  src="../../../../assets/images/cybersecurity.png"
+                  alt=""
+                />
+                <p class="para">
+                  For over a decade, our senior developers have built myriad
+                  types of applications for the web from the ground up, building
+                  our own tools, solutions and frameworks to solve many
+                  challenges.
+                </p>
+                <p class="para">
+                  Whether it’s our own custom CMS especially built to be at the
+                  vanguard of security, interactive classrooms inside of virtual
+                  reality spaces, mobile device games, e-commerce websites or
+                  simply a high performance corporate website our team has the
+                  skills and experience to make it happen. If you can dream it,
+                  we can build it.
+                </p>
+              </div>
+
+              <button class="btn-trans btn-link">
+                <span>GO TO Development SERVICES</span>
+                <svg class="link-icon">
+                  <use xlink:href="#arrowUpRightIcon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="top-right-item">
+              <img
+                class="big-img"
+                src="../../../../assets/images/cybersecurity.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="offer-content-bottom">
+            <div class="list-content">
+              <h5 class="title">Custom IT & Web Programming :</h5>
+              <ul>
+                <li>
+                  <app-accordin [title]="'E-Commerce'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Web Applications'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="' Corporate Presentations '">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Mobile Applications'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Custom Software'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'High Performance Websites'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'SEO Specialized Sites'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Virtual Reality Frameworks'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="currentTabIndex === 2">
+        <div class="offer-content">
+          <div class="offer-content-top">
+            <div class="top-left-item">
+              <div class="section-title">
+                <span class="title-label">Digital Marketing </span>
+                <h2 class="title">Making your Offerings Shine</h2>
+                <div class="line">
+                  <img src="../../../../assets/images/line.png" alt="" />
+                </div>
+                <img
+                  class="small-img"
+                  src="../../../../assets/images/cybersecurity.png"
+                  alt=""
+                />
+                <p class="para">
+                  Your project is secure and works well, but does it look good?
+                  Our specialized teams make our clients shine and thrive with
+                  custom SEO campaigns resulting in top rankings, video
+                  productions that wow, 3D animations that impress,
+                  professionally designed marketing materials that capture the
+                  imagination and more.
+                </p>
+              </div>
+
+              <button class="btn-trans btn-link">
+                <span>go to marketing services</span>
+                <svg class="link-icon">
+                  <use xlink:href="#arrowUpRightIcon"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="top-right-item">
+              <img
+                class="big-img"
+                src="../../../../assets/images/cybersecurity.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="offer-content-bottom">
+            <div class="list-content">
+              <h5 class="title">Professional Design and Digital Marketing :</h5>
+              <ul>
+                <li>
+                  <app-accordin [title]="'Video Production '">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="' 3D Animation'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'  SEO Campaigns'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Marketing Materials'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="' Virtual Reality Spaces'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="' UI/UX Design '">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Website Design'">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+                <li>
+                  <app-accordin [title]="'Print & Physical Products Design  '">
+                    <div class="according-content">
+                      <p class="para">
+                        Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p class="para">
+                        Ornare suspendisse sed nisi lacus sed viverra tellus in.
+                        Sagittis nisl rhoncus mattis rhoncus urna neque Pulvinar
+                        neque laoreet suspendisse. In hac habitasse platea
+                        dictumst quisque sagittis purus.
+                      </p>
+                    </div>
+                  </app-accordin>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </section>

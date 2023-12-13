@@ -46,19 +46,19 @@ export class WhatWeOfferComponent implements AfterViewInit {
         end: "bottom center",
         toggleActions: "play none none none"
       },
-      defaults: { duration: 0.3 },
+      defaults: { duration: 0.4, ease: "power2.out" },
     });
 
     // Define the animation for the second element (top-right-item)
-    tl
-      .from(offerContent.querySelector('.section-title .title-label'), { opacity: 0 })
+    tl.from(offerContent.querySelector('.section-title .title-label'), { opacity: 0 })
       .from(offerContent.querySelectorAll('.section-title .title'), { opacity: 0 }, '-=0.1')
       .from(offerContent.querySelector(' .line img'), { width: 0, opacity: 0 }, '-=0.1')
       .from(offerContent.querySelector(' .img-sm'), { scale: 0, opacity: 0 }, '-=0.1')
-      .from(offerContent.querySelectorAll(' .para'), { opacity: 0, duration: 0.2 })
+      .from(offerContent.querySelector('.big-img'), { opacity: 0 })
+      .from(offerContent.querySelectorAll(' .para'), { opacity: 0 })
       .from(offerContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
-      .from(offerContent.querySelector('.big-img'), { opacity: 0, duration: 0.2 })
       .from(offerContent.querySelector('.list-content .title'), { opacity: 0 })
       .from(offerContent.querySelectorAll('.list-content li'), { opacity: 0, stagger: 0.1 });
+
   }
 }

@@ -1,4 +1,5 @@
 .banner {
+    will-change: transform;
     .latest-news-box {
         .title {
             color: #fff;
@@ -12,6 +13,7 @@
             .latest-news-item {
                 position: relative;
                 padding: 1.313rem 0 1.813rem 0;
+                cursor: pointer;
                 &:last-child {
                     padding-bottom: 0;
                     &::after {
@@ -41,7 +43,10 @@
                     font-weight: 400;
                     margin: 0;
                     line-height: normal;
-                    // margin-top: 0.375rem;
+                    transition: all 0.2s ease-in-out;
+                    &:hover {
+                        color: #048bd7;
+                    }
                 }
             }
         }
@@ -97,8 +102,7 @@
                     font-weight: 400;
                     line-height: 30px;
                     letter-spacing: 0.056rem;
-                    margin-top: 1.5rem;
-                    margin-bottom: 2rem;
+                    margin: 1.5rem 0rem;
                 }
                 .btn-banner {
                     transition: none;
@@ -122,7 +126,7 @@
                 // background: hsla(0,0%,100%,.25);
             }
             .slider-indicator-wrapper {
-                margin-top: 3rem;
+                margin-top: 1.8rem;
                 .slider-indicator {
                     display: flex;
                     align-items: center;
@@ -151,7 +155,8 @@
 
                         &.active {
                             &::after {
-                                background-color: #07cef4;
+                                background: #048bd7;
+                                // color: #048bd7;
                             }
                         }
                     }
@@ -221,9 +226,12 @@
                         text-transform: uppercase;
                         cursor: pointer;
                         transition: all 0.2s ease-in-out;
+                        .text-item {
+                            &:hover {
+                                color: #048bd7;
+                            }
+                        }
                         &:hover {
-                            // color: #048bd7;
-                            .text-item,
                             .active {
                                 color: #048bd7;
                             }

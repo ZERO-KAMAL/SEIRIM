@@ -1,4 +1,5 @@
 .what-we-offer {
+    will-change: transform;
     background: #090c18;
     padding: 6.8rem 0 11rem 0;
     display: flex;
@@ -25,7 +26,8 @@
         ul {
             display: flex;
             align-items: start;
-            justify-content: space-between;
+            justify-content: 2rem;
+            column-gap: 4rem;
             flex-wrap: wrap;
             li {
                 max-width: 26rem;
@@ -89,8 +91,8 @@
     .tab-content {
         width: 100%;
         margin-top: 4.875rem;
-        .cybersecurity-content {
-            .cybersecurity-content-top {
+        .offer-content {
+            .offer-content-top {
                 display: flex;
                 justify-content: space-between;
                 gap: 2rem;
@@ -125,8 +127,8 @@
     }
     @media screen and (max-width: 767px) {
         padding: 4.375rem 0;
-        .cybersecurity-content {
-            .cybersecurity-content-top {
+        .offer-content {
+            .offer-content-top {
                 .line {
                     display: block !important;
                 }

@@ -31,7 +31,7 @@ export class AboutComponent implements AfterViewInit {
         end: () => `+=${target.offsetHeight}`,  // This will make it end after the height of the element has scrolled past the start point.
         toggleActions: "play none none none"
       },
-      defaults: { duration: 0.3, ease: "power2.out" }
+      defaults: { duration: 0.4, ease: "power2.out" }
     });
 
     tl
