@@ -219,4 +219,5 @@ export class HeaderComponent implements AfterViewInit {
       }
     });
   }
+  
 }

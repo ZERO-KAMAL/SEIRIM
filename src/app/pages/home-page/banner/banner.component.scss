@@ -52,11 +52,11 @@
         }
     }
     .banner-wrapper {
-        margin-top: -5.813rem;
+        // margin-top: -5.813rem;
         background-image: url("../../../../assets/images/banner-img.jpg");
         background-position: 38% 100%;
         background-size: cover;
-        min-height: 103vh;
+        padding-top: 9rem;
         position: relative;
         z-index: 1;
         &::after {
@@ -72,14 +72,12 @@
             z-index: -1;
         }
         .banner-content {
-            padding-top: 5.813rem;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 11;
             .banner-content-left {
-                margin-top: 5rem;
                 max-width: 36.125rem;
                 h1 {
                     color: #fff;
@@ -120,8 +118,6 @@
                 padding: 1.938rem 2.188rem;
                 background: rgba(6, 8, 15, 0.3);
                 backdrop-filter: blur(4px);
-                margin-top: 3.75rem;
-
                 // backdrop-filter: blur(4px);
                 // background: hsla(0,0%,100%,.25);
             }
@@ -193,7 +189,7 @@
             width: 100%;
             max-width: 90rem;
             margin: 0 auto;
-            margin-top: 2.75rem;
+            // margin-top: 2.75rem;
             .footer-top {
                 margin-left: auto;
                 span {
@@ -252,13 +248,78 @@
         background-color: #0c2436;
         padding: 3.125rem 0;
     }
-    @media screen and (min-width: 767px) and (max-width: 1400px) {
+    @media screen and (min-width: 991px) and (max-width: 1300px) {
         .banner-wrapper {
-            min-height: 60rem !important;
+            padding-top: 7rem;
+            .banner-content {
+                .banner-content-left {
+                    margin-top: 0rem;
+                    max-width: 25rem;
+                    h1 {
+                        font-size: 3rem;
+                    }
+                    p {
+                        font-size: 1rem;
+                        margin: 0;
+                        margin-top: 0.75rem;
+                        line-height: 1.4rem;
+                    }
+                    .btn-banner {
+                        margin-top: 0.75rem;
+                        transition: none;
+                        svg {
+                            width: 1.089rem;
+                            height: 1.375rem;
+                        }
+                        span {
+                            margin: 0 1.2rem 0 1rem;
+                        }
+                    }
+                    .slider-indicator-wrapper {
+                        margin-top: 1rem;
+                        .slider-indicator {
+                            button {
+                                height: 3px;
+                            }
+                        }
+                    }
+                }
+                .banner-content-right {
+                    margin-top: 0rem;
+                    padding: 1rem;
+                    max-width: 25rem;
+                    // margin-top: 2rem;
+                    .latest-news-box {
+                        .title {
+                            font-size: 0.875rem;
+                        }
+                        .latest-news-list {
+                            .latest-news-item {
+                                padding: 0.7rem 0;
+
+                                .item-content {
+                                    font-size: 0.875rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .banner-footer {
+                padding: 0 1.2rem;
+                padding-bottom: 0.75rem;
+                span {
+                    font-size: 0.75rem !important;
+                }
+                .animated-border {
+                    margin: 0.75rem 0;
+                }
+            }
         }
     }
     @media screen and (max-width: 991px) {
         .banner-wrapper {
+            min-height: 100vh;
             .banner-content {
                 .banner-content-right {
                     display: none;
@@ -279,7 +340,7 @@
     }
     @media screen and (min-width: 991px) {
         .banner-wrapper {
-            max-height: 103vh;
+            height: 100vh;
         }
         .moblie-latest-news {
             display: none;

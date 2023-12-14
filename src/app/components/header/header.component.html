@@ -1,7 +1,6 @@
-<header #header  [ngClass]="{activeNavBg: isMegaMenuActive}">
+<section class="header" [ngClass]="{ activeNavBg: isMegaMenuActive }">
   <div class="app-container">
     <div class="header-container">
-
       <div class="header-logo">
         <a href="#">
           <svg>
@@ -12,9 +11,13 @@
 
       <div class="header-menu">
         <ul>
-          <li (mouseenter)="showMegaMenu()" (mouseleave)="hideMegaMenu()" [ngClass]="{active: isMegaMenuActive}">
-            <a class="link" href="/" (mouseenter)="onHoverTextScramble($event)" >
-              <span class="link-name" >Services</span>
+          <li
+            (mouseenter)="showMegaMenu()"
+            (mouseleave)="hideMegaMenu()"
+            [ngClass]="{ active: isMegaMenuActive }"
+          >
+            <a class="link" href="/" (mouseenter)="onHoverTextScramble($event)">
+              <span class="link-name">Services</span>
               <svg>
                 <use xlink:href="#arrowDownIcon"></use>
               </svg>
@@ -25,15 +28,16 @@
                 <div class="row">
                   <div class="col-md-3">
                     <div class="mega-menu-left">
-                      <h6>
-                        Services
-                      </h6>
+                      <h6>Services</h6>
                       <div class="line">
-                        <img src="../../../assets/images/line.png" alt="">
+                        <img src="../../../assets/images/line.png" alt="" />
                       </div>
-                      <p> Achieving security is an iterative and ongoing process involving assessing the whole threat
-                        and
-                        risks landscape coupled with hands on scanning, repairing, validating, testing and more.</p>
+                      <p>
+                        Achieving security is an iterative and ongoing process
+                        involving assessing the whole threat and risks landscape
+                        coupled with hands on scanning, repairing, validating,
+                        testing and more.
+                      </p>
 
                       <button class="btn-learn-more">
                         <span>learn more</span>
@@ -45,10 +49,13 @@
                   </div>
                   <div class="col-md-9">
                     <div class="mega-menu-right">
-
                       <div class="tabs">
-                        <button class="tab-item" *ngFor="let tab of tabs; let i = index"
-                          [class.active]="currentTabIndex === i" (click)="onTabSelected(i)">
+                        <button
+                          class="tab-item"
+                          *ngFor="let tab of tabs; let i = index"
+                          [class.active]="currentTabIndex === i"
+                          (click)="onTabSelected(i)"
+                        >
                           <span> {{ tab }}</span>
                         </button>
                       </div>
@@ -61,10 +68,17 @@
                                 <h3 class="menu-title">
                                   Security from the ground up
                                 </h3>
-                                <img class="menu-img" src="../../../assets/images/cyber-img.jpg" alt="">
-                                <p class="menu-para">The SEIRIM team of professionals is working around the clock to
-                                  secure, strengthen
-                                  and make more resilient the data environments of our clients.</p>
+                                <img
+                                  class="menu-img"
+                                  src="../../../assets/images/cyber-img.jpg"
+                                  alt=""
+                                />
+                                <p class="menu-para">
+                                  The SEIRIM team of professionals is working
+                                  around the clock to secure, strengthen and
+                                  make more resilient the data environments of
+                                  our clients.
+                                </p>
 
                                 <button class="btn btn-menu">
                                   <span>cybersecurity main</span>
@@ -75,9 +89,14 @@
                               </div>
                               <div class="col-md-9">
                                 <ul class="list">
-                                  <li class="list-item" *ngFor="let item of items">
+                                  <li
+                                    class="list-item"
+                                    *ngFor="let item of items"
+                                  >
                                     <h6 class="item-title">{{ item.title }}</h6>
-                                    <p class="item-para">{{ item.description }}</p>
+                                    <p class="item-para">
+                                      {{ item.description }}
+                                    </p>
                                   </li>
                                 </ul>
                               </div>
@@ -89,7 +108,6 @@
                         <ng-container *ngIf="currentTabIndex === 2">
                         </ng-container>
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -97,7 +115,11 @@
             </div>
           </li>
           <li>
-            <a class="link" href="/about" (mouseenter)="onHoverTextScramble($event)">
+            <a
+              class="link"
+              href="/about"
+              (mouseenter)="onHoverTextScramble($event)"
+            >
               <span class="link-name">Case Studies</span>
               <svg>
                 <use xlink:href="#arrowDownIcon"></use>
@@ -105,15 +127,27 @@
             </a>
           </li>
           <li>
-            <a class="link" href="/contact" (mouseenter)="onHoverTextScramble($event)"><span
-                class="link-name">About</span></a>
+            <a
+              class="link"
+              href="/contact"
+              (mouseenter)="onHoverTextScramble($event)"
+              ><span class="link-name">About</span></a
+            >
           </li>
           <li>
-            <a class="link" href="/contact" (mouseenter)="onHoverTextScramble($event)"><span
-                class="link-name">News</span></a>
+            <a
+              class="link"
+              href="/contact"
+              (mouseenter)="onHoverTextScramble($event)"
+              ><span class="link-name">News</span></a
+            >
           </li>
           <li>
-            <a class="link" href="/contact" (mouseenter)="onHoverTextScramble($event)">
+            <a
+              class="link"
+              href="/contact"
+              (mouseenter)="onHoverTextScramble($event)"
+            >
               <span class="link-name">Tools</span>
               <svg>
                 <use xlink:href="#arrowDownIcon"></use>
@@ -121,14 +155,17 @@
             </a>
           </li>
           <li>
-            <a class="link" href="/contact" (mouseenter)="onHoverTextScramble($event)"><span
-                class="link-name">Contact Us</span></a>
+            <a
+              class="link"
+              href="/contact"
+              (mouseenter)="onHoverTextScramble($event)"
+              ><span class="link-name">Contact Us</span></a
+            >
           </li>
         </ul>
       </div>
 
       <div class="mobile-menu">
-
         <div class="language-selector">
           <a class="link">
             <span class="link-name">En</span>
@@ -165,10 +202,14 @@
                 </a>
               </li>
               <li>
-                <a class="link" href="/contact"><span class="link-name">About</span></a>
+                <a class="link" href="/contact"
+                  ><span class="link-name">About</span></a
+                >
               </li>
               <li>
-                <a class="link" href="/contact"><span class="link-name">News</span></a>
+                <a class="link" href="/contact"
+                  ><span class="link-name">News</span></a
+                >
               </li>
               <li>
                 <a class="link" href="/contact">
@@ -179,13 +220,14 @@
                 </a>
               </li>
               <li>
-                <a class="link" href="/contact"><span class="link-name">Contact Us</span></a>
+                <a class="link" href="/contact"
+                  ><span class="link-name">Contact Us</span></a
+                >
               </li>
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-</header>
+</section>
