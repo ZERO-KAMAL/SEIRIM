@@ -87,6 +87,9 @@ export class BlogComponent implements AfterViewInit {
   ngAfterViewInit(): void {
 
     const blogSwiper = new Swiper(this.blogSwiperContainer.nativeElement, {
+      // slidesPerView: 4,
+      // spaceBetween: 30,
+      // centeredSlides: true,
       slidesPerView: 1,
       centeredSlides: true,
       spaceBetween: 10,
@@ -103,19 +106,19 @@ export class BlogComponent implements AfterViewInit {
       },
       breakpoints: {
         600: {
-          slidesPerView: 1.5,
-          spaceBetween: 30,
+          slidesPerView: 1,
+          spaceBetween: 10,
         },
         767: {
-          slidesPerView: 2.5,
-          spaceBetween: 30,
+          slidesPerView: 2,
+          spaceBetween: 15,
         },
         991: {
-          slidesPerView: 2.9,
-          spaceBetween: 30,
+          slidesPerView: 3,
+          spaceBetween: 15,
         },
-        1180: {
-          slidesPerView: 3.9,
+        1500: {
+          slidesPerView: 4,
           spaceBetween: 30,
         }
       },
@@ -146,8 +149,6 @@ export class BlogComponent implements AfterViewInit {
 
 
   playOfferContentAnimation() {
-
-
     // Obtain the reference to the second element
     const blogContent = this.blogContentAnimation.nativeElement;
 
@@ -158,17 +159,16 @@ export class BlogComponent implements AfterViewInit {
         end: "bottom center",
         toggleActions: "play none none none"
       },
-      defaults: { duration: 0.3 },
+      defaults: { duration: 0.3, ease: "power2.out" }, 
     });
 
-    // Define the animation for the second element (top-right-item)
     tl
       .from(blogContent.querySelector('.section-title .title-label'), { opacity: 0 })
-      .from(blogContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.1')
-      .from(blogContent.querySelector(' .line img'), { width: 0, opacity: 0 }, '-=0.1')
-      .from(blogContent.querySelector(' .btn-trans'), { opacity: 0, ease: 'elastic.out(1, 0.3)' })
-      .from(blogContent.querySelectorAll('.swiper-slide'), { y: 50, opacity: 0, stagger: 0.1 })
-      .from(blogContent.querySelectorAll('.slider-actions'), { y: 50, opacity: 0 })
+      .from(blogContent.querySelector('.section-title .title'), { opacity: 0 }, '-=0.15') 
+      .from(blogContent.querySelector(' .line img'), { width: 0, opacity: 0 }, '-=0.15') 
+      .from(blogContent.querySelector(' .btn-trans'), { opacity: 0 })
+      .from(blogContent.querySelectorAll('.swiper-slide'), { y: 30, opacity: 0, stagger: 0.05 }) 
+      .from(blogContent.querySelectorAll('.slider-actions'), { y: 30, opacity: 0, stagger: 0.05 }); 
   }
 
 }

@@ -146,7 +146,7 @@
                             top: 0;
                             left: 0;
                             height: 100%;
-                            animation: borderSlideAnimation 5s ease-in-out infinite; /* Add the animation here */
+                            animation: borderSlideAnimation 4s ease-in-out infinite; /* Add the animation here */
                         }
 
                         &:nth-child(2) {
@@ -278,6 +278,9 @@
         }
     }
     @media screen and (min-width: 991px) {
+        .banner-wrapper {
+            max-height: 103vh;
+        }
         .moblie-latest-news {
             display: none;
         }

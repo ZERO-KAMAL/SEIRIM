@@ -1,6 +1,7 @@
 .blog {
     padding: 11rem 0 6rem 0;
     background: #0d101e;
+    will-change: transform;
     .slider-actions {
         margin-top: 5rem;
     }
@@ -14,17 +15,22 @@
         }
     }
     .blog-bottom {
+        margin: auto;
         margin-top: 4rem;
+        max-width: 1700px;
+        // overflow: hidden;
+        .swiper-slide {
+        }
         .slider-item {
+            // max-width: 24rem !important;
+            width: 100%;
             border: 1px solid rgba($color: #00c3cf, $alpha: 0.2);
             background: #0a0d1c;
             padding: 2rem 1.8rem;
             position: relative;
-
-            border: 1px solid rgba($color: #00C3CF, $alpha: 0.3);
-            background: #0D1324;
-            box-shadow: 0px 0px 100px 15px rgba(35, 60, 96, 0.60);
-            
+            border: 1px solid rgba($color: #00c3cf, $alpha: 0.3);
+            background: #0d1324;
+            box-shadow: 0px 0px 100px 15px rgba(35, 60, 96, 0.6);
 
             .card-bg {
                 position: absolute;

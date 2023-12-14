@@ -49,17 +49,17 @@ export class CaseStudyComponent implements AfterViewInit {
         end: "bottom center",
         toggleActions: "play reverse play reverse"
       },
-      defaults: {
-        duration: 0.1
-      },
+      defaults: { duration: 0.25, ease: 'power1.inOut' } // Reduced duration and altered ease
     });
 
-    tlBg.fromTo(".case-study", { backgroundColor: "#090C18" }, { backgroundColor: "white" })
-      .fromTo(".case-study .section-title .title", { color: "white" }, { color: "#090C18" })
-      .fromTo(".case-study .para", { color: "white" }, { color: "#090C18" })
-      .fromTo(".case-study .btn-trans span", { color: "white" }, { color: "#090C18" })
-      .fromTo(".case-study .card-title", { color: "white" }, { color: "#090C18" })
-      .fromTo(".case-study .card-des", { color: "white" }, { color: "#090C18" })
+    // Start color transitions simultaneously for a more cohesive feel
+    tlBg
+      .fromTo(".case-study", { backgroundColor: "#090C18" }, { backgroundColor: "white" }, "start")
+      .fromTo(".case-study .section-title .title", { color: "white" }, { color: "#090C18" }, "start")
+      .fromTo(".case-study .para", { color: "white" }, { color: "#090C18" }, "start")
+      .fromTo(".case-study .btn-trans span", { color: "white" }, { color: "#090C18" }, "start")
+      .fromTo(".case-study .card-title", { color: "white" }, { color: "#090C18" }, "start")
+      .fromTo(".case-study .card-des", { color: "white" }, { color: "#090C18" }, "start");
   }
 
 }

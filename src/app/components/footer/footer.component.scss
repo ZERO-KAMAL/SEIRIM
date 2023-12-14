@@ -1,4 +1,5 @@
 footer {
+    will-change: transform;
     a {
         transition: all 0.2s ease-in-out;
         &:hover {

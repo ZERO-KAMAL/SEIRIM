@@ -1,5 +1,6 @@
 .case-study {
     padding: 8rem 0;
+    will-change: transform;
     .slider-actions {
         margin-top: 3.625rem;
     }
@@ -86,11 +87,11 @@
                                 font-weight: 500;
                                 letter-spacing: -0.22px;
                                 cursor: pointer;
-                                transition: all 0.3s ease-in-out;
                                 max-width: 39.25rem;
                                 margin: 0.5rem 0;
+                                transition: all 0.2s ease-in-out;
                                 &:hover {
-                                    color: #0782f4;
+                                    color: #0782f4 !important;
                                 }
                             }
                             p {
