@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     ScrollSmoother.create({
       wrapper: ".main",
       content: ".main-container",
-      smooth: 1.5,
+      smooth: 1.2,
       effects: true,
       ease: "expo.out",
       ignoreMobileResize: false,

@@ -1,69 +1,73 @@
 <section class="blog" #blogContentAnimation>
-    <div class="app-container">
-        <div class="blog-top">
-            <div class="section-title">
-                <span class="title-label">get latest updates</span>
-                <h2 class="title">News & Blog</h2>
-                <div class="line">
-                    <img src="../../../../assets/images/line.png" alt="">
-                </div>
-            </div>
-
-            <button class="btn-trans">
-                <span class="btn-label">view all articles</span>
-                <svg class="link-icon">
-                    <use xlink:href="#arrowTopRightIcon"></use>
-                </svg>
-            </button>
-
+  <div class="app-container">
+    <div class="blog-top">
+      <div class="section-title">
+        <span class="title-label">get latest updates</span>
+        <h2 class="title">News & Blog</h2>
+        <div class="line">
+          <img src="../../../../assets/images/line.png" alt="" />
         </div>
+      </div>
+
+      <button class="btn-trans">
+        <span class="btn-label">view all articles</span>
+        <svg class="link-icon">
+          <use xlink:href="#arrowTopRightIcon"></use>
+        </svg>
+      </button>
     </div>
-    <div class="blog-bottom">
-
-        <div class="swiper-container" #blogSwiperContainer>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let item of sliderData">
-                    <div class="slider-item">
-                        <img class="card-img" [src]="item.blogImg" alt="">
-                        <div class="card-content">
-                            <div class="category">
-                                {{ item.date }} - {{ item.category }}
-                            </div>
-                            <h6 class="card-title">{{ item.title }}</h6>
-                            <p>
-                                {{ item.description }}
-                            </p>
-
-                            <button>
-                                <svg>
-                                    <use xlink:href="#arrowRightIconOne"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+  </div>
+  <div class="blog-bottom">
+    <div class="swiper-container" #blogSwiperContainer>
+      <div class="swiper-wrapper">
+        <ng-container *ngFor="let item of sliderData">
+          <div class="swiper-slide">
+              <!-- src="https://github.githubassets.com/assets/bg-glow-purple-6e9a6a96cb04.png" -->
+              <!-- class="position-absolute d-none d-md-block events-none js-build-in-item build-in-fade build-in-animate" -->
+              <img
+              class="shadow-card"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                src="../../../../assets/images/blog-box-shadow.png"
+                />
+              <div class="slider-item">
+              <img class="card-img" [src]="item.blogImg" alt="" />
+              <div class="card-content">
+                <div class="category">
+                  {{ item.date }} - {{ item.category }}
                 </div>
-            </div>
-        </div>
+                <h6 class="card-title">{{ item.title }}</h6>
+                <p>
+                  {{ item.description }}
+                </p>
 
-        <div class="slider-actions">
-
-            <button class="btn-prev">
-                <svg>
+                <button>
+                  <svg>
                     <use xlink:href="#arrowRightIconOne"></use>
-                </svg>
-            </button>
-            <div class="loading-indicator">
-                <div class="loading-bar" #loadingIndicator>
-                </div>
+                  </svg>
+                </button>
+              </div>
             </div>
-            <button class="btn-next">
-                <svg>
-                    <use xlink:href="#arrowRightIconOne"></use>
-                </svg>
-            </button>
-
-        </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
 
-
+    <div class="slider-actions">
+      <button class="btn-prev">
+        <svg>
+          <use xlink:href="#arrowRightIconOne"></use>
+        </svg>
+      </button>
+      <div class="loading-indicator">
+        <div class="loading-bar" #loadingIndicator></div>
+      </div>
+      <button class="btn-next">
+        <svg>
+          <use xlink:href="#arrowRightIconOne"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>

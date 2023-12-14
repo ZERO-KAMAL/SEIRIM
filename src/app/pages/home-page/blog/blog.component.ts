@@ -91,8 +91,7 @@ export class BlogComponent implements AfterViewInit {
       // spaceBetween: 30,
       // centeredSlides: true,
       slidesPerView: 1,
-      centeredSlides: true,
-      spaceBetween: 10,
+      // centeredSlides: true,
       grabCursor: true,
       loop: true,
       autoplay: {
@@ -107,15 +106,15 @@ export class BlogComponent implements AfterViewInit {
       breakpoints: {
         600: {
           slidesPerView: 1,
-          spaceBetween: 10,
+          spaceBetween: 15,
         },
         767: {
           slidesPerView: 2,
-          spaceBetween: 15,
+          spaceBetween: 30,
         },
         991: {
           slidesPerView: 3,
-          spaceBetween: 15,
+          spaceBetween: 30,
         },
         1500: {
           slidesPerView: 4,
